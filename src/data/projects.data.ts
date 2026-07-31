@@ -1,5 +1,4 @@
-import { Project, ProjectsData } from '@types';
-
+import { Project, ProjectsData } from '../types/project.types';
 /**
  * Projects Data
  * Featured project + grid projects
@@ -193,6 +192,7 @@ const projects: Project[] = [
     },
     gridSize: 'md',
     tags: ['Security', 'Compliance'],
+    links: undefined
   },
 
   {
@@ -231,6 +231,7 @@ const projects: Project[] = [
     },
     gridSize: 'sm',
     tags: ['Monitoring', 'DevOps'],
+    links: undefined
   },
 ];
 

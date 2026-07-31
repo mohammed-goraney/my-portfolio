@@ -1,4 +1,6 @@
-import { ImageMeta } from './common.types';/**
+import { ImageMeta } from './common.types';
+
+/**
  * Project Section Types
  */
 
@@ -15,11 +17,11 @@ export interface ProjectMetrics {
 
 export interface TechStackItem {
   name: string;
-  category: 'Backend' | 'Infrastructure' | 'DevOps' | 'Tools' | 'Frontend' | 'Database';
+  category: 'Backend' | 'Infrastructure' | 'DevOps' | 'Tools' | 'Frontend' | 'Database' | 'Cloud';
 }
 
 export interface ProjectStack {
-  category: 'Backend' | 'Infrastructure' | 'DevOps' | 'Tools' | 'Frontend' | 'Database';
+  category: 'Backend' | 'Infrastructure' | 'DevOps' | 'Tools' | 'Frontend' | 'Database' | 'Cloud';
   technologies: TechStackItem[];
 }
 
@@ -73,8 +75,8 @@ export interface Project {
   screenshots?: ImageMeta[];
   diagram?: ImageMeta;
 
-  // Links
-  links: ProjectLinks;
+  // Links (تم جعلها اختيارية لمنع أخطاء البيانات الناقصة)
+  links?: ProjectLinks;
 
   // Featured project designation
   featured?: boolean;
