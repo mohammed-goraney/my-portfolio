@@ -1,10 +1,4 @@
-import { JourneyData } from '@types';
-
-/**
- * Journey Section Data
- * Replace with your actual journey, milestones, and learning path
- */
-
+import { JourneyData } from '../types/journey.types';
 export const journeyData: JourneyData = {
   introText:
     'From early curiosity about how networks work to designing infrastructure for enterprise-scale systems, this is my technical journey.',

@@ -1,5 +1,4 @@
-import { SkillsData } from '@types';
-
+import { SkillsData } from '../types/skill.types';
 /**
  * Skills Data
  * Organized by category with expertise levels

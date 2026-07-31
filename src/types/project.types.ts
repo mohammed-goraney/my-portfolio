@@ -1,6 +1,4 @@
-import { CTA, ImageMeta, ColorVariant } from './common.types';
-
-/**
+import { ImageMeta } from './common.types';/**
  * Project Section Types
  */
 

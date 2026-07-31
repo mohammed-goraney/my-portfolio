@@ -1,71 +1,28 @@
-/**
- * Navigation Constants
- */
+import { HeroData } from '../types/hero.types';
 
-export const navigationLinks = [
-  {
-    label: 'Home',
-    href: '#hero',
-    id: 'nav-home',
+export const heroData: HeroData = {
+  name: 'Your Name',
+  title: 'Network & Cloud Engineer',
+  valueProposition:
+    'Designing resilient networks and cloud infrastructure that scale with confidence.',
+  supportingText:
+    'Building secure, high-performance infrastructure for businesses that demand excellence.',
+  portrait: {
+    url: '/images/hero/portrait.jpg',
+    alt: 'Professional portrait',
+    width: 600,
+    height: 600,
   },
-  {
-    label: 'Journey',
-    href: '#journey',
-    id: 'nav-journey',
-  },
-  {
-    label: 'Featured',
-    href: '#featured-project',
-    id: 'nav-featured',
-  },
-  {
-    label: 'Projects',
+  primaryCTA: {
+    text: 'View My Work',
     href: '#projects',
-    id: 'nav-projects',
+    ariaLabel: 'Navigate to projects section',
   },
-  {
-    label: 'Skills',
-    href: '#skills',
-    id: 'nav-skills',
-  },
-  {
-    label: 'Contact',
+  secondaryCTA: {
+    text: 'Get In Touch',
     href: '#contact',
-    id: 'nav-contact',
+    ariaLabel: 'Navigate to contact section',
   },
-];
-
-export const socialLinks = [
-  {
-    platform: 'github' as const,
-    url: 'https://github.com/yourname',
-    label: 'GitHub',
-    icon: 'FiGithub',
-  },
-  {
-    platform: 'linkedin' as const,
-    url: 'https://linkedin.com/in/yourprofile',
-    label: 'LinkedIn',
-    icon: 'FiLinkedin',
-  },
-  {
-    platform: 'twitter' as const,
-    url: 'https://twitter.com/yourhandle',
-    label: 'Twitter',
-    icon: 'FiTwitter',
-  },
-  {
-    platform: 'email' as const,
-    url: 'mailto:your.email@example.com',
-    label: 'Email',
-    icon: 'FiMail',
-  },
-];
-
-export const mobileMenuLinks = navigationLinks; // Same as desktop for simplicity
-
-export default {
-  navigationLinks,
-  socialLinks,
-  mobileMenuLinks,
 };
+
+export default heroData;

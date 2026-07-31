@@ -1,5 +1,4 @@
-import { SocialProofData } from '@types';
-
+import { SocialProofData } from '../types/contact.types';
 /**
  * Social Proof Data
  * Certifications, metrics, and credibility signals
