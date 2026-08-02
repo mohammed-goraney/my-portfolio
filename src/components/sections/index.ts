@@ -1,0 +1,6 @@
+export { Hero, type HeroProps } from './Hero'
+export { Journey, type JourneyProps } from './Journey'
+export { Projects, type ProjectsProps } from './Projects'
+export { Skills, type SkillsProps } from './Skills'
+export { SocialProof, type SocialProofProps } from './SocialProof'
+export { Contact, type ContactProps } from './Contact'

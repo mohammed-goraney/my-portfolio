@@ -31,7 +31,7 @@ export default defineConfig({
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
           'motion-vendor': ['framer-motion'],
-          'ui-components': ['src/components/shared'],
+          //'ui-components': ['src/components/shared'],
         },
       },
     },
