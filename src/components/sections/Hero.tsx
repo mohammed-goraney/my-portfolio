@@ -1,8 +1,8 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { Button } from '@shared/Button'
 import { Section } from '@shared/Section'
 import { heroData } from '@data/hero.data'
-import { ScrollReveal } from '@components/animations'
 
 interface HeroProps {
   data?: typeof heroData
@@ -18,34 +18,32 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
         ref={ref}
         className="min-h-screen flex items-center justify-center relative overflow-hidden"
       >
-        {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-surface opacity-50 -z-10" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
-          {/* Left Column - Text Content */}
-          <ScrollReveal>
-  <div className="flex flex-col gap-6">  
-            {/* Name */}
+          <motion.div
+            className="flex flex-col gap-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h1 className="text-display md:text-5xl font-bold text-text-primary leading-tight">
               {data.name}
             </h1>
 
-            {/* Title */}
             <p className="text-h2 md:text-3xl text-accent-gold font-semibold">
               {data.title}
             </p>
 
-            {/* Value Proposition */}
             <p className="text-body-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed">
               {data.valueProposition}
             </p>
 
-            {/* Supporting Text */}
             <p className="text-body-md text-text-muted max-w-xl">
               {data.supportingText}
             </p>
 
-            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button
                 variant="primary"
@@ -65,8 +63,11 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
               </Button>
             </div>
 
-            {/* Scroll Indicator */}
-            <div className="flex items-center gap-2 pt-8 animate-bounce">
+            <motion.div
+              className="flex items-center gap-2 pt-8"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
               <svg
                 className="w-5 h-5 text-accent-gold"
                 fill="none"
@@ -81,13 +82,17 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                 />
               </svg>
               <span className="text-text-muted text-sm">Scroll to explore</span>
-            </div>
-          </div>
-          </ScrollReveal>
-          {/* Right Column - Portrait Image */}
-          <div className="flex justify-center md:justify-end animate-fade-in-up">
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="flex justify-center md:justify-end"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             <div className="relative w-full max-w-md">
-              {/* Image Container with Border */}
               <div className="aspect-square rounded-2xl overflow-hidden border-2 border-accent-gold/30 shadow-elevation-3">
                 <img
                   src={data.portrait.url}
@@ -98,12 +103,10 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                   loading="lazy"
                 />
               </div>
-
-              {/* Decorative Elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent-gold/10 rounded-full blur-3xl" />
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent-amber/5 rounded-full blur-3xl" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </Section>
     )
