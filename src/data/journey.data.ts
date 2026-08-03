@@ -1,71 +1,84 @@
-import { JourneyData } from '../types/journey.types';
+import { JourneyData } from '../types/journey.types'
+
 export const journeyData: JourneyData = {
   introText:
-    'From early curiosity about how networks work to designing infrastructure for enterprise-scale systems, this is my technical journey.',
+    'From IT education to specialized expertise in enterprise networking and cloud infrastructure. A continuous journey of learning, certification, and hands-on experience in building secure, scalable systems.',
 
   milestones: [
     {
+      id: 'milestone-0',
+      year: 2019,
+      title: 'Bachelor of Science in Information Technology',
+      description: 'Completed IT degree with comprehensive foundation in computer systems and networks',
+      type: 'achievement',
+      icon: 'Award',
+      tags: ['Education', 'IT Foundation'],
+      details: 'Solid foundation in IT fundamentals, networking basics, and system administration.',
+    },
+    {
       id: 'milestone-1',
-      year: 2015,
-      title: 'Started Learning Networking',
-      description: 'Self-taught networking fundamentals through CompTIA A+',
+      year: 2022,
+      title: 'Networking Specialization Journey Begins',
+      description: 'Started professional certification path in enterprise networking',
       type: 'learning',
       icon: 'BookOpen',
-      tags: ['Education', 'Networking'],
-      details: 'Discovered passion for network architecture and design.',
+      tags: ['Networking', 'Certification'],
+      details: 'Began intensive training for Cisco CCNA and enterprise network design.',
     },
     {
       id: 'milestone-2',
-      year: 2017,
-      title: 'First Enterprise Project',
-      description: 'Implemented LAN restructuring for financial services firm',
+      year: 2023,
+      title: 'Cisco CCNA Certification Achieved',
+      description: 'Completed comprehensive CCNA training from Networkat platform',
       type: 'achievement',
       icon: 'Award',
-      tags: ['Enterprise', 'Leadership'],
-      details: '99.5% uptime SLA achievement. Led team of 3 engineers.',
+      tags: ['Cisco', 'CCNA', 'Verified'],
+      details: 'Mastered networking fundamentals through 9 comprehensive courses and practical labs.',
     },
     {
       id: 'milestone-3',
-      year: 2019,
-      title: 'Migrated to Cloud',
-      description: 'Led digital transformation - on-premise to AWS',
-      type: 'challenge',
-      icon: 'Cloud',
-      tags: ['Cloud', 'AWS'],
-      details: 'Zero-downtime migration of critical workloads. 40% cost optimization.',
+      year: 2024,
+      title: 'Cisco CCNP & Azure Cloud Journey',
+      description: 'Advanced networking with CCNP and cloud infrastructure with Azure AZ-104',
+      type: 'growth',
+      icon: 'Zap',
+      tags: ['CCNP', 'Azure', 'Cloud'],
+      details:
+        'Achieved CCNP certification and passed Azure Administrator (AZ-104) exam. Expanded expertise into cloud infrastructure.',
     },
     {
       id: 'milestone-4',
-      year: 2021,
-      title: 'Infrastructure as Code',
-      description: 'Implemented Terraform-based infrastructure automation',
+      year: 2024,
+      title: 'DevOps & Containerization Skills',
+      description: 'Mastered Docker containerization and DevOps fundamentals',
       type: 'growth',
       icon: 'Code',
-      tags: ['DevOps', 'Automation'],
-      details: 'Reduced deployment time from hours to minutes. Full GitOps workflow.',
+      tags: ['Docker', 'DevOps', 'Containers'],
+      details:
+        'Completed Docker for Beginners hands-on labs. Gained practical experience with containerization and modern deployment practices.',
     },
     {
       id: 'milestone-5',
-      year: 2023,
-      title: 'Senior Architecture Role',
-      description: 'Promoted to Principal Network Engineer',
+      year: 2024,
+      title: 'Continuous Learning & Specialization',
+      description: '36+ courses completed across multiple platforms and technologies',
       type: 'achievement',
-      icon: 'Zap',
-      tags: ['Leadership', 'Architecture'],
+      icon: 'Sparkles',
+      tags: ['Learning', 'Certifications', 'Google', 'Coursera'],
       details:
-        'Leading infrastructure strategy for 500+ employee organization. Mentoring junior engineers.',
+        '1,200+ hours of hands-on training. Certifications from Google, Packt, Coursera, IBM, and specialized platforms in networking, cloud, and automation.',
     },
   ],
 
   currentFocus: {
     title: 'NOW',
     description:
-      'Mastering Kubernetes orchestration, learning Rust for systems programming, and exploring edge computing solutions.',
-    keywords: ['Kubernetes', 'Rust', 'Edge Computing', 'Cloud Security'],
+      'Deepening expertise in Kubernetes orchestration, preparing for advanced cloud certifications, and exploring edge computing solutions for enterprise networks.',
+    keywords: ['Kubernetes', 'Advanced Cloud', 'Edge Computing', 'Network Automation'],
     icon: 'Sparkles',
   },
 
-  callToAction: 'Want to explore a specific project or technology?',
-};
+  callToAction: 'Ready to collaborate on enterprise networking or cloud infrastructure projects?',
+}
 
-export default journeyData;
+export default journeyData

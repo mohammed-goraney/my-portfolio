@@ -35,7 +35,7 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {data.categories.map((category, index) => (
+          {data.categories.map((category: typeof data.categories[0], index: number) => (
             <motion.div
               key={category.id}
               initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
                 </div>
 
                 <div className="space-y-4 flex-grow">
-                  {category.skills?.map((skill) => (
+                  {category.skills?.map((skill: typeof category.skills[0]) => (
                     <div key={skill.name} className="flex items-start justify-between">
                       <div className="flex items-center gap-2 flex-1">
                         <span className="text-text-primary font-semibold text-body-sm">
@@ -113,19 +113,19 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
             { label: 'Categories', value: data.categories.length },
             {
               label: 'Total Skills',
-              value: data.categories.reduce((sum, cat) => sum + (cat.skills?.length ?? 0), 0),
+              value: data.categories.reduce((sum: number, cat: typeof data.categories[0]) => sum + (cat.skills?.length ?? 0), 0),
             },
             {
               label: 'Avg Level',
               value:
                 Math.round(
-                  data.categories.reduce((sum, cat) => sum + (cat.level ?? 0), 0) /
-                    data.categories.length
-                ) + '%',
+  data.categories.reduce((sum: number, cat: typeof data.categories[0]) => sum + (cat.level ?? 0), 0) /
+    data.categories.length
+) + '%',
             },
             {
               label: 'Years Exp',
-              value: Math.max(...data.categories.map((cat) => cat.yearsOfExperience ?? 0)) + '+',
+              value: Math.max(...data.categories.map((cat: typeof data.categories[0]) => cat.yearsOfExperience ?? 0)) + '+',
             },
           ].map((stat) => (
             <motion.div

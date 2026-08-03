@@ -1,115 +1,87 @@
-import { SocialProofData } from '../types/contact.types';
-/**
- * Social Proof Data
- * Certifications, metrics, and credibility signals
- */
-
+import { SocialProofData } from '../types/contact.types'
 export const socialProofData: SocialProofData = {
   metrics: {
-    yearsOfExperience: 8,
-    projectsCompleted: 35,
-    learningHours: 2400,
-    technologiesMastered: 20,
-    certifications: 5,
-    recommendations: 12,
-    githubFollowers: 450,
-    publicSpeakingEvents: 8,
-    articlesPublished: 24,
+    yearsOfExperience: 2,
+    projectsCompleted: 12,
+    learningHours: 1200,         
+    technologiesMastered: 15,
+    certifications: +36,
+    recommendations: 1,
+    githubFollowers: 150,
+    publicSpeakingEvents: 2,
+    articlesPublished: 3,
   },
 
   certifications: [
     {
-      id: 'aws-solutions-architect',
-      name: 'AWS Solutions Architect Professional',
-      issuer: 'Amazon Web Services',
-      date: '2023-06',
-      credentialId: 'AWS-SAP-2023-1234',
-      badge: '/images/badges/aws-solutions-architect.png',
-      category: 'Cloud',
-      verified: true,
-      url: 'https://aws.amazon.com/certification/certified-solutions-architect-professional/',
-    },
-
-    {
-      id: 'cisco-ccie',
-      name: 'Cisco CCIE Routing & Switching',
-      issuer: 'Cisco',
-      date: '2021-03',
-      credentialId: 'CCIE-123456',
-      badge: '/images/badges/cisco-ccie.png',
+      id: 'ccna',
+      name: 'Cisco CCNA Certification',
+      issuer: 'Networkat Platform',
+      date: '2024-09',
+      credentialId: 'CCNA-2024',
       category: 'Networking',
       verified: true,
-      url: 'https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert/ccie-routing-switching.html',
+      url: 'https://www.cisco.com/c/en/us/training-events/training-certifications/',
     },
-
     {
-      id: 'kubernetes-admin',
-      name: 'Certified Kubernetes Administrator',
-      issuer: 'Cloud Native Computing Foundation',
-      date: '2022-11',
-      credentialId: 'CNCF-CKA-2022-5678',
-      badge: '/images/badges/cka.png',
+      id: 'ccnp',
+      name: 'Cisco CCNP Certification',
+      issuer: 'Networkat Platform',
+      date: '2024-10',
+      credentialId: 'CCNP-2024',
+      category: 'Networking',
+      verified: true,
+      url: 'https://www.cisco.com/c/en/us/training-events/training-certifications/',
+    },
+    {
+      id: 'azure-az104',
+      name: 'Microsoft Azure Administrator (AZ-104)',
+      issuer: 'Microsoft Azure',
+      date: '2024-11',
+      credentialId: 'AZ-104-2024',
+      category: 'Cloud',
+      verified: true,
+      url: 'https://learn.microsoft.com/en-us/certifications/exams/az-104/',
+    },
+    {
+      id: 'docker',
+      name: 'Docker for Beginners with Hands-on Labs',
+      issuer: 'KodeKloud',
+      date: '2024-07',
+      credentialId: 'DOCKER-2024',
       category: 'DevOps',
       verified: true,
-      url: 'https://www.cncf.io/certification/cka/',
+      url: 'https://www.kodekloud.com/',
     },
-
     {
-      id: 'terraform-associate',
-      name: 'Terraform Associate',
-      issuer: 'HashiCorp',
-      date: '2023-02',
-      credentialId: 'TF-ASSOCIATE-2023-9012',
-      category: 'DevOps',
+      id: 'encor',
+      name: 'ENCOR (350-401) v1.1 Video Training Series',
+      issuer: 'Packt',
+      date: '2024-08',
+      credentialId: 'ENCOR-2024',
+      category: 'Networking',
       verified: true,
-      url: 'https://www.hashicorp.com/certification/terraform-associate',
-    },
-
-    {
-      id: 'iso-27001',
-      name: 'ISO/IEC 27001 Lead Implementer',
-      issuer: 'PECB',
-      date: '2022-08',
-      credentialId: 'ISO27001-LI-2022-3456',
-      category: 'Security',
-      verified: true,
-      url: 'https://pecb.org/en/iso-27001-lead-implementer-training',
+      url: 'https://www.packtpub.com/',
     },
   ],
 
-  recommendations: {
-    count: 12,
-    url: 'https://linkedin.com/in/yourprofile',
-  },
-
   achievements: [
-    'Led digital transformation saving $500k annually',
-    'Designed infrastructure serving 10M+ daily requests',
-    'Reduced mean time to recovery by 70%',
-    'Achieved ISO 27001 certification',
-    'Mentored 8+ junior engineers',
-    'Published 24 technical articles',
-    'Speaker at 8 industry conferences',
+    'Completed 36+ professional courses across networking, cloud, and DevOps platforms',
+    '1,200+ hours of hands-on learning and certification training',
+    'Cisco CCNA and CCNP certifications from Networkat - 9 comprehensive courses',
+    'Microsoft Azure Administrator (AZ-104) certified',
+    'Docker containerization and DevOps fundamentals mastered',
+    'Advanced expertise in Enterprise Network Design, Security, and Automation',
   ],
 
   badges: [
-    {
-      label: 'Cloud Expert',
-      icon: 'Cloud',
-    },
-    {
-      label: 'Infrastructure Leader',
-      icon: 'Zap',
-    },
-    {
-      label: 'Security Champion',
-      icon: 'Shield',
-    },
-    {
-      label: 'Open Source Contributor',
-      icon: 'Code',
-    },
+    { label: 'Network Architect', icon: 'Network' },
+    { label: 'Cloud Engineer', icon: 'Cloud' },
+    { label: 'DevOps Enthusiast', icon: 'Zap' },
   ],
-};
 
-export default socialProofData;
+  recommendations: {
+    count: 6,
+    url: 'https://linkedin.com/in/mohammed-abdalla-it',
+  },
+}

@@ -1,20 +1,19 @@
-import { HeroData } from '../types/hero.types';
-
+import { HeroData } from '../types/hero.types'
 export const heroData: HeroData = {
-  name: 'Your Name',
-  title: 'Network & Cloud Engineer',
+  name: 'Mohammed Abdalla',
+  title: 'Network & Cloud & Engineer',
   valueProposition:
-    'Designing resilient networks and cloud infrastructure that scale with confidence.',
+    'Building secure, scalable network infrastructure and cloud solutions with hands-on expertise in Azure, Docker, and enterprise networking.',
   supportingText:
-    'Building secure, high-performance infrastructure for businesses that demand excellence.',
+    'Certified in CCNA, CCNP, and Azure AZ-104 with practical experience in network automation, containerization, and DevOps.',
   portrait: {
     url: '/images/hero/portrait.jpg',
-    alt: 'Professional portrait',
+    alt: 'Mohammed Abdalla - Network & Cloud Engineer',
     width: 600,
     height: 600,
   },
   primaryCTA: {
-    text: 'View My Work',
+    text: 'View My Projects',
     href: '#projects',
     ariaLabel: 'Navigate to projects section',
   },
@@ -23,6 +22,4 @@ export const heroData: HeroData = {
     href: '#contact',
     ariaLabel: 'Navigate to contact section',
   },
-};
-
-export default heroData;
+}

@@ -39,7 +39,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
       <div className="mb-20">
         <h3 className="text-h2 font-bold text-text-primary mb-8">Certifications</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {data.certifications?.map((cert) => (
+          {data.certifications?.map((cert: typeof data.certifications[0]) => (
             <Card key={cert.id} variant="elevated" padding="lg" hover>
               <div className="flex items-start gap-4">
                 <span className="text-2xl">📜</span>
@@ -65,7 +65,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
         <div className="mb-20">
           <h3 className="text-h2 font-bold text-text-primary mb-8">Key Achievements</h3>
           <div className="space-y-4">
-            {data.achievements.map((achievement, index) => (
+            {data.achievements.map((achievement: string, index: number) => (
               <Card key={index} variant="bordered" padding="md">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-full bg-accent-gold/20 flex items-center justify-center text-accent-gold font-bold">
@@ -84,7 +84,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
         <div className="mb-20">
           <h3 className="text-h2 font-bold text-text-primary mb-8">Expertise Badges</h3>
           <div className="flex flex-wrap gap-4">
-            {data.badges.map((badge, index) => (
+            {data.badges.map((badge: typeof data.badges[0], index: number) => (
               <div
                 key={index}
                 className="bg-gradient-to-br from-accent-gold/20 to-accent-amber/10 border border-accent-gold/30 rounded-xl p-6 text-center"
