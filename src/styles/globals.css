@@ -1,8 +1,10 @@
-/* Create: src/styles/globals.css */
+/* Premium Portfolio — global styles */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap');
 
 * {
   margin: 0;
@@ -12,10 +14,148 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
   background-color: #1A1918;
   color: #F5F2ED;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+@media (max-width: 1024px) {
+  body {
+    cursor: auto;
+  }
+}
+
+::selection {
+  background: #D4A574;
+  color: #1A1918;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1A1918;
+}
+::-webkit-scrollbar-thumb {
+  background: #403C38;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4A574;
+}
+
+/* ================= Custom Cursor ================= */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: #D4A574;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, background 0.25s ease;
+}
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(212, 165, 116, 0.55);
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease, opacity 0.3s ease;
+}
+.cursor-hover .cursor-dot {
+  width: 0;
+  height: 0;
+}
+.cursor-hover .cursor-ring {
+  width: 64px;
+  height: 64px;
+  background: rgba(212, 165, 116, 0.12);
+  border-color: rgba(212, 165, 116, 0.9);
+}
+
+/* ================= Typography ================= */
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+.font-mono-tech {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ================= Word / Letter reveal helpers ================= */
+.reveal-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.reveal-word-inner {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* ================= Marquee ================= */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee-scroll 28s linear infinite;
+}
+
+/* ================= Terminal blink ================= */
+@keyframes blink-caret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink-caret 1s step-end infinite;
+}
+
+/* ================= Grid / pixel texture ================= */
+.bg-noise-grid {
+  background-image:
+    linear-gradient(rgba(212, 165, 116, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 165, 116, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ================= Glow utilities ================= */
+.text-glow {
+  text-shadow: 0 0 24px rgba(212, 165, 116, 0.35);
+}
+.box-glow-gold {
+  box-shadow: 0 0 40px rgba(212, 165, 116, 0.15), inset 0 1px 0 rgba(212, 165, 116, 0.2);
+}
+
+/* ================= Floating ================= */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+/* ================= Reduced motion ================= */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-marquee, .animate-float-slow, .animate-blink { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

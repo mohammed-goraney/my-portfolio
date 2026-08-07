@@ -1,7 +1,7 @@
 import { HeroData } from '../types/hero.types'
 export const heroData: HeroData = {
   name: 'Mohammed Abdalla',
-  title: 'Network & Cloud & Engineer',
+  title: 'Network & Cloud Engineer',
   valueProposition:
     'Building secure, scalable network infrastructure and cloud solutions with hands-on expertise in Azure, Docker, and enterprise networking.',
   supportingText:
@@ -9,8 +9,8 @@ export const heroData: HeroData = {
   portrait: {
     url: '/images/hero/portrait.jpg',
     alt: 'Mohammed Abdalla - Network & Cloud Engineer',
-    width: 600,
-    height: 600,
+    width: 864,
+    height: 1216,
   },
   primaryCTA: {
     text: 'View My Projects',

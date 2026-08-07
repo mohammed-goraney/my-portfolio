@@ -5,27 +5,27 @@
 
 export const siteMetadata = {
   // Basic info
-  title: 'Your Name - Network & Cloud Engineer',
+  title: 'Mohammed Abdalla - Network & Cloud Engineer',
   description:
-    'Network & Cloud Engineer designing resilient infrastructure that scales with confidence. Expert in AWS, networking, and DevOps.',
-  siteName: 'Your Portfolio',
-  url: 'https://yourportfolio.com',
+    'Mohammed Abdalla — Network & Cloud Engineer designing resilient infrastructure that scales with confidence. Certified in CCNA, CCNP, and Azure AZ-104. Expert in AWS, networking, and DevOps.',
+  siteName: 'Mohammed Abdalla — Portfolio',
+  url: 'https://github.com/mohammed-goraney/my-portfolio',
   locale: 'en_US',
 
   // Author
   author: {
-    name: 'Your Name',
-    email: 'your.email@example.com',
-    phone: '+1 (XXX) XXX-XXXX',
-    location: 'City, Country',
+    name: 'Mohammed Abdalla',
+    email: 'moha.gora.app123@gmail.com',
+    phone: '',
+    location: 'Egypt',
   },
 
   // Social profiles
   social: {
-    github: 'https://github.com/yourname',
-    linkedin: 'https://linkedin.com/in/yourprofile',
-    twitter: 'https://twitter.com/yourhandle',
-    email: 'your.email@example.com',
+    github: 'https://github.com/mohammed-goraney',
+    linkedin: 'https://linkedin.com/in/mohammed-abdalla-it',
+    twitter: '',
+    email: 'moha.gora.app123@gmail.com',
   },
 
   // Open Graph / Social sharing
@@ -39,7 +39,7 @@ export const siteMetadata = {
   // Twitter Card
   twitter: {
     card: 'summary_large_image',
-    creator: '@yourhandle',
+    creator: '',
   },
 
   // Keywords
@@ -57,22 +57,22 @@ export const siteMetadata = {
 
   // Contact information
   contact: {
-    email: 'your.email@example.com',
-    phone: '+1 (XXX) XXX-XXXX',
-    location: 'City, Country',
+    email: 'moha.gora.app123@gmail.com',
+    phone: '',
+    location: 'Egypt',
   },
 
   // Organization
   organization: {
-    name: 'Your Name',
-    url: 'https://yourportfolio.com',
-    logo: 'https://yourportfolio.com/logo.png',
+    name: 'Mohammed Abdalla',
+    url: 'https://github.com/mohammed-goraney',
+    logo: '',
   },
 
   // Analytics (if needed)
   analytics: {
-    googleAnalyticsId: 'G-XXXXXXXXXX',
-    hotjarId: 'XXXXXXXXX',
+    googleAnalyticsId: '',
+    hotjarId: '',
   },
 };
 

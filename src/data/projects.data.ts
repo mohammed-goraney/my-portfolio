@@ -81,7 +81,7 @@ const projects: Project[] = [
 
     links: {
       caseStudy: '#case-study-multi-region',
-      github: 'https://github.com/yourname/multi-region-infrastructure',
+      github: 'https://github.com/mohammed-goraney',
     },
 
     tags: ['Cloud', 'AWS', 'Infrastructure', 'DevOps'],
@@ -149,7 +149,7 @@ const projects: Project[] = [
     },
     gridSize: 'md',
     links: {
-      github: 'https://github.com/yourname/network-automation',
+      github: 'https://github.com/mohammed-goraney',
     },
     tags: ['Automation', 'Python', 'Networking'],
   },

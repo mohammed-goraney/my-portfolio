@@ -27,7 +27,7 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(  (
     {
       sections = [],
       socialLinks = [],
-      copyrightText = `© ${new Date().getFullYear()} Your Name. All rights reserved.`,
+      copyrightText = `© ${new Date().getFullYear()} Mohammed Abdalla. All rights reserved.`,
     },
     ref
   ) => {
@@ -41,8 +41,8 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(  (
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             {/* Brand */}
             <div>
-              <h3 className="text-h3 font-bold text-accent-gold mb-4">
-                Portfolio
+              <h3 className="font-display text-h3 font-bold text-accent-gold mb-4">
+                Mohammed Abdalla
               </h3>
               <p className="text-text-secondary text-body-sm">
                 Network & Cloud Engineer designing resilient infrastructure.
@@ -83,7 +83,9 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(  (
 
             {socialLinks.length > 0 && (
               <div className="flex items-center gap-6">
-                {socialLinks.map((social) => (
+                {socialLinks
+                  .filter((social) => social.href && social.href !== 'mailto:' && !social.href.endsWith('twitter.com/'))
+                  .map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
