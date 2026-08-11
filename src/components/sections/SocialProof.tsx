@@ -1,18 +1,21 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { SectionTitle } from '@shared/SectionTitle'
 import { Section } from '@shared/Section'
 import { Badge } from '@shared/Badge'
 import { FadeUp } from '@shared/TextReveal'
 import { CountUp } from '@shared/CountUp'
 import { socialProofData } from '@data/social-proof.data'
+import type { Certification } from '../../types/contact.types'
 
 interface SocialProofProps {
   data?: typeof socialProofData
 }
 
 const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
-  ({ data = socialProofData }, ref) => (
+  ({ data = socialProofData }, ref) => {
+    const [viewerCert, setViewerCert] = useState<Certification | null>(null)
+    return (
     <Section id="social-proof" ref={ref} className="py-20 md:py-32 relative">
       <div className="absolute inset-0 bg-noise-grid opacity-40 pointer-events-none" aria-hidden="true" />
 
@@ -59,15 +62,27 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
         </div>
       </FadeUp>
 
-      {/* Certifications */}
+      {/* Certifications — official certificates gallery */}
       <FadeUp className="mb-20">
-        <h3 className="text-h2 font-bold text-text-primary mb-8 flex items-center gap-3">
+        <h3 className="text-h2 font-bold text-text-primary mb-3 flex items-center gap-3">
           <span className="h-px w-8 bg-accent-gold" />
           Certifications
         </h3>
+        <p className="text-body-md text-text-secondary max-w-2xl mb-8">
+          Seven official certificates issued by{' '}
+          <a
+            href="https://netkat.works/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent-gold underline underline-offset-4 hover:text-glow transition-colors"
+          >
+            NetKat
+          </a>{' '}
+          (Credential ID: {data.certificatesIssuer?.credentialId ?? 'NetKat1197'}) — click any certificate to view it full size.
+        </p>
       </FadeUp>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
-        {data.certifications?.map((cert: typeof data.certifications[0], index) => (
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mb-20">
+        {data.certifications?.map((cert, index) => (
           <motion.div
             key={cert.id}
             initial={{ opacity: 0, y: 28 }}
@@ -76,25 +91,91 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
             viewport={{ once: true, margin: '-5%' }}
             className="group"
           >
-            <div className="h-full rounded-xl bg-surface/60 border border-border/70 p-6 flex items-start gap-4 backdrop-blur-sm transition-all duration-300 hover:border-accent-gold/50 hover:bg-surface/80">
-              <span className="text-3xl group-hover:scale-110 transition-transform duration-300">📜</span>
-              <div className="flex-1">
-                <h4 className="text-h4 font-bold text-text-primary group-hover:text-accent-gold transition-colors duration-300">
-                  {cert.name}
-                </h4>
-                <p className="text-body-sm text-text-secondary">{cert.issuer}</p>
-                <div className="flex items-center gap-2 mt-2 text-caption text-text-muted">
-                  <span className="font-mono-tech">{cert.date}</span>
-                  {cert.verified && <span className="text-success">✓ Verified</span>}
-                </div>
-                <Badge variant="soft" size="sm" className="mt-3 capitalize">
-                  {cert.category}
-                </Badge>
+            <button
+              type="button"
+              onClick={() => setViewerCert(cert)}
+              className="h-full w-full text-left rounded-xl bg-surface/60 border border-border/70 p-3 backdrop-blur-sm transition-all duration-300 hover:border-accent-gold/60 hover:shadow-[0_8px_40px_rgba(212,165,116,0.12)] hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold"
+              aria-label={`View ${cert.name} certificate`}
+            >
+              <div className="relative overflow-hidden rounded-lg aspect-[4/3] mb-3 bg-white">
+                {cert.image ? (
+                  <img
+                    src={cert.image}
+                    alt={`${cert.name} certificate`}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-4xl">📜</div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
+                <span className="absolute bottom-2 right-2 text-caption text-white bg-black/60 rounded-full px-2 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  View
+                </span>
               </div>
-            </div>
+              <h4 className="text-h4 font-bold text-text-primary group-hover:text-accent-gold transition-colors duration-300 line-clamp-1">
+                {cert.name}
+              </h4>
+              <div className="flex items-center justify-between gap-2 mt-1 text-caption text-text-muted">
+                <span>{cert.issuer}</span>
+                {cert.verified && <span className="text-success">✓</span>}
+              </div>
+              <Badge variant="soft" size="sm" className="mt-2 capitalize">
+                {cert.category}
+              </Badge>
+            </button>
           </motion.div>
         ))}
       </div>
+
+      {/* Certificate viewer (lightbox) */}
+      <AnimatePresence>
+        {viewerCert?.image && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 md:p-10"
+            onClick={() => setViewerCert(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${viewerCert.name} certificate viewer`}
+          >
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setViewerCert(null)}
+              className="absolute top-5 right-5 z-10 w-12 h-12 rounded-full bg-surface border border-accent-gold/50 text-accent-gold text-xl flex items-center justify-center hover:bg-accent-gold/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold"
+              aria-label="Close certificate viewer"
+            >
+              ✕
+            </motion.button>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.92 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 24 }}
+              className="relative max-w-4xl w-full max-h-full flex flex-col items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={viewerCert.image}
+                alt={`${viewerCert.name} certificate`}
+                className="w-full max-h-[78vh] object-contain rounded-xl border border-accent-gold/40 shadow-[0_0_60px_rgba(212,165,116,0.25)]"
+              />
+              <div className="mt-4 text-center">
+                <p className="text-h3 font-bold text-accent-gold">{viewerCert.name}</p>
+                <p className="text-body-sm text-text-secondary mt-1">
+                  {viewerCert.issuer} · Credential ID: {viewerCert.credentialId ?? 'NetKat1197'} · Verified
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Achievements */}
       {data.achievements && data.achievements.length > 0 ? (
@@ -168,10 +249,12 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
         </FadeUp>
       ) : null}
     </Section>
-  )
+    )
+  }
 )
 
 SocialProof.displayName = 'SocialProof'
 
 export { SocialProof }
 export type { SocialProofProps }
+export type { Certification } from '../../types/contact.types'
