@@ -38,25 +38,25 @@ export const navigationLinks = [
 export const socialLinks = [
   {
     platform: 'github' as const,
-    url: 'https://github.com/yourname',
+    url: 'https://github.com/mohammed-goraney',
     label: 'GitHub',
     icon: 'FiGithub',
   },
   {
     platform: 'linkedin' as const,
-    url: 'https://linkedin.com/in/yourprofile',
+    url: 'https://linkedin.com/in/mohammed-abdalla-it',
     label: 'LinkedIn',
     icon: 'FiLinkedin',
   },
   {
     platform: 'twitter' as const,
-    url: 'https://twitter.com/yourhandle',
+    url: 'https://twitter.com/',
     label: 'Twitter',
     icon: 'FiTwitter',
   },
   {
     platform: 'email' as const,
-    url: 'mailto:your.email@example.com',
+    url: 'mailto:moha.gora.app123@gmail.com',
     label: 'Email',
     icon: 'FiMail',
   },

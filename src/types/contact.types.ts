@@ -45,6 +45,7 @@ export interface Certification {
   expiryDate?: string;
   verified?: boolean;
   category?: string; // "Cloud", "Security", "Networking"
+  image?: string; // URL to certificate document image
 }
 
 export interface SocialProofMetrics {
@@ -63,6 +64,12 @@ export interface SocialProofMetrics {
 export interface SocialProofData {
   metrics: SocialProofMetrics;
   certifications: Certification[];
+  certificatesIssuer?: {
+    name: string;
+    website?: string;
+    certifiedDate?: string;
+    credentialId?: string;
+  };
   recommendations?: {
     count: number;
     url?: string; // LinkedIn profile link
