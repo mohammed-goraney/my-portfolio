@@ -16,9 +16,9 @@ export const socialProofData: SocialProofData = {
     {
       id: 'ccna-200-301',
       name: 'Cisco CCNA 200-301',
-      issuer: 'NetKat',
+      issuer: 'Networkat',
       date: '2026-08-06',
-      credentialId: 'NetKat1197',
+      credentialId: 'Networkat1197',
       category: 'Networking',
       verified: true,
       image: '/images/Networkat/ccna-200-301.jpg',
@@ -26,9 +26,9 @@ export const socialProofData: SocialProofData = {
     {
       id: 'ccnp',
       name: 'Cisco CCNP',
-      issuer: 'NetKat',
+      issuer: 'Networkat',
       date: '2026-08-06',
-      credentialId: 'NetKat1197',
+      credentialId: 'Networkat1197',
       category: 'Networking',
       verified: true,
       image: '/images/Networkat/ccnp.jpg',
@@ -36,9 +36,9 @@ export const socialProofData: SocialProofData = {
     {
       id: 'azure-cloud-fundamentals',
       name: 'Azure Cloud Fundamentals',
-      issuer: 'NetKat',
+      issuer: 'Networkat',
       date: '2026-08-06',
-      credentialId: 'NetKat1197',
+      credentialId: 'Networkat1197',
       category: 'Cloud',
       verified: true,
       image: '/images/Networkat/azure-cloud-fundamentals.jpg',
@@ -46,9 +46,9 @@ export const socialProofData: SocialProofData = {
     {
       id: 'cybersecurity',
       name: 'Cybersecurity',
-      issuer: 'NetKat',
+      issuer: 'Networkat',
       date: '2026-08-06',
-      credentialId: 'NetKat1197',
+      credentialId: 'Networkat1197',
       category: 'Security',
       verified: true,
       image: '/images/Networkat/cybersecurity.jpg',
@@ -56,9 +56,9 @@ export const socialProofData: SocialProofData = {
     {
       id: 'fortigate-nse4',
       name: 'Fortigate Firewall (NSE4)',
-      issuer: 'NetKat',
+      issuer: 'Networkat',
       date: '2026-08-06',
-      credentialId: 'NetKat1197',
+      credentialId: 'Networkat1197',
       category: 'Security',
       verified: true,
       image: '/images/Networkat/fortigate-nse4.jpg',
@@ -66,9 +66,9 @@ export const socialProofData: SocialProofData = {
     {
       id: 'mcsa',
       name: 'MCSA',
-      issuer: 'NetKat',
+      issuer: 'Networkat',
       date: '2026-08-06',
-      credentialId: 'NetKat1197',
+      credentialId: 'Networkat1197',
       category: 'Cloud',
       verified: true,
       image: '/images/Networkat/mcsa.jpg',
@@ -76,9 +76,9 @@ export const socialProofData: SocialProofData = {
     {
       id: 'redhat-linux-admin',
       name: 'RedHat Linux Admin 1 & 2',
-      issuer: 'NetKat',
+      issuer: 'Networkat',
       date: '2026-08-06',
-      credentialId: 'NetKat1197',
+      credentialId: 'Networkat1197',
       category: 'Systems',
       verified: true,
       image: '/images/Networkat/redhat-linux-admin.jpg',
@@ -86,10 +86,10 @@ export const socialProofData: SocialProofData = {
   ],
 
   certificatesIssuer: {
-    name: 'NetKat',
-    website: 'https://netkat.works/',
+    name: 'Networkat',
+    website: 'https://networkat.net/',
     certifiedDate: 'August 2026',
-    credentialId: 'NetKat1197',
+    credentialId: 'Networkat1197',
   },
 
   achievements: [

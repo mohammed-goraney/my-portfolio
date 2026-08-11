@@ -71,14 +71,14 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
         <p className="text-body-md text-text-secondary max-w-2xl mb-8">
           Seven official certificates issued by{' '}
           <a
-            href="https://netkat.works/"
+            href="https://networkat.net/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-accent-gold underline underline-offset-4 hover:text-glow transition-colors"
           >
-            NetKat
+            Networkat
           </a>{' '}
-          (Credential ID: {data.certificatesIssuer?.credentialId ?? 'NetKat1197'}) — click any certificate to view it full size.
+          (Credential ID: {data.certificatesIssuer?.credentialId ?? 'Networkat1197'}) — click any certificate to view it full size.
         </p>
       </FadeUp>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mb-20">
@@ -169,7 +169,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
               <div className="mt-4 text-center">
                 <p className="text-h3 font-bold text-accent-gold">{viewerCert.name}</p>
                 <p className="text-body-sm text-text-secondary mt-1">
-                  {viewerCert.issuer} · Credential ID: {viewerCert.credentialId ?? 'NetKat1197'} · Verified
+                  {viewerCert.issuer} · Credential ID: {viewerCert.credentialId ?? 'Networkat1197'} · Verified
                 </p>
               </div>
             </motion.div>
