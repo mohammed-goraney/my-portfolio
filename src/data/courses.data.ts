@@ -25,7 +25,7 @@ export interface CoursesData {
 }
 
 export const coursesData: CoursesData = {
-  totalCourses: 11,
+  totalCourses: 8,
   courses: [
     {
       id: 'encor-350-401',
@@ -53,6 +53,10 @@ export const coursesData: CoursesData = {
       date: 'Mar 1, 2026',
       grade: '84%',
       category: 'Networking',
+      credentialUrl:
+        'https://www.coursera.org/account/accomplishments/verify/BQ49Z50FA70U',
+      certificateImage: '/images/Coursera/network-security-automation.jpeg',
+      skills: ['Network Security', 'Automation', 'Exam Preparation'],
     },
     {
       id: 'advanced-routing',
@@ -61,14 +65,22 @@ export const coursesData: CoursesData = {
       date: 'Feb 19, 2026',
       grade: '92%',
       category: 'Networking',
+      credentialUrl:
+        'https://www.coursera.org/account/accomplishments/verify/FXCWETNX6UTR',
+      certificateImage: '/images/Coursera/advanced-routing.jpeg',
+      skills: ['Advanced Routing', 'Infrastructure', 'Network Management'],
     },
     {
       id: 'enterprise-network-design',
       name: 'Enterprise Network Design and Virtualization',
       provider: 'Packt',
-      date: 'Jan 22, 2026',
+      date: 'Jan 21, 2026',
       grade: '80%',
       category: 'Networking',
+      credentialUrl:
+        'https://www.coursera.org/account/accomplishments/verify/WAS4JDHGDRHL',
+      certificateImage: '/images/Coursera/enterprise-network-design.jpeg',
+      skills: ['Enterprise Network Design', 'Virtualization'],
     },
     {
       id: 'intro-devops',
@@ -106,22 +118,6 @@ export const coursesData: CoursesData = {
       ],
     },
     {
-      id: 'microsoft-excel',
-      name: 'Getting Started with Microsoft Excel',
-      provider: 'Coursera',
-      date: 'Feb 23, 2025',
-      grade: '86%',
-      category: 'Productivity',
-    },
-    {
-      id: 'art-of-storytelling',
-      name: 'The Art of Storytelling',
-      provider: 'IESE Business School',
-      date: 'Mar 19, 2025',
-      grade: '100%',
-      category: 'Soft Skills',
-    },
-    {
       id: 'storytelling-influencing',
       name: 'Storytelling and Influencing: Communicate with Impact',
       provider: 'Macquarie University',
@@ -137,14 +133,6 @@ export const coursesData: CoursesData = {
         'Public Speaking',
         'Strategic Communication',
       ],
-    },
-    {
-      id: 'mind-map-canva',
-      name: 'Use Canva to Create an Interactive Mind Map',
-      provider: 'Coursera',
-      date: 'Nov 20, 2024',
-      grade: '100%',
-      category: 'Productivity',
     },
     {
       id: 'google-digital-marketing',
