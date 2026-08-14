@@ -110,17 +110,43 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
                 )}
               </div>
 
+              {course.skills && course.skills.length > 0 && (
+                <div className="mb-3 flex flex-wrap gap-1.5">
+                  {course.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full border border-border/60 bg-surface-2/50 px-2 py-0.5 font-mono-tech text-[10px] uppercase tracking-wide text-text-secondary"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              )}
+
               <h4 className="text-h4 font-bold text-text-primary mb-3 leading-snug group-hover:text-accent-gold transition-colors duration-300">
                 {course.name}
               </h4>
 
-              <div className="mt-auto flex items-center justify-between pt-4 border-t border-border/60">
+              <div className="mt-auto flex items-center justify-between gap-2 pt-4 border-t border-border/60">
                 <span className="text-body-sm text-text-secondary font-medium">
                   {course.provider}
                 </span>
-                <span className="font-mono-tech text-caption text-text-muted">
-                  {course.date}
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="font-mono-tech text-caption text-text-muted">
+                    {course.date}
+                  </span>
+                  {course.credentialUrl && (
+                    <a
+                      href={course.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${course.name} certificate credential`}
+                      className="font-mono-tech text-caption text-accent-gold hover:underline"
+                    >
+                      Credential ↗
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

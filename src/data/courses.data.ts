@@ -11,6 +11,12 @@ export interface Course {
   date: string
   grade?: string
   category: 'Networking' | 'DevOps' | 'Cloud' | 'Soft Skills' | 'Productivity'
+  /** Verifiable credential URL (Coursera / Packt verification page) */
+  credentialUrl?: string
+  /** Local certificate image, e.g. /images/Coursera/encor-350-401.jpeg */
+  certificateImage?: string
+  /** Skills highlighted by the credential */
+  skills?: string[]
 }
 
 export interface CoursesData {
@@ -25,8 +31,20 @@ export const coursesData: CoursesData = {
       id: 'encor-350-401',
       name: 'ENCOR (350-401) v1.1 Video Training Series',
       provider: 'Packt',
-      date: '2026',
+      date: 'Mar 1, 2026',
       category: 'Networking',
+      credentialUrl:
+        'https://www.coursera.org/account/accomplishments/specialization/00JIDXE1U80N',
+      certificateImage: '/images/Coursera/encor-350-401.jpeg',
+      skills: [
+        'Enterprise Network Design',
+        'SDN',
+        'Wireless',
+        'Network Virtualization',
+        'QoS',
+        'Network Security',
+        'Automation',
+      ],
     },
     {
       id: 'network-security-automation',
