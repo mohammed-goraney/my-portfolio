@@ -1,4 +1,5 @@
 export { Button, type ButtonProps } from './Button'
+export { PixelReveal } from './PixelReveal'
 export { Card, type CardProps } from './Card'
 export { Badge, type BadgeProps } from './Badge'
 export { Section, type SectionProps } from './Section'

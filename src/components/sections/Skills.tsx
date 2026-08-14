@@ -32,6 +32,57 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
           alignment="center"
         />
 
+        {/* UI/UX pro-max highlight — design obsession banner */}
+        {data.uiUxHighlight && (
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-10%' }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            className="relative mb-16 overflow-hidden rounded-2xl border border-[#C084FC]/50 bg-gradient-to-br from-[#C084FC]/15 via-surface/70 to-surface/40 p-8 md:p-10 backdrop-blur-md"
+          >
+            <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[#C084FC]/20 blur-3xl" aria-hidden="true" />
+            <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-[#818CF8]/20 blur-3xl" aria-hidden="true" />
+            <div className="relative flex flex-col md:flex-row md:items-center gap-8">
+              <div className="md:w-2/3">
+                <Badge className="mb-4 border-[#C084FC]/60 text-[#C084FC]">
+                  ✦ Designer's Obsession
+                </Badge>
+                <h3 className="text-h2 md:text-h1 font-black tracking-tight text-text-primary mb-3">
+                  {data.uiUxHighlight.title}
+                </h3>
+                <p className="text-body-lg text-text-secondary">{data.uiUxHighlight.description}</p>
+              </div>
+              <div className="md:w-1/3">
+                <div className="flex items-center gap-4">
+                  <div className="flex-1 bg-surface-light/80 rounded-full h-2.5 overflow-hidden">
+                    <motion.div
+                      className="h-full rounded-full bg-gradient-to-r from-[#C084FC] to-[#818CF8]"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${data.uiUxHighlight.level}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.4, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                    />
+                  </div>
+                  <span className="text-3xl font-black bg-gradient-to-r from-[#C084FC] to-[#818CF8] bg-clip-text text-transparent">
+                    {data.uiUxHighlight.level}%
+                  </span>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {data.uiUxHighlight.skills.map((s) => (
+                    <span
+                      key={s.name}
+                      className="rounded-full border border-[#C084FC]/40 bg-[#C084FC]/10 px-3 py-1 text-caption text-text-primary"
+                    >
+                      {s.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
         {data.intro && (
           <FadeUp>
             <p className="text-center text-body-lg text-text-secondary max-w-2xl mx-auto mb-16">
@@ -123,13 +174,14 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
         {/* summary stats with count-up */}
         <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { label: 'Categories', value: data.categories.length, suffix: '' },
+            { label: 'Categories', value: data.categories.length + (data.uiUxHighlight ? 1 : 0), suffix: '' },
             {
               label: 'Total Skills',
-              value: data.categories.reduce(
-                (sum: number, cat: typeof data.categories[0]) => sum + (cat.skills?.length ?? 0),
-                0
-              ),
+              value:
+                data.categories.reduce(
+                  (sum: number, cat: typeof data.categories[0]) => sum + (cat.skills?.length ?? 0),
+                  0
+                ) + (data.uiUxHighlight?.skills?.length ?? 0),
               suffix: '',
             },
             {

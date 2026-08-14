@@ -24,6 +24,13 @@ export interface SkillCategory {
 
 export interface SkillsData {
   intro?: string;
+  uiUxHighlight?: {
+    title: string;
+    description: string;
+    level: number;
+    color?: string;
+    skills: Skill[];
+  };
   categories: SkillCategory[];
   hideCategoryLevels?: boolean;
   hideIndividualLevels?: boolean;

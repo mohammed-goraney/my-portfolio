@@ -3,6 +3,20 @@ export const skillsData: SkillsData = {
   intro:
     'Hands-on experience with enterprise networking, cloud infrastructure, and modern DevOps practices. Certified across multiple platforms including Cisco, Microsoft Azure, and containerization technologies.',
 
+  uiUxHighlight: {
+    title: 'UI / UX Design',
+    description:
+      'A deep obsession with craft — pixel-perfect interfaces, motion design, and user-first experiences. Not just engineering: design thinking is woven into everything I build.',
+    level: 95,
+    color: '#C084FC',
+    skills: [
+      { name: 'Interaction Design', level: 95, proficiency: 'expert' },
+      { name: 'Motion & Animation', level: 92, proficiency: 'expert' },
+      { name: 'Visual Design Systems', level: 90, proficiency: 'expert' },
+      { name: 'User Research & Wireframing', level: 85, proficiency: 'advanced' },
+    ],
+  },
+
   categories: [
     {
       id: 'networking',
