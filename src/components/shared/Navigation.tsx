@@ -30,6 +30,33 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
     const [progress, setProgress] = useState(0)
     const [scrolled, setScrolled] = useState(false)
 
+    // Extract the target section id from each href (e.g. '#journey' -> 'journey')
+    const sectionIds = React.useMemo(
+      () =>
+        links
+          .map((link) => link.href.replace('#', ''))
+          .filter((id) => id.length > 0),
+      [links]
+    )
+
+    // Smooth-scroll interception: account for the sticky navbar height
+    useEffect(() => {
+      const onClick = (event: MouseEvent) => {
+        const anchor = (event.target as HTMLElement).closest('a[href^="#"]') as HTMLAnchorElement | null
+        if (!anchor) return
+        const id = anchor.getAttribute('href')?.replace('#', '')
+        if (!id) return
+        const target = document.getElementById(id)
+        if (!target) return
+        event.preventDefault()
+        const navHeight = 88
+        const y = target.getBoundingClientRect().top + window.scrollY - navHeight
+        window.scrollTo({ top: y, behavior: 'smooth' })
+      }
+      document.addEventListener('click', onClick, { capture: true })
+      return () => document.removeEventListener('click', onClick, { capture: true })
+    }, [])
+
     useEffect(() => {
       const onScroll = () => {
         const doc = document.documentElement
@@ -38,11 +65,11 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         setScrolled(doc.scrollTop > 40)
 
         let current = ''
-        for (const link of links) {
-          const el = document.getElementById(link.id || '')
+        for (const id of sectionIds) {
+          const el = document.getElementById(id)
           if (el) {
             const rect = el.getBoundingClientRect()
-            if (rect.top <= window.innerHeight * 0.45) current = link.id || ''
+            if (rect.top <= window.innerHeight * 0.45) current = `nav-${id}`
           }
         }
         setActiveId(current)
@@ -50,7 +77,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
       window.addEventListener('scroll', onScroll, { passive: true })
       onScroll()
       return () => window.removeEventListener('scroll', onScroll)
-    }, [links])
+    }, [sectionIds])
 
     return (
       <>

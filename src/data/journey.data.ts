@@ -61,12 +61,12 @@ export const journeyData: JourneyData = {
       id: 'milestone-5',
       year: 2024,
       title: 'Continuous Learning & Specialization',
-      description: '36+ courses completed across multiple platforms and technologies',
+      description: '11+ verified courses completed across multiple platforms and technologies',
       type: 'achievement',
       icon: 'Sparkles',
       tags: ['Learning', 'Certifications', 'Google', 'Coursera'],
       details:
-        '1,200+ hours of hands-on training. Certifications from Google, Packt, Coursera, IBM, and specialized platforms in networking, cloud, and automation.',
+        '1,200+ hours of hands-on training. Verified courses from Google, Packt, Coursera, IBM, and specialized platforms in networking, cloud, DevOps, and automation.',
     },
   ],
 

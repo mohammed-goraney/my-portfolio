@@ -19,6 +19,11 @@ export const navigationLinks = [
     id: 'nav-featured',
   },
   {
+    label: 'Courses',
+    href: '#courses',
+    id: 'nav-courses',
+  },
+  {
     label: 'Projects',
     href: '#projects',
     id: 'nav-projects',

@@ -31,7 +31,7 @@ const Projects = React.forwardRef<HTMLElement, ProjectsProps>(
           {/* ---------- Featured project: split glass panel ---------- */}
           {featured && (
             <FadeUp>
-              <div className="relative bg-gradient-to-br from-accent-gold/5 to-accent-amber/5 border border-accent-gold/30 rounded-2xl overflow-hidden box-glow-gold">
+              <div id="featured-project" className="scroll-mt-24 relative bg-gradient-to-br from-accent-gold/5 to-accent-amber/5 border border-accent-gold/30 rounded-2xl overflow-hidden box-glow-gold">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 md:p-12 items-center">
                   <div className="order-2 md:order-1">
                     {featured.image && (

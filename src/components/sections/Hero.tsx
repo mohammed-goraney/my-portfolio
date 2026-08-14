@@ -12,7 +12,7 @@ interface HeroProps {
   onSecondaryCtaClick?: () => void
 }
 
-const STATUS_ITEMS = ['CCNA', 'CCNP', 'Azure AZ-104', 'Docker']
+const STATUS_ITEMS = ['CCNA', 'CCNP', 'Azure AZ-104', 'Linux', 'Docker']
 
 const Hero = React.forwardRef<HTMLElement, HeroProps>(
   ({ data = heroData, onPrimaryCtaClick, onSecondaryCtaClick }, ref) => {
@@ -60,7 +60,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
             >
               <span className="h-px w-10 bg-accent-gold" />
               <span className="font-mono-tech text-xs uppercase tracking-[0.3em] text-accent-gold">
-                Infrastructure · Cloud · Security
+                Networks · DevOps · Cloud · Linux
               </span>
             </motion.div>
 

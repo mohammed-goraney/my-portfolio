@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Hero, Journey, Projects, Skills, SocialProof, Contact } from '@components/sections'
+import { Hero, Journey, Courses, Projects, Skills, SocialProof, Contact } from '@components/sections'
 import { Navigation } from '@shared/Navigation'
 import { Footer } from '@shared/Footer'
 import { ScrollIndicator } from '@shared/ScrollIndicator'
@@ -43,6 +43,7 @@ export default function App() {
         <TechMarquee />
 
         <Journey />
+        <Courses />
         <Projects />
         <Skills />
         <SocialProof />

@@ -5,7 +5,7 @@ export const socialProofData: SocialProofData = {
     projectsCompleted: 12,
     learningHours: 1200,         
     technologiesMastered: 15,
-    certifications: +36,
+    certifications: +7,
     recommendations: 1,
     githubFollowers: 150,
     publicSpeakingEvents: 2,
@@ -93,9 +93,9 @@ export const socialProofData: SocialProofData = {
   },
 
   achievements: [
-    'Completed 36+ professional courses across networking, cloud, and DevOps platforms',
+    'Completed 11+ professional courses across networking, DevOps, and productivity platforms — verified on Google profile',
     '1,200+ hours of hands-on learning and certification training',
-    'Cisco CCNA and CCNP certifications from Networkat - 9 comprehensive courses',
+    'Seven official Networkat certificates including Cisco CCNA (200-301) and CCNP',
     'Microsoft Azure Administrator (AZ-104) certified',
     'Docker containerization and DevOps fundamentals mastered',
     'Advanced expertise in Enterprise Network Design, Security, and Automation',
