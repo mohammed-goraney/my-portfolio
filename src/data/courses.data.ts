@@ -74,9 +74,19 @@ export const coursesData: CoursesData = {
       id: 'intro-devops',
       name: 'Introduction to DevOps',
       provider: 'IBM',
-      date: 'Mar 3, 2025',
+      date: 'Mar 2, 2025',
       grade: '83%',
       category: 'DevOps',
+      credentialUrl:
+        'https://www.coursera.org/account/accomplishments/verify/76LFUHWTI2E2',
+      certificateImage: '/images/Coursera/intro-devops.jpeg',
+      skills: [
+        'CI/CD',
+        'Continuous Deployment',
+        'Cloud-Native',
+        'Microservices',
+        'TDD',
+      ],
     },
     {
       id: 'time-management',
@@ -85,6 +95,15 @@ export const coursesData: CoursesData = {
       date: 'Feb 23, 2025',
       grade: '95%',
       category: 'Soft Skills',
+      credentialUrl:
+        'https://www.coursera.org/account/accomplishments/verify/3F04BKH9RLXY',
+      certificateImage: '/images/Coursera/effective-time-management.jpeg',
+      skills: [
+        'Time Management',
+        'Prioritization',
+        'Planning',
+        'Professional Development',
+      ],
     },
     {
       id: 'microsoft-excel',
@@ -109,6 +128,15 @@ export const coursesData: CoursesData = {
       date: 'Mar 17, 2025',
       grade: '89%',
       category: 'Soft Skills',
+      credentialUrl:
+        'https://www.coursera.org/account/accomplishments/verify/D2R10HWJQHZY',
+      certificateImage: '/images/Coursera/storytelling-influencing.jpeg',
+      skills: [
+        'Persuasive Communication',
+        'Leadership',
+        'Public Speaking',
+        'Strategic Communication',
+      ],
     },
     {
       id: 'mind-map-canva',
@@ -122,8 +150,19 @@ export const coursesData: CoursesData = {
       id: 'google-digital-marketing',
       name: 'Google Digital Marketing & E-commerce Professional Certificate',
       provider: 'Google',
-      date: '2024',
+      date: 'Jul 7, 2024',
       category: 'Productivity',
+      credentialUrl:
+        'https://www.coursera.org/account/accomplishments/specialization/ZCGFXYJSHNG3',
+      certificateImage: '/images/Coursera/google-digital-marketing.jpeg',
+      skills: [
+        'SEO',
+        'E-Commerce',
+        'Email Marketing',
+        'Google Ads',
+        'Campaign Management',
+        'Performance Measurement',
+      ],
     },
   ],
 }
