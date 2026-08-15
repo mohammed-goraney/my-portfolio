@@ -6,13 +6,15 @@ interface PixelRevealProps {
   delay?: number
   cols?: number
   rows?: number
+  /** Color of the dissolving tiles — defaults to the page background */
+  tileColor?: string
 }
 
 /**
  * Swiss-style pixel/grid reveal: a blocky overlay that dissolves cell-by-cell
  * as the section enters the viewport, revealing the content beneath.
  */
-export function PixelReveal({ children, delay = 0, cols = 14, rows = 8 }: PixelRevealProps) {
+export function PixelReveal({ children, delay = 0, cols = 14, rows = 8, tileColor }: PixelRevealProps) {
   const reduced = useReducedMotion()
 
   const cells = Array.from({ length: cols * rows }, (_, i) => ({
@@ -53,6 +55,7 @@ export function PixelReveal({ children, delay = 0, cols = 14, rows = 8 }: PixelR
             }}
             className="bg-background"
             style={{
+              backgroundColor: tileColor ?? undefined,
               boxShadow: '0 0 12px rgba(212,165,116,0.08)',
             }}
           />

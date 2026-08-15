@@ -9,6 +9,7 @@ export interface ScrollIndicatorProps {
 const ScrollIndicator = React.forwardRef<HTMLDivElement, ScrollIndicatorProps>(
   ({ showProgress = false, animated = true }, ref) => {
     const [scrollProgress, setScrollProgress] = useState(0)
+    const [scrolled, setScrolled] = useState(false)
 
     useEffect(() => {
       const handleScroll = () => {
@@ -16,17 +17,19 @@ const ScrollIndicator = React.forwardRef<HTMLDivElement, ScrollIndicatorProps>(
         const docHeight = document.documentElement.scrollHeight - window.innerHeight
         const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
         setScrollProgress(scrollPercent)
+        setScrolled(scrollTop > 240)
       }
 
       window.addEventListener('scroll', handleScroll, { passive: true })
+      handleScroll()
       return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
     return (
-      <div ref={ref} className="fixed bottom-8 right-8 z-40 flex flex-col items-center gap-4">
+      <div ref={ref} className="fixed bottom-8 right-8 z-40 flex flex-col items-center gap-4 pointer-events-none select-none">
         {/* Scroll Progress Circle */}
         {showProgress && (
-          <div className="relative w-12 h-12">
+          <div className="relative w-12 h-12 pointer-events-none">
             <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
               <circle
                 cx="50"
@@ -58,14 +61,17 @@ const ScrollIndicator = React.forwardRef<HTMLDivElement, ScrollIndicatorProps>(
           </div>
         )}
 
-        {/* Scroll to Top Button */}
+        {/* Scroll to Top Button — appears once scrolled, replaces cluttered stacked controls */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className={cn(
-            'p-3 rounded-full bg-accent-gold text-background hover:bg-accent-gold-light transition-all duration-300',
+            'pointer-events-auto p-3 rounded-full bg-accent-gold text-background hover:bg-accent-gold-light transition-all duration-300',
             'flex items-center justify-center w-12 h-12',
             'shadow-elevation-2 hover:shadow-elevation-3',
-            'active:scale-95'
+            'active:scale-95',
+            scrolled
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-4 pointer-events-none'
           )}
           aria-label="Scroll to top"
         >

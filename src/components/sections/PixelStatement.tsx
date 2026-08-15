@@ -36,7 +36,7 @@ export function PixelStatement() {
         </motion.p>
 
         {/* pixel-grid dissolve over the giant headline, swiss-style */}
-        <PixelReveal cols={16} rows={8} delay={0.1}>
+        <PixelReveal cols={16} rows={8} delay={0.1} tileColor="#1A1918">
           <h2
             className="font-display text-[clamp(2.4rem,7vw,5.5rem)] font-black uppercase leading-[0.95] tracking-tight text-text-primary"
             style={{ letterSpacing: '-0.02em' }}
