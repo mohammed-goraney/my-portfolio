@@ -1,10 +1,11 @@
 // src/components/sections/Contact.tsx
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { SectionTitle } from '@shared/SectionTitle'
 import { Section } from '@shared/Section'
 import { Button } from '@shared/Button'
 import { FadeUp } from '@shared/TextReveal'
+import { WEB3FORMS_KEY } from '@constants/metadata'
 
 interface ContactProps {
   email?: string
@@ -13,25 +14,49 @@ interface ContactProps {
 const Contact = React.forwardRef<HTMLElement, ContactProps>(
   ({ email = 'moha.gora.app123@gmail.com' }, ref) => {
     const [formState, setFormState] = useState({ name: '', email: '', message: '' })
-    const [submitted, setSubmitted] = useState(false)
+    const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+    const [retryKey, setRetryKey] = useState(0)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     }
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
-      // Open the user's email client with a pre-filled message (works with no backend)
-      const subject = encodeURIComponent(`Portfolio inquiry from ${formState.name}`)
-      const body = encodeURIComponent(
-        `${formState.message}\n\n— ${formState.name}\n${formState.email}`
-      )
-      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`
-      setSubmitted(true)
-      setTimeout(() => {
-        setFormState({ name: '', email: '', message: '' })
-        setSubmitted(false)
-      }, 3000)
+      if (status === 'sending') return
+      setStatus('sending')
+
+      const payload = new FormData()
+      payload.append('access_key', WEB3FORMS_KEY)
+      payload.append('name', formState.name)
+      payload.append('email', formState.email)
+      payload.append('message', formState.message)
+      payload.append('subject', `Portfolio inquiry from ${formState.name}`)
+      payload.append('from_name', 'Portfolio Contact Form')
+      payload.append('to_email', email)
+      payload.append('replyto', formState.email)
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: JSON.stringify(Object.fromEntries(payload)),
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+        })
+        const data = await response.json()
+        if (response.ok && data.success) {
+          setStatus('success')
+          setFormState({ name: '', email: '', message: '' })
+          // Return to form after 5 seconds
+          setTimeout(() => setStatus('idle'), 5000)
+        } else {
+          setStatus('error')
+        }
+      } catch {
+        setStatus('error')
+      }
     }
 
     const inputClass =
@@ -107,22 +132,52 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
                 whileHover={{ boxShadow: '0 0 50px rgba(212,165,116,0.15)' }}
                 transition={{ duration: 0.4 }}
               >
-                {submitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-12"
-                  >
-                    <div className="text-5xl mb-4">✅</div>
-                    <h4 className="text-h4 font-bold text-text-primary mb-2">
-                      Opening your email client…
-                    </h4>
-                    <p className="text-body-md text-text-secondary">
-                      The message is ready — just hit send.
-                    </p>
-                  </motion.div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                <AnimatePresence mode="wait">
+                  {status === 'success' ? (
+                    <motion.div
+                      key="success"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.35 }}
+                      className="text-center py-12"
+                    >
+                      <div className="text-5xl mb-4">✅</div>
+                      <h4 className="text-h4 font-bold text-text-primary mb-2">
+                        Message Sent Successfully!
+                      </h4>
+                      <p className="text-body-md text-text-secondary">
+                        Thank you — I got your message and will reply within 24 hours.
+                      </p>
+                    </motion.div>
+                  ) : status === 'error' ? (
+                    <motion.div
+                      key="error"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.35 }}
+                      className="text-center py-12"
+                    >
+                      <div className="text-5xl mb-4">⚠️</div>
+                      <h4 className="text-h4 font-bold text-text-primary mb-2">
+                        Something went wrong
+                      </h4>
+                      <p className="text-body-md text-text-secondary mb-6">
+                        The message couldn't be sent right now. You can retry below or email me directly.
+                      </p>
+                      <Button
+                        variant="secondary"
+                        onClick={() => {
+                          setStatus('idle')
+                          setRetryKey((k) => k + 1)
+                        }}
+                      >
+                        Try Again
+                      </Button>
+                    </motion.div>
+                  ) : (
+                    <form key={retryKey} onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label className="block text-sm font-semibold text-text-primary mb-2">
                         Name
@@ -165,14 +220,46 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
                         placeholder="Tell me about your project..."
                       />
                     </div>
-                    <Button type="submit" variant="primary" size="lg" className="w-full">
-                      Send Message
-                    </Button>
-                    <p className="text-caption text-text-muted text-center">
-                      Opens your email app with the message pre-filled · I respond within 24 hours
-                    </p>
-                  </form>
-                )}
+                      <Button
+                        type="submit"
+                        variant="primary"
+                        size="lg"
+                        className="w-full"
+                        disabled={status === 'sending'}
+                      >
+                        {status === 'sending' ? (
+                          <span className="inline-flex items-center gap-2">
+                            <svg
+                              className="h-5 w-5 animate-spin"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                            >
+                              <circle
+                                className="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                strokeWidth="4"
+                              />
+                              <path
+                                className="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                              />
+                            </svg>
+                            Sending…
+                          </span>
+                        ) : (
+                          'Send Message'
+                        )}
+                      </Button>
+                      <p className="text-caption text-text-muted text-center">
+                        Delivered directly to my inbox · I respond within 24 hours
+                      </p>
+                    </form>
+                  )}
+                </AnimatePresence>
               </motion.div>
             </div>
           </FadeUp>

@@ -76,4 +76,11 @@ export const siteMetadata = {
   },
 };
 
+/**
+ * Web3Forms access key — routes contact form submissions to
+ * moha.gora.app123@gmail.com. Activated via the Web3Forms activation
+ * email sent on the first successful submission.
+ */
+export const WEB3FORMS_KEY = '690a9454-9d76-4136-8b70-0cddd2a49317';
+
 export default siteMetadata;
