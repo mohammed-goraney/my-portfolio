@@ -3,7 +3,6 @@ import { Hero, Journey, Courses, Projects, Skills, SocialProof, Contact, PixelSt
 import { Navigation } from '@shared/Navigation'
 import { Footer } from '@shared/Footer'
 import { ScrollIndicator } from '@shared/ScrollIndicator'
-import { CustomCursor } from '@shared/CustomCursor'
 import { TechMarquee } from '@shared/TechMarquee'
 import { navigationLinks } from '@constants/navigation'
 import { heroData } from '@data/hero.data'
@@ -31,7 +30,6 @@ export default function App() {
 
   return (
     <div className="bg-background text-text-primary min-h-screen">
-      <CustomCursor />
       <Navigation links={navigationLinks} sticky brand="M.A" />
 
       <main>
