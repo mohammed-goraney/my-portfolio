@@ -2,7 +2,7 @@ import { SocialProofData } from '../types/contact.types'
 export const socialProofData: SocialProofData = {
   metrics: {
     yearsOfExperience: 2,
-    projectsCompleted: 12,
+    projectsCompleted: 15,
     learningHours: 1200,         
     technologiesMastered: 15,
     certifications: +7,
@@ -93,7 +93,7 @@ export const socialProofData: SocialProofData = {
   },
 
   achievements: [
-    'Completed 11+ professional courses across networking, DevOps, and productivity platforms — verified on Google profile',
+    'Completed 8 professional courses across networking, DevOps, and productivity platforms — verified on Google profile',
     '1,200+ hours of hands-on learning and certification training',
     'Seven official Networkat certificates including Cisco CCNA (200-301) and CCNP',
     'Microsoft Azure Administrator (AZ-104) certified',

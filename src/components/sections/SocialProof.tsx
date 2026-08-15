@@ -31,7 +31,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {[
             { label: 'Years Experience', value: data.metrics.yearsOfExperience, suffix: '+' },
-            { label: 'Projects Completed', value: data.metrics.projectsCompleted, suffix: '+' },
+            { label: 'Labs & Projects', value: data.metrics.projectsCompleted, suffix: '+' },
             { label: 'Learning Hours', value: data.metrics.learningHours, suffix: '+' },
             { label: 'Technologies', value: data.metrics.technologiesMastered, suffix: '' },
             { label: 'Certifications', value: data.metrics.certifications, suffix: '+' },

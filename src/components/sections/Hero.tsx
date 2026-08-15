@@ -110,6 +110,24 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
               <Button variant="outlined" size="lg" onClick={onSecondaryCtaClick} className="sm:w-auto">
                 {data.secondaryCTA.text}
               </Button>
+              <a
+                href="https://linkedin.com/in/mohammed-abdalla-it"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View my LinkedIn profile"
+                className="group inline-flex items-center justify-center gap-2.5 rounded-2xl border border-text-primary/20 bg-white/5 px-6 py-4 text-base font-semibold text-text-secondary backdrop-blur-sm transition-all duration-300 hover:border-accent-gold/60 hover:bg-accent-gold/10 hover:text-accent-gold sm:px-7"
+              >
+                <svg
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M20.47 2H3.53a1.45 1.45 0 0 0-1.47 1.43v17.14A1.45 1.45 0 0 0 3.53 22h16.94a1.45 1.45 0 0 0 1.47-1.43V3.43A1.45 1.45 0 0 0 20.47 2zM8.09 18.74h-3v-9h3v9zM6.59 8.48a1.56 1.56 0 1 1 1.56-1.56 1.56 1.56 0 0 1-1.56 1.56zM18.91 18.74h-3v-4.8c0-1.21-.43-2-1.52-2a1.65 1.65 0 0 0-1.54 1.11 2 2 0 0 0-.1.72v4.97h-3v-9h3v1.29a3 3 0 0 1 2.73-1.5c2 0 3.43 1.3 3.43 4.08z" />
+                </svg>
+                LinkedIn
+                <span className="text-accent-gold opacity-0 transition-opacity group-hover:opacity-100">↗</span>
+              </a>
             </motion.div>
 
             {/* certification status line */}
