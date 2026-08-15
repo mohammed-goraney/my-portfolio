@@ -25,7 +25,7 @@ export interface CoursesData {
 }
 
 export const coursesData: CoursesData = {
-  totalCourses: 8,
+  totalCourses: 9,
   courses: [
     {
       id: 'encor-350-401',
@@ -81,6 +81,24 @@ export const coursesData: CoursesData = {
         'https://www.coursera.org/account/accomplishments/verify/WAS4JDHGDRHL',
       certificateImage: '/images/Coursera/enterprise-network-design.jpeg',
       skills: ['Enterprise Network Design', 'Virtualization'],
+    },
+    {
+      id: 'docker-for-beginners',
+      name: 'Docker for Beginners with Hands-on Labs',
+      provider: 'KodeKloud',
+      date: 'Jul 24, 2026',
+      category: 'DevOps',
+      credentialUrl:
+        'https://www.coursera.org/account/accomplishments/verify/5EXQZC4ECHPY',
+      certificateImage: '/images/Coursera/docker-for-beginners.jpeg',
+      skills: [
+        'Docker',
+        'Containerization',
+        'Docker Compose',
+        'Docker Swarm',
+        'Kubernetes',
+        'Cloud-Native',
+      ],
     },
     {
       id: 'intro-devops',

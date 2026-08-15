@@ -61,7 +61,7 @@ export const journeyData: JourneyData = {
       id: 'milestone-5',
       year: 2024,
       title: 'Continuous Learning & Specialization',
-      description: '8 verified courses completed across multiple platforms and technologies',
+      description: '9 verified courses completed across multiple platforms and technologies',
       type: 'achievement',
       icon: 'Sparkles',
       tags: ['Learning', 'Certifications', 'Google', 'Coursera'],
