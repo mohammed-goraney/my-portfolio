@@ -43,10 +43,10 @@ export default function App() {
         <PixelStatement />
 
         <Journey />
+        <SocialProof />
         <Courses />
         <Projects />
         <Skills />
-        <SocialProof />
         <Contact />
       </main>
 

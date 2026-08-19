@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { SectionTitle } from '@shared/SectionTitle'
 import { Section } from '@shared/Section'
 import { Badge } from '@shared/Badge'
 import { FadeUp } from '@shared/TextReveal'
 import { CountUp } from '@shared/CountUp'
+import { Lightbox } from '@shared/Lightbox'
 import { socialProofData } from '@data/social-proof.data'
 import type { Certification } from '../../types/contact.types'
 
@@ -129,53 +130,10 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
       </div>
 
       {/* Certificate viewer (lightbox) */}
-      <AnimatePresence>
-        {viewerCert?.image && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 md:p-10"
-            onClick={() => setViewerCert(null)}
-            role="dialog"
-            aria-modal="true"
-            aria-label={`${viewerCert.name} certificate viewer`}
-          >
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
-              onClick={() => setViewerCert(null)}
-              className="absolute top-5 right-5 z-10 w-12 h-12 rounded-full bg-surface border border-accent-gold/50 text-accent-gold text-xl flex items-center justify-center hover:bg-accent-gold/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold"
-              aria-label="Close certificate viewer"
-            >
-              ✕
-            </motion.button>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.92 }}
-              transition={{ type: 'spring', stiffness: 260, damping: 24 }}
-              className="relative max-w-4xl w-full max-h-full flex flex-col items-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img
-                src={viewerCert.image}
-                alt={`${viewerCert.name} certificate`}
-                className="w-full max-h-[78vh] object-contain rounded-xl border border-accent-gold/40 shadow-[0_0_60px_rgba(212,165,116,0.25)]"
-              />
-              <div className="mt-4 text-center">
-                <p className="text-h3 font-bold text-accent-gold">{viewerCert.name}</p>
-                <p className="text-body-sm text-text-secondary mt-1">
-                  {viewerCert.issuer} · Credential ID: {viewerCert.credentialId ?? 'Networkat1197'} · Verified
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Lightbox
+        item={viewerCert ? { image: viewerCert.image, name: viewerCert.name, subtitle: `${viewerCert.issuer} · Credential ID: ${viewerCert.credentialId ?? 'Networkat1197'} · Verified` } : null}
+        onClose={() => setViewerCert(null)}
+      />
 
       {/* Achievements */}
       {data.achievements && data.achievements.length > 0 ? (

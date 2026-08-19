@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Lightbox } from '@shared/Lightbox'
 import { SectionTitle } from '@shared/SectionTitle'
 import { Section } from '@shared/Section'
 import { Badge } from '@shared/Badge'
@@ -22,6 +23,7 @@ const CATEGORY_META: Record<Exclude<Filter, 'All'>, { label: string; icon: strin
 
 const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesData }, ref) => {
   const [filter, setFilter] = useState<Filter>('All')
+  const [lightboxCourse, setLightboxCourse] = useState<typeof coursesData.courses[number] | null>(null)
 
   const visible = useMemo(
     () =>
@@ -99,6 +101,28 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
                 aria-hidden="true"
               />
 
+              {/* Official certificate image (click to enlarge) */}
+              {course.certificateImage && (
+                <button
+                  type="button"
+                  onClick={() => setLightboxCourse(course)}
+                  aria-label={`View ${course.name} official certificate`}
+                  className="group/img relative mb-4 block w-full overflow-hidden rounded-lg border border-border/60 bg-white transition-all duration-300 hover:border-accent-gold/60 hover:shadow-[0_0_30px_rgba(212,165,116,0.18)] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold"
+                >
+                  <img
+                    src={course.certificateImage}
+                    alt={`${course.name} official certificate`}
+                    loading="lazy"
+                    className="w-full aspect-[4/3] object-contain transition-transform duration-500 group-hover/img:scale-105"
+                  />
+                  <span className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-2">
+                    <span className="rounded-full bg-black/60 px-3 py-1 text-caption text-white">
+                      View Certificate
+                    </span>
+                  </span>
+                </button>
+              )}
+
               <div className="mb-4 flex items-center justify-between gap-3">
                 <Badge variant="soft" size="sm" className="capitalize">
                   {course.category}
@@ -159,6 +183,20 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
           No courses in this category yet.
         </p>
       )}
+
+      {/* Certificate viewer (lightbox) */}
+      <Lightbox
+        item={
+          lightboxCourse?.certificateImage
+            ? {
+                image: lightboxCourse.certificateImage,
+                name: lightboxCourse.name,
+                subtitle: `${lightboxCourse.provider} · Issued ${lightboxCourse.date}`,
+              }
+            : null
+        }
+        onClose={() => setLightboxCourse(null)}
+      />
     </Section>
   )
 })
