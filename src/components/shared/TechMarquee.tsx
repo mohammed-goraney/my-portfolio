@@ -1,9 +1,7 @@
 import { useReducedMotion } from 'framer-motion'
 
 const TECHS = [
-  'BGP', 'MPLS', 'QoS', 'SD-WAN', 'OSPF', 'Cisco IOS', 'Azure',
-  'Terraform', 'Docker', 'Kubernetes', 'Ansible', 'Python', 'Linux',
-  'Prometheus', 'Grafana', 'ELK', 'GitLab CI', 'AWS', 'Zero Trust',
+  'BGP', 'SD-WAN', 'Cisco IOS', 'Azure', 'Terraform', 'Docker', 'Kubernetes', 'Ansible', 'Linux',
 ]
 
 /**
@@ -15,7 +13,7 @@ export function TechMarquee() {
   return (
     <div className="relative overflow-hidden border-y border-border/60 bg-surface/40 py-5">
       <div
-        className={`flex w-max gap-10 font-mono-tech text-sm uppercase tracking-[0.25em] text-text-muted ${
+        className={`flex w-max gap-10 font-mono-tech text-[10px] uppercase tracking-[0.25em] text-text-muted sm:text-sm ${
           reduced ? '' : 'animate-marquee'
         }`}
         aria-hidden="true"

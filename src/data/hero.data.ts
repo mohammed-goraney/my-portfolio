@@ -1,7 +1,7 @@
 import { HeroData } from '../types/hero.types'
 export const heroData: HeroData = {
   name: 'Mohammed Abdalla',
-  title: 'Network Engineer · DevOps · Cloud · Linux Administrator',
+  title: 'Network · Cloud · DevOps',
   valueProposition:
     'Building secure, scalable network infrastructure and cloud solutions with hands-on expertise in Azure, Linux, Docker, and enterprise networking.',
   supportingText:

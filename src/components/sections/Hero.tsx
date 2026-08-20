@@ -20,7 +20,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
     const { t } = useI18n()
     const reduced = useReducedMotion()
     const [typed, setTyped] = useState('')
-    const roleText = data.title || 'Network & Cloud Engineer'
+    const roleText = t.heroRole || data.title || 'Network & Cloud Engineer'
 
     // terminal-style typing effect for the role
     useEffect(() => {
@@ -76,7 +76,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
             />
 
             {/* Role — terminal typing */}
-            <div className="flex items-center gap-3 font-mono-tech text-lg text-accent-gold md:text-2xl">
+            <div className="flex items-center gap-3 font-mono-tech text-base text-accent-gold md:text-xl">
               <span className="text-accent-gold/60">$</span>
               <span aria-label={roleText}>{typed}</span>
               <span className="animate-blink ml-1 inline-block h-5 w-[2px] bg-accent-gold align-middle" />

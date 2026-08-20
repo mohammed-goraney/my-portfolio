@@ -114,6 +114,7 @@ export interface Dictionary {
 
   // hero content
   heroEyebrow: string
+  heroRole: string
   heroValueProposition: string
   heroSupportingText: string
 
@@ -302,6 +303,7 @@ export const en: Dictionary = {
   scrollToTop: 'Scroll to top',
 
   heroEyebrow: 'Networks · DevOps · Cloud · Linux',
+  heroRole: 'Network · Cloud · DevOps',
   heroValueProposition:
     'Building secure, scalable network infrastructure and cloud solutions with hands-on expertise in Azure, Linux, Docker, and enterprise networking.',
   heroSupportingText:
@@ -497,6 +499,7 @@ export const ar: Dictionary = {
   scrollToTop: 'العودة للأعلى',
 
   heroEyebrow: 'الشبكات · ديف أوبس · السحابة · لينكس',
+  heroRole: 'مهندس شبكات · سحابة · ديف أوبس',
   heroValueProposition:
     'بناء بنية شبكات آمنة وقابلة للتوسع وحلول سحابية بخبرة عملية في Azure ولينكس وDocker وشبكات المؤسسات.',
   heroSupportingText:
