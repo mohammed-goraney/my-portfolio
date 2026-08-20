@@ -55,7 +55,7 @@ const Journey = React.forwardRef<HTMLElement, JourneyProps>(
 
         <FadeUp>
           <p className="text-center text-body-lg text-text-secondary max-w-2xl mx-auto mb-16">
-            {data.introText}
+            {t.journeyIntro}
           </p>
         </FadeUp>
 
@@ -135,10 +135,10 @@ const Journey = React.forwardRef<HTMLElement, JourneyProps>(
                     {milestone.year}
                   </p>
                   <h3 className="text-h3 font-bold text-text-primary mb-2 group-hover:text-accent-gold transition-colors duration-300">
-                    {milestone.title}
+                    {t[`milestone${index}Title` as keyof typeof t]}
                   </h3>
-                  <p className="text-body-md text-text-secondary mb-4">{milestone.description}</p>
-                  <p className="text-body-sm text-text-muted mb-4">{milestone.details}</p>
+                  <p className="text-body-md text-text-secondary mb-4">{t[`milestone${index}Desc` as keyof typeof t]}</p>
+                  <p className="text-body-sm text-text-muted mb-4">{t[`milestone${index}Details` as keyof typeof t]}</p>
                   <div className="flex gap-2 flex-wrap">
                     {milestone.tags.map((tag) => (
                       <Badge key={tag} variant="soft" size="sm">
@@ -211,9 +211,9 @@ const Journey = React.forwardRef<HTMLElement, JourneyProps>(
                       <p className="font-mono-tech text-xs tracking-[0.2em] text-accent-gold mb-2">
                         {milestone.year}
                       </p>
-                      <h3 className="text-h4 font-bold text-text-primary mb-2">{milestone.title}</h3>
-                      <p className="text-body-sm text-text-secondary mb-2">{milestone.description}</p>
-                      <p className="text-caption text-text-muted mb-3">{milestone.details}</p>
+                      <h3 className="text-h4 font-bold text-text-primary mb-2">{t[`milestone${index}Title` as keyof typeof t]}</h3>
+                      <p className="text-body-sm text-text-secondary mb-2">{t[`milestone${index}Desc` as keyof typeof t]}</p>
+                      <p className="text-caption text-text-muted mb-3">{t[`milestone${index}Details` as keyof typeof t]}</p>
                       <div className="flex gap-2 flex-wrap">
                         {milestone.tags.map((tag) => (
                           <Badge key={tag} variant="soft" size="sm">
@@ -247,15 +247,17 @@ const Journey = React.forwardRef<HTMLElement, JourneyProps>(
             <div className="relative max-w-2xl">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">{getMilestoneIcon(data.currentFocus.icon)}</span>
-                <h3 className="text-h2 font-bold text-accent-gold">{data.currentFocus.title}</h3>
+                <h3 className="text-h2 font-bold text-accent-gold">{t.journeyNowTitle}</h3>
               </div>
-              <p className="text-body-lg text-text-secondary mb-4">{data.currentFocus.description}</p>
+              <p className="text-body-lg text-text-secondary mb-4">{t.journeyNowDesc}</p>
               <div className="flex gap-2 flex-wrap">
-                {data.currentFocus.keywords.map((keyword) => (
-                  <Badge key={keyword} variant="solid" size="md">
-                    {keyword}
-                  </Badge>
-                ))}
+                {[t.journeyNowKeyword1, t.journeyNowKeyword2, t.journeyNowKeyword3, t.journeyNowKeyword4].map(
+                  (keyword) => (
+                    <Badge key={keyword} variant="solid" size="md">
+                      {keyword}
+                    </Badge>
+                  )
+                )}
               </div>
             </div>
           </motion.div>

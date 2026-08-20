@@ -37,7 +37,7 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
         {data.intro && (
           <FadeUp>
             <p className="text-center text-body-lg text-text-secondary max-w-2xl mx-auto mb-16">
-              {data.intro}
+              {t.skillsIntro}
             </p>
           </FadeUp>
         )}
@@ -55,15 +55,15 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex-1">
                     <h3 className="text-h3 font-bold text-text-primary mb-2 group-hover:text-accent-gold transition-colors duration-300">
-                      {category.name}
+                      {t[`skillCat${index}Name` as keyof typeof t]}
                     </h3>
-                    <p className="text-body-sm text-text-secondary">{category.description}</p>
+                    <p className="text-body-sm text-text-secondary">{t[`skillCat${index}Desc` as keyof typeof t]}</p>
                   </div>
                   <div className="ml-4 text-right">
                     <span className="text-2xl font-bold text-accent-gold">
                       {category.level ?? 0}%
                     </span>
-                    <p className="text-caption text-text-muted">{category.yearsOfExperience ?? 0}+ yrs</p>
+                    <p className="text-caption text-text-muted">{category.yearsOfExperience ?? 0}+ {t.skillsYrs}</p>
                   </div>
                 </div>
 
@@ -125,9 +125,9 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
         {/* summary stats with count-up */}
         <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { label: 'Categories', value: data.categories.length, suffix: '' },
+            { label: t.skillsSummaryCategories, value: data.categories.length, suffix: '' },
             {
-              label: 'Total Skills',
+              label: t.skillsSummaryTotal,
               value:
                 data.categories.reduce(
                   (sum: number, cat: typeof data.categories[0]) => sum + (cat.skills?.length ?? 0),
@@ -136,7 +136,7 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
               suffix: '',
             },
             {
-              label: 'Avg Level',
+              label: t.skillsSummaryAvg,
               value: Math.round(
                 data.categories.reduce(
                   (sum: number, cat: typeof data.categories[0]) => sum + (cat.level ?? 0),
@@ -146,7 +146,7 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
               suffix: '%',
             },
             {
-              label: 'Years Exp',
+              label: t.skillsSummaryYears,
               value: Math.max(
                 ...data.categories.map((cat: typeof data.categories[0]) => cat.yearsOfExperience ?? 0)
               ),

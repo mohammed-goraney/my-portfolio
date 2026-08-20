@@ -145,7 +145,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
             {t.socialProofKeyAchievements}
           </h3>
           <div className="space-y-4">
-            {data.achievements.map((achievement: string, index: number) => (
+            {[t.achievement1, t.achievement2, t.achievement3, t.achievement4, t.achievement5, t.achievement6].map((achievement: string, index: number) => (
               <div
                 key={index}
                 className="rounded-xl border border-accent-gold/40 bg-surface/50 p-5 flex items-start gap-3 backdrop-blur-sm"
@@ -176,7 +176,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
                 <span className="text-3xl block mb-2 group-hover:scale-110 transition-transform duration-300">
                   🏅
                 </span>
-                <p className="font-bold text-text-primary text-sm">{badge.label}</p>
+                <p className="font-bold text-text-primary text-sm">{[t.badge1Label, t.badge2Label, t.badge3Label][index] ?? badge.label}</p>
               </div>
             ))}
           </div>

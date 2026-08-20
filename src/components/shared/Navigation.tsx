@@ -147,6 +147,11 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
                 })}
               </ul>
 
+              {/* Language toggle (desktop) */}
+              <div className="hidden md:flex items-center gap-2 mr-3">
+                <LanguageToggle />
+              </div>
+
               {/* CTA */}
               <div className="hidden md:block">
                 <a

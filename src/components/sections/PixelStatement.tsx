@@ -9,7 +9,7 @@ import { useI18n } from '@i18n'
  */
 export function PixelStatement() {
   const { t } = useI18n()
-  const words = ['BUILD', 'SECURE', 'AUTOMATE', 'SCALE']
+  const words = [t.pixelWord1, t.pixelWord2, t.pixelWord3, t.pixelWord4]
 
   return (
     <section
@@ -43,13 +43,13 @@ export function PixelStatement() {
             className="font-display text-[clamp(2.4rem,7vw,5.5rem)] font-black uppercase leading-[0.95] tracking-tight text-text-primary"
             style={{ letterSpacing: '-0.02em' }}
           >
-            Networks that hold.
+            {t.pixelLine1}
             <br />
             <span className="bg-gradient-to-r from-accent-gold via-[#C084FC] to-accent-gold bg-clip-text text-transparent">
-              Pipelines that run.
+              {t.pixelLine2}
             </span>
             <br />
-            Systems that stay up.
+            {t.pixelLine3}
           </h2>
         </PixelReveal>
 

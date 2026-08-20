@@ -62,7 +62,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
             >
               <span className="h-px w-10 bg-accent-gold" />
               <span className="font-mono-tech text-xs uppercase tracking-[0.3em] text-accent-gold">
-                Networks · DevOps · Cloud · Linux
+                {t.heroEyebrow}
               </span>
             </motion.div>
 
@@ -83,7 +83,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
             </div>
 
             <TextReveal
-              text={data.valueProposition}
+              text={t.heroValueProposition}
               as="p"
               delay={0.5}
               animateInView={false}
@@ -96,7 +96,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
               transition={{ delay: 0.9, duration: 0.8 }}
               className="max-w-xl text-sm text-text-muted md:text-base"
             >
-              {data.supportingText}
+              {t.heroSupportingText}
             </motion.p>
 
             {/* CTAs */}
