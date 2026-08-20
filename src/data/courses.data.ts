@@ -13,7 +13,7 @@ export interface Course {
   category: 'Networking' | 'DevOps' | 'Cloud' | 'Soft Skills' | 'Productivity'
   /** Verifiable credential URL (Coursera / Packt verification page) */
   credentialUrl?: string
-  /** Local certificate image, e.g. /images/Coursera/encor-350-401.jpeg */
+  /** Local certificate image, e.g. /images/Coursera/encor-350-401.webp */
   certificateImage?: string
   /** Skills highlighted by the credential */
   skills?: string[]
@@ -25,7 +25,7 @@ export interface CoursesData {
 }
 
 export const coursesData: CoursesData = {
-  totalCourses: 9,
+  totalCourses: 11,
   courses: [
     {
       id: 'encor-350-401',
@@ -35,7 +35,7 @@ export const coursesData: CoursesData = {
       category: 'Networking',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/specialization/00JIDXE1U80N',
-      certificateImage: '/images/Coursera/encor-350-401.jpeg',
+      certificateImage: '/images/Coursera/encor-350-401.webp',
       skills: [
         'Enterprise Network Design',
         'SDN',
@@ -55,7 +55,7 @@ export const coursesData: CoursesData = {
       category: 'Networking',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/BQ49Z50FA70U',
-      certificateImage: '/images/Coursera/network-security-automation.jpeg',
+      certificateImage: '/images/Coursera/network-security-automation.webp',
       skills: ['Network Security', 'Automation', 'Exam Preparation'],
     },
     {
@@ -67,7 +67,7 @@ export const coursesData: CoursesData = {
       category: 'Networking',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/FXCWETNX6UTR',
-      certificateImage: '/images/Coursera/advanced-routing.jpeg',
+      certificateImage: '/images/Coursera/advanced-routing.webp',
       skills: ['Advanced Routing', 'Infrastructure', 'Network Management'],
     },
     {
@@ -79,7 +79,7 @@ export const coursesData: CoursesData = {
       category: 'Networking',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/WAS4JDHGDRHL',
-      certificateImage: '/images/Coursera/enterprise-network-design.jpeg',
+      certificateImage: '/images/Coursera/enterprise-network-design.webp',
       skills: ['Enterprise Network Design', 'Virtualization'],
     },
     {
@@ -90,7 +90,7 @@ export const coursesData: CoursesData = {
       category: 'DevOps',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/5EXQZC4ECHPY',
-      certificateImage: '/images/Coursera/docker-for-beginners.jpeg',
+      certificateImage: '/images/Coursera/docker-for-beginners.webp',
       skills: [
         'Docker',
         'Containerization',
@@ -109,13 +109,28 @@ export const coursesData: CoursesData = {
       category: 'DevOps',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/76LFUHWTI2E2',
-      certificateImage: '/images/Coursera/intro-devops.jpeg',
+      certificateImage: '/images/Coursera/intro-devops.webp',
       skills: [
         'CI/CD',
         'Continuous Deployment',
         'Cloud-Native',
         'Microservices',
         'TDD',
+      ],
+    },
+    {
+      id: 'ai-fundamentals',
+      name: 'Artificial Intelligence Fundamentals',
+      provider: 'IBM SkillsBuild',
+      date: 'Dec 25, 2024',
+      category: 'DevOps',
+      credentialUrl: 'https://www.credly.com/go/Y2Pu6P4W',
+      certificateImage: '/images/Coursera/ai-fundamentals.webp',
+      skills: [
+        'Artificial Intelligence',
+        'Machine Learning Concepts',
+        'AI Use Cases',
+        'AI Fundamentals',
       ],
     },
     {
@@ -127,7 +142,7 @@ export const coursesData: CoursesData = {
       category: 'Soft Skills',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/3F04BKH9RLXY',
-      certificateImage: '/images/Coursera/effective-time-management.jpeg',
+      certificateImage: '/images/Coursera/effective-time-management.webp',
       skills: [
         'Time Management',
         'Prioritization',
@@ -144,7 +159,7 @@ export const coursesData: CoursesData = {
       category: 'Soft Skills',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/D2R10HWJQHZY',
-      certificateImage: '/images/Coursera/storytelling-influencing.jpeg',
+      certificateImage: '/images/Coursera/storytelling-influencing.webp',
       skills: [
         'Persuasive Communication',
         'Leadership',
@@ -160,7 +175,7 @@ export const coursesData: CoursesData = {
       category: 'Productivity',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/specialization/ZCGFXYJSHNG3',
-      certificateImage: '/images/Coursera/google-digital-marketing.jpeg',
+      certificateImage: '/images/Coursera/google-digital-marketing.webp',
       skills: [
         'SEO',
         'E-Commerce',
@@ -168,6 +183,20 @@ export const coursesData: CoursesData = {
         'Google Ads',
         'Campaign Management',
         'Performance Measurement',
+      ],
+    },
+    {
+      id: 'mckinsey-forward',
+      name: 'McKinsey Forward Program',
+      provider: 'McKinsey & Company',
+      date: 'Dec 17, 2024',
+      category: 'Soft Skills',
+      certificateImage: '/images/Coursera/mckinsey-forward.webp',
+      skills: [
+        'Problem Solving',
+        'Communication & Influence',
+        'Adaptability & Resilience',
+        'Digital Toolkit',
       ],
     },
   ],

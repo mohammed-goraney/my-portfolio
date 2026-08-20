@@ -93,7 +93,7 @@ export const socialProofData: SocialProofData = {
   },
 
   achievements: [
-    'Completed 9 professional courses across networking, DevOps, and productivity platforms — verified on Google profile',
+    'Completed 11 professional courses and programs across networking, DevOps, and productivity platforms — verified on Google profile',
     '1,200+ hours of hands-on learning and certification training',
     'Seven official Networkat certificates including Cisco CCNA (200-301) and CCNP',
     'Microsoft Azure Administrator (AZ-104) certified',

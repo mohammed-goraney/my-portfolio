@@ -33,7 +33,7 @@ export const journeyData: JourneyData = {
       type: 'achievement',
       icon: 'Award',
       tags: ['Cisco', 'CCNA', 'Verified'],
-      details: 'Mastered networking fundamentals through 9 comprehensive courses and practical labs.',
+      details: 'Mastered networking fundamentals through comprehensive courses and practical labs.',
     },
     {
       id: 'milestone-3',
@@ -61,10 +61,10 @@ export const journeyData: JourneyData = {
       id: 'milestone-5',
       year: 2024,
       title: 'Continuous Learning & Specialization',
-      description: '9 verified courses completed across multiple platforms and technologies',
+      description: '11 verified courses and programs completed across multiple platforms and technologies',
       type: 'achievement',
       icon: 'Sparkles',
-      tags: ['Learning', 'Certifications', 'Google', 'Coursera'],
+      tags: ['Learning', 'Certifications', 'Google', 'Coursera', 'IBM', 'McKinsey'],
       details:
         '1,200+ hours of hands-on training. Verified courses from Google, Packt, Coursera, IBM, and specialized platforms in networking, cloud, DevOps, and automation.',
     },
