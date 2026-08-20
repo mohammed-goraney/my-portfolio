@@ -5,6 +5,7 @@ import { Section } from '@shared/Section'
 import { Badge } from '@shared/Badge'
 import { FadeUp } from '@shared/TextReveal'
 import { journeyData } from '@data/journey.data'
+import { useI18n } from '@i18n'
 
 interface JourneyProps {
   data?: typeof journeyData
@@ -12,6 +13,7 @@ interface JourneyProps {
 
 const Journey = React.forwardRef<HTMLElement, JourneyProps>(
   ({ data = journeyData }, ref) => {
+    const { t } = useI18n()
 
     const getMilestoneColor = (type: string) => {
       switch (type) {
@@ -45,8 +47,8 @@ const Journey = React.forwardRef<HTMLElement, JourneyProps>(
         <div className="absolute inset-0 bg-noise-grid opacity-40 pointer-events-none" aria-hidden="true" />
 
         <SectionTitle
-          title="My Journey"
-          subtitle="From passion to expertise"
+          title={t.journeyTitle}
+          subtitle={t.journeySubtitle}
           level="h2"
           alignment="center"
         />

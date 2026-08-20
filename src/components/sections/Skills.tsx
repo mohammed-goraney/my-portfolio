@@ -6,6 +6,7 @@ import { Badge } from '@shared/Badge'
 import { FadeUp } from '@shared/TextReveal'
 import { CountUp } from '@shared/CountUp'
 import { skillsData } from '@data/skills.data'
+import { useI18n } from '@i18n'
 
 interface SkillsProps {
   data?: typeof skillsData
@@ -13,6 +14,7 @@ interface SkillsProps {
 
 const Skills = React.forwardRef<HTMLElement, SkillsProps>(
   ({ data = skillsData }, ref) => {
+    const { t } = useI18n()
 
     const getSkillColor = (level: number) => {
       if (level >= 90) return 'from-success to-success/70'
@@ -26,8 +28,8 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
         <div className="absolute inset-0 bg-noise-grid opacity-40 pointer-events-none" aria-hidden="true" />
 
         <SectionTitle
-          title="Technical Expertise"
-          subtitle="Skills developed through hands-on experience"
+          title={t.skillsTitle}
+          subtitle={t.skillsSubtitle}
           level="h2"
           alignment="center"
         />
@@ -85,7 +87,7 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
                         </span>
                         {skill.verified && (
                           <span
-                            title="Verified skill"
+                            title={t.verifiedSkill}
                             className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-accent-gold/60 text-[10px] text-accent-gold"
                           >
                             ✓

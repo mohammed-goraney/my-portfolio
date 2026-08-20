@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useI18n } from '@i18n'
 import { cn } from '@utils/cn'
 
 export interface ScrollIndicatorProps {
@@ -8,6 +9,7 @@ export interface ScrollIndicatorProps {
 
 const ScrollIndicator = React.forwardRef<HTMLDivElement, ScrollIndicatorProps>(
   ({ showProgress = false, animated = true }, ref) => {
+    const { t } = useI18n()
     const [scrollProgress, setScrollProgress] = useState(0)
     const [scrolled, setScrolled] = useState(false)
 
@@ -73,7 +75,7 @@ const ScrollIndicator = React.forwardRef<HTMLDivElement, ScrollIndicatorProps>(
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-4 pointer-events-none'
           )}
-          aria-label="Scroll to top"
+          aria-label={t.scrollToTop}
         >
           <svg
             className="w-5 h-5"

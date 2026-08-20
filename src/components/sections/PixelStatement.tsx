@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { PixelReveal } from '@shared/PixelReveal'
+import { useI18n } from '@i18n'
 
 /**
  * Swiss-brutalist statement section — the boldest element inspired by the
@@ -7,6 +8,7 @@ import { PixelReveal } from '@shared/PixelReveal'
  * dissolving pixel-grid overlay, plus a glowing accent underline treatment.
  */
 export function PixelStatement() {
+  const { t } = useI18n()
   const words = ['BUILD', 'SECURE', 'AUTOMATE', 'SCALE']
 
   return (
@@ -32,7 +34,7 @@ export function PixelStatement() {
           transition={{ duration: 0.6 }}
           className="mb-6 font-mono-tech text-xs uppercase tracking-[0.4em] text-accent-gold"
         >
-          Engineer's Statement
+          {t.pixelStatementEyebrow}
         </motion.p>
 
         {/* pixel-grid dissolve over the giant headline, swiss-style */}

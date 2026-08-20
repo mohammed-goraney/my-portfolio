@@ -18,6 +18,7 @@ export default defineConfig({
       '@data': path.resolve(__dirname, './src/data'),
       '@types': path.resolve(__dirname, './src/types'),
       '@assets': path.resolve(__dirname, './src/assets'),
+      '@i18n': path.resolve(__dirname, './src/i18n/index.tsx'),
       '@styles': path.resolve(__dirname, './src/styles'),
     },
   },

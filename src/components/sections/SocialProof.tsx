@@ -7,6 +7,7 @@ import { FadeUp } from '@shared/TextReveal'
 import { CountUp } from '@shared/CountUp'
 import { Lightbox } from '@shared/Lightbox'
 import { socialProofData } from '@data/social-proof.data'
+import { useI18n } from '@i18n'
 import type { Certification } from '../../types/contact.types'
 
 interface SocialProofProps {
@@ -16,13 +17,14 @@ interface SocialProofProps {
 const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
   ({ data = socialProofData }, ref) => {
     const [viewerCert, setViewerCert] = useState<Certification | null>(null)
+    const { t } = useI18n()
     return (
     <Section id="social-proof" ref={ref} className="py-20 md:py-32 relative">
       <div className="absolute inset-0 bg-noise-grid opacity-40 pointer-events-none" aria-hidden="true" />
 
       <SectionTitle
-        title="Recognition & Achievements"
-        subtitle="Certifications and validation of expertise"
+        title={t.socialProofTitle}
+        subtitle={t.socialProofSubtitle}
         level="h2"
         alignment="center"
       />
@@ -31,11 +33,11 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
       <FadeUp className="mb-20">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {[
-            { label: 'Years Experience', value: data.metrics.yearsOfExperience, suffix: '+' },
-            { label: 'Labs & Projects', value: data.metrics.projectsCompleted, suffix: '+' },
-            { label: 'Learning Hours', value: data.metrics.learningHours, suffix: '+' },
-            { label: 'Technologies', value: data.metrics.technologiesMastered, suffix: '' },
-            { label: 'Certifications', value: data.metrics.certifications, suffix: '+' },
+            { label: t.socialProofYearsExp, value: data.metrics.yearsOfExperience, suffix: '+' },
+            { label: t.socialProofLabs, value: data.metrics.projectsCompleted, suffix: '+' },
+            { label: t.socialProofHours, value: data.metrics.learningHours, suffix: '+' },
+            { label: t.socialProofTech, value: data.metrics.technologiesMastered, suffix: '' },
+            { label: t.socialProofCerts, value: data.metrics.certifications, suffix: '+' },
           ].map((metric, i) => (
             <motion.div
               key={metric.label}
@@ -67,19 +69,19 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
       <FadeUp className="mb-20">
         <h3 className="text-h2 font-bold text-text-primary mb-3 flex items-center gap-3">
           <span className="h-px w-8 bg-accent-gold" />
-          Certifications
+          {t.socialProofCertifications}
         </h3>
         <p className="text-body-md text-text-secondary max-w-2xl mb-8">
-          Seven official certificates issued by{' '}
+          {t.socialProofCertIntro}{' '}
           <a
             href="https://networkat.net/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-accent-gold underline underline-offset-4 hover:text-glow transition-colors"
           >
-            Networkat
+            {t.socialProofCertLink}
           </a>{' '}
-          (Credential ID: {data.certificatesIssuer?.credentialId ?? 'Networkat1197'}) — click any certificate to view it full size.
+          (Credential ID: {data.certificatesIssuer?.credentialId ?? 'Networkat1197'}) {t.socialProofCertFullSize}
         </p>
       </FadeUp>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mb-20">
@@ -111,7 +113,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
                 <span className="absolute bottom-2 right-2 text-caption text-white bg-black/60 rounded-full px-2 py-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  View
+                  {t.socialProofViewCert}
                 </span>
               </div>
               <h4 className="text-h4 font-bold text-text-primary group-hover:text-accent-gold transition-colors duration-300 line-clamp-1">
@@ -140,7 +142,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
         <FadeUp className="mb-20">
           <h3 className="text-h2 font-bold text-text-primary mb-8 flex items-center gap-3">
             <span className="h-px w-8 bg-accent-gold" />
-            Key Achievements
+            {t.socialProofKeyAchievements}
           </h3>
           <div className="space-y-4">
             {data.achievements.map((achievement: string, index: number) => (
@@ -163,7 +165,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
         <FadeUp className="mb-20">
           <h3 className="text-h2 font-bold text-text-primary mb-8 flex items-center gap-3">
             <span className="h-px w-8 bg-accent-gold" />
-            Expertise Badges
+            {t.socialProofBadges}
           </h3>
           <div className="flex flex-wrap gap-4">
             {data.badges.map((badge: typeof data.badges[0], index: number) => (
@@ -197,10 +199,10 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
               <div className="mb-4 text-4xl">👥</div>
               <p className="text-h3 font-bold text-text-primary mb-2">
                 <CountUp value={data.recommendations.count} suffix="+" duration={1500} />{' '}
-                Recommendations
+                {t.socialProofRecommendations}
               </p>
               <p className="text-body-md text-text-secondary">
-                Endorsed by colleagues and clients on LinkedIn
+                {t.socialProofRecommendationsText}
               </p>
             </div>
           </div>

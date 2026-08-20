@@ -6,6 +6,7 @@ import { Section } from '@shared/Section'
 import { Badge } from '@shared/Badge'
 import { FadeUp } from '@shared/TextReveal'
 import { coursesData } from '@data/courses.data'
+import { useI18n } from '@i18n'
 
 interface CoursesProps {
   data?: typeof coursesData
@@ -14,14 +15,17 @@ interface CoursesProps {
 const CATEGORY_FILTERS = ['All', 'Networking', 'DevOps', 'Soft Skills', 'Productivity'] as const
 type Filter = (typeof CATEGORY_FILTERS)[number]
 
-const CATEGORY_META: Record<Exclude<Filter, 'All'>, { label: string; icon: string }> = {
-  Networking: { label: 'Networking', icon: '⚙' },
-  DevOps: { label: 'DevOps', icon: '⚡' },
-  'Soft Skills': { label: 'Soft Skills', icon: '◆' },
-  Productivity: { label: 'Productivity', icon: '✦' },
+type FilterKey = 'filterAll' | 'filterNetworking' | 'filterDevOps' | 'filterSoftSkills' | 'filterProductivity'
+
+const CATEGORY_META: Record<Exclude<Filter, 'All'>, { labelKey: FilterKey; icon: string }> = {
+  Networking: { labelKey: 'filterNetworking', icon: '⚙' },
+  DevOps: { labelKey: 'filterDevOps', icon: '⚡' },
+  'Soft Skills': { labelKey: 'filterSoftSkills', icon: '◆' },
+  Productivity: { labelKey: 'filterProductivity', icon: '✦' },
 }
 
 const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesData }, ref) => {
+  const { t } = useI18n()
   const [filter, setFilter] = useState<Filter>('All')
   const [lightboxCourse, setLightboxCourse] = useState<typeof coursesData.courses[number] | null>(null)
 
@@ -39,8 +43,8 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
 
       <FadeUp>
         <SectionTitle
-          title="Courses & Continuous Learning"
-          subtitle={`${data.totalCourses} completed courses across networking, DevOps, and professional skills — verified on Google profile`}
+          title={t.coursesTitle}
+          subtitle={`${data.totalCourses} ${t.coursesSubtitle}`}
           level="h2"
           alignment="center"
         />
@@ -64,7 +68,7 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
                     : 'border border-border bg-surface/60 text-text-secondary hover:border-accent-gold/50 hover:text-accent-gold')
                 }
               >
-                {f === 'All' ? 'All' : CATEGORY_META[f as Exclude<Filter, 'All'>].label}
+                {f === 'All' ? t.filterAll : t[CATEGORY_META[f as Exclude<Filter, 'All'>].labelKey]}
               </button>
             )
           })}
@@ -117,7 +121,7 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
                   />
                   <span className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-2">
                     <span className="rounded-full bg-black/60 px-3 py-1 text-caption text-white">
-                      View Certificate
+                      {t.viewCertificate}
                     </span>
                   </span>
                 </button>
@@ -167,7 +171,7 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
                       aria-label={`View ${course.name} certificate credential`}
                       className="font-mono-tech text-caption text-accent-gold hover:underline"
                     >
-                      Credential ↗
+                      {t.credential} ↗
                     </a>
                   )}
                 </div>
@@ -180,7 +184,7 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
       {/* ---------- empty state ---------- */}
       {visible.length === 0 && (
         <p className="mt-8 text-center text-text-muted">
-          No courses in this category yet.
+          {t.coursesEmpty}
         </p>
       )}
 

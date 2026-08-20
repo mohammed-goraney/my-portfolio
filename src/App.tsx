@@ -1,13 +1,24 @@
 import { useEffect } from 'react'
 import { Hero, Journey, Courses, Projects, Skills, SocialProof, Contact, PixelStatement } from '@components/sections'
-import { Navigation } from '@shared/Navigation'
+import { Navigation, type NavigationLink } from '@shared/Navigation'
 import { Footer } from '@shared/Footer'
 import { ScrollIndicator } from '@shared/ScrollIndicator'
 import { TechMarquee } from '@shared/TechMarquee'
 import { navigationLinks } from '@constants/navigation'
+import { I18nProvider, useI18n } from '@i18n'
 import { heroData } from '@data/hero.data'
 
 export default function App() {
+  return (
+    <I18nProvider>
+      <AppShell />
+    </I18nProvider>
+  )
+}
+
+function AppShell() {
+  const { t } = useI18n()
+
   const handlePrimaryCtaClick = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -30,7 +41,7 @@ export default function App() {
 
   return (
     <div className="bg-background text-text-primary min-h-screen">
-      <Navigation links={navigationLinks} sticky brand="M.A" />
+      <Navigation links={navigationLinks as NavigationLink[]} sticky brand="M.A" />
 
       <main>
         <Hero
@@ -53,7 +64,7 @@ export default function App() {
       <ScrollIndicator showProgress animated />
 
       <Footer
-        copyrightText={`© ${new Date().getFullYear()} ${heroData.name}. All rights reserved.`}
+        copyrightText={`© ${new Date().getFullYear()} ${heroData.name}. ${t.footerRights}`}
       />
     </div>
   )

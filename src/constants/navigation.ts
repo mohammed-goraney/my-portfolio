@@ -5,31 +5,37 @@
 export const navigationLinks = [
   {
     label: 'Home',
+    labelKey: 'navHome',
     href: '#hero',
     id: 'nav-home',
   },
   {
     label: 'Journey',
+    labelKey: 'navJourney',
     href: '#journey',
     id: 'nav-journey',
   },
   {
     label: 'Courses',
+    labelKey: 'navCourses',
     href: '#courses',
     id: 'nav-courses',
   },
   {
     label: 'Projects',
+    labelKey: 'navProjects',
     href: '#projects',
     id: 'nav-projects',
   },
   {
     label: 'Skills',
+    labelKey: 'navSkills',
     href: '#skills',
     id: 'nav-skills',
   },
   {
     label: 'Contact',
+    labelKey: 'navContact',
     href: '#contact',
     id: 'nav-contact',
   },

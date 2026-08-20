@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Button } from './Button'
+import { LanguageToggle } from './LanguageToggle'
+import { useI18n, type Dictionary } from '@i18n'
 import { cn } from '@utils/cn'
 
 export interface NavigationLink {
   label: string
+  labelKey?: keyof Dictionary
   href: string
   id?: string
 }
@@ -26,6 +29,7 @@ export interface NavigationProps {
 const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
   ({ links, sticky = true, transparent = false, brand = 'M.A' }, ref) => {
     const [mobileOpen, setMobileOpen] = useState(false)
+    const { t } = useI18n()
     const [activeId, setActiveId] = useState<string>('')
     const [progress, setProgress] = useState(0)
     const [scrolled, setScrolled] = useState(false)
@@ -120,6 +124,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
               <ul className="hidden items-center gap-1 md:flex">
                 {links.map((link) => {
                   const active = activeId === link.id
+                  const label = link.labelKey ? t[link.labelKey as keyof Dictionary] : link.label
                   return (
                     <li key={link.id || link.href}>
                       <a
@@ -129,7 +134,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
                           active ? 'text-accent-gold' : 'text-text-secondary hover:text-text-primary'
                         )}
                       >
-                        {link.label}
+                        {label}
                         <span
                           className={cn(
                             'absolute bottom-0 left-1/2 h-[2px] -translate-x-1/2 rounded-full bg-accent-gold transition-all duration-300',
@@ -148,15 +153,20 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
                   href="#contact"
                   className="group relative overflow-hidden rounded-full border border-accent-gold/60 px-5 py-2 text-sm font-semibold text-accent-gold transition-all duration-300 hover:bg-accent-gold hover:text-background"
                 >
-                  Contact Me
+                  {t.contactMe}
                 </a>
+              </div>
+
+              {/* Language toggle (mobile) */}
+              <div className="flex md:hidden items-center gap-2 mr-1">
+                <LanguageToggle />
               </div>
 
               {/* Mobile Menu Button */}
               <button
                 className="md:hidden p-2 rounded-lg transition-colors text-text-primary"
                 onClick={() => setMobileOpen(!mobileOpen)}
-                aria-label="Toggle menu"
+                aria-label={t.toggleMenu}
               >
                 <div className="space-y-1.5">
                   <div
@@ -192,29 +202,33 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
                 className="md:hidden mt-3 max-w-5xl mx-auto rounded-2xl bg-background/95 border border-accent-gold/20 backdrop-blur-xl"
               >
                 <ul className="flex flex-col p-6 gap-3">
-                  {links.map((link) => (
-                    <li key={link.id || link.href}>
-                      <a
-                        href={link.href}
-                        className={cn(
-                          'text-body-md font-semibold transition-colors duration-300 block py-2',
-                          activeId === link.id
-                            ? 'text-accent-gold'
-                            : 'text-text-secondary hover:text-accent-gold'
-                        )}
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                  <li className="pt-4 border-t border-border">
+                  {links.map((link) => {
+                    const label = link.labelKey ? t[link.labelKey as keyof Dictionary] : link.label
+                    return (
+                      <li key={link.id || link.href}>
+                        <a
+                          href={link.href}
+                          className={cn(
+                            'text-body-md font-semibold transition-colors duration-300 block py-2',
+                            activeId === link.id
+                              ? 'text-accent-gold'
+                              : 'text-text-secondary hover:text-accent-gold'
+                          )}
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {label}
+                        </a>
+                      </li>
+                    )
+                  })}
+                  <li className="flex items-center justify-between gap-3 pt-4 border-t border-border">
+                    <LanguageToggle />
                     <Button
                       variant="primary"
-                      className="w-full"
+                      className="flex-1"
                       onClick={() => setMobileOpen(false)}
                     >
-                      Contact Me
+                      {t.contactMe}
                     </Button>
                   </li>
                 </ul>

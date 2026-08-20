@@ -1,4 +1,5 @@
 import React from 'react'
+import { useI18n } from '@i18n'
 import { AnimatePresence, motion } from 'framer-motion'
 
 export interface LightboxItem {
@@ -16,7 +17,9 @@ interface LightboxProps {
  * Premium certificate lightbox: full-screen blurred overlay with a spring-scaled
  * zoomed certificate image, matching the SocialProof certificate viewer style.
  */
-const Lightbox: React.FC<LightboxProps> = ({ item, onClose }) => (
+const Lightbox: React.FC<LightboxProps> = ({ item, onClose }) => {
+  const { t } = useI18n()
+  return (
   <AnimatePresence>
     {item?.image && (
       <motion.div
@@ -37,7 +40,7 @@ const Lightbox: React.FC<LightboxProps> = ({ item, onClose }) => (
           transition={{ duration: 0.3 }}
           onClick={onClose}
           className="absolute top-5 right-5 z-10 w-12 h-12 rounded-full bg-surface border border-accent-gold/50 text-accent-gold text-xl flex items-center justify-center hover:bg-accent-gold/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold"
-          aria-label="Close certificate viewer"
+          aria-label={t.closeLightbox}
         >
           ✕
         </motion.button>
@@ -64,7 +67,8 @@ const Lightbox: React.FC<LightboxProps> = ({ item, onClose }) => (
       </motion.div>
     )}
   </AnimatePresence>
-)
+  )
+}
 
 Lightbox.displayName = 'Lightbox'
 

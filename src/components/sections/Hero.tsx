@@ -5,6 +5,7 @@ import { Section } from '@shared/Section'
 import { NetworkCanvas } from '@shared/NetworkCanvas'
 import { TextReveal } from '@shared/TextReveal'
 import { heroData } from '@data/hero.data'
+import { useI18n } from '@i18n'
 
 interface HeroProps {
   data?: typeof heroData
@@ -16,6 +17,7 @@ const STATUS_ITEMS = ['CCNA', 'CCNP', 'Azure AZ-104', 'Linux', 'Docker']
 
 const Hero = React.forwardRef<HTMLElement, HeroProps>(
   ({ data = heroData, onPrimaryCtaClick, onSecondaryCtaClick }, ref) => {
+    const { t } = useI18n()
     const reduced = useReducedMotion()
     const [typed, setTyped] = useState('')
     const roleText = data.title || 'Network & Cloud Engineer'
@@ -105,10 +107,10 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
               className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center"
             >
               <Button variant="primary" size="lg" onClick={onPrimaryCtaClick} className="sm:w-auto">
-                {data.primaryCTA.text}
+                {t.heroCtaProjects}
               </Button>
               <Button variant="outlined" size="lg" onClick={onSecondaryCtaClick} className="sm:w-auto">
-                {data.secondaryCTA.text}
+                {t.heroCtaContact}
               </Button>
               <a
                 href="https://linkedin.com/in/mohammed-abdalla-it"
@@ -125,7 +127,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                 >
                   <path d="M20.47 2H3.53a1.45 1.45 0 0 0-1.47 1.43v17.14A1.45 1.45 0 0 0 3.53 22h16.94a1.45 1.45 0 0 0 1.47-1.43V3.43A1.45 1.45 0 0 0 20.47 2zM8.09 18.74h-3v-9h3v9zM6.59 8.48a1.56 1.56 0 1 1 1.56-1.56 1.56 1.56 0 0 1-1.56 1.56zM18.91 18.74h-3v-4.8c0-1.21-.43-2-1.52-2a1.65 1.65 0 0 0-1.54 1.11 2 2 0 0 0-.1.72v4.97h-3v-9h3v1.29a3 3 0 0 1 2.73-1.5c2 0 3.43 1.3 3.43 4.08z" />
                 </svg>
-                LinkedIn
+                {t.heroLinkedIn}
                 <span className="text-accent-gold opacity-0 transition-opacity group-hover:opacity-100">↗</span>
               </a>
             </motion.div>
@@ -143,7 +145,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                   className="inline-flex items-center gap-2 rounded-full border border-accent-gold/30 bg-accent-gold/5 px-3.5 py-1.5 font-mono-tech text-xs text-text-secondary"
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-success animate-pulse" />
-                  {s} Verified
+                  {s} {t.heroVerified}
                 </span>
               ))}
             </motion.div>
@@ -191,7 +193,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                 className="animate-float-slow absolute bottom-5 left-5 rounded-full border border-accent-gold/40 bg-background/75 px-4 py-2 font-mono-tech text-xs text-accent-gold backdrop-blur-md"
               >
                 <span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-success" />
-                Available for opportunities
+                {t.heroAvailable}
               </motion.div>
             </div>
           </motion.div>
@@ -205,7 +207,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
           className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
         >
           <span className="font-mono-tech text-[10px] uppercase tracking-[0.3em] text-text-muted">
-            Scroll
+            {t.heroScroll}
           </span>
           <motion.div
             animate={{ y: [0, 7, 0] }}

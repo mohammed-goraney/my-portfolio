@@ -6,6 +6,7 @@ import { Section } from '@shared/Section'
 import { Button } from '@shared/Button'
 import { FadeUp } from '@shared/TextReveal'
 import { WEB3FORMS_KEY } from '@constants/metadata'
+import { useI18n } from '@i18n'
 
 interface ContactProps {
   email?: string
@@ -13,6 +14,7 @@ interface ContactProps {
 
 const Contact = React.forwardRef<HTMLElement, ContactProps>(
   ({ email = 'moha.gora.app123@gmail.com' }, ref) => {
+    const { t } = useI18n()
     const [formState, setFormState] = useState({ name: '', email: '', message: '' })
     const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
     const [retryKey, setRetryKey] = useState(0)
@@ -68,8 +70,8 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
 
         <div className="max-w-4xl mx-auto relative">
           <SectionTitle
-            title="Let's Build Something Great"
-            subtitle="Get in touch to discuss your next project"
+            title={t.contactTitle}
+            subtitle={t.contactSubtitle}
             level="h2"
             alignment="center"
           />
@@ -79,7 +81,7 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
               <div className="space-y-6">
                 <h3 className="text-h3 font-bold text-text-primary mb-8 flex items-center gap-3">
                   <span className="h-px w-8 bg-accent-gold" />
-                  Contact Information
+                  {t.contactInfoTitle}
                 </h3>
                 <div className="group flex items-start gap-4 p-4 rounded-lg bg-surface/50 border border-border/60 hover:border-accent-gold/50 transition-colors duration-300">
                   <span className="text-2xl">📧</span>
@@ -100,7 +102,7 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
                       href="#projects"
                       className="group flex items-center justify-between text-body-md text-text-secondary hover:text-accent-gold transition-colors"
                     >
-                      <span>View Portfolio</span>
+                      <span>{t.contactQuickProjects}</span>
                       <span className="text-accent-gold opacity-0 group-hover:opacity-100 transition-opacity">
                         →
                       </span>
@@ -109,7 +111,7 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
                       href="#journey"
                       className="group flex items-center justify-between text-body-md text-text-secondary hover:text-accent-gold transition-colors"
                     >
-                      <span>See Timeline</span>
+                      <span>{t.contactQuickTimeline}</span>
                       <span className="text-accent-gold opacity-0 group-hover:opacity-100 transition-opacity">
                         →
                       </span>
@@ -118,7 +120,7 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
                       href="#skills"
                       className="group flex items-center justify-between text-body-md text-text-secondary hover:text-accent-gold transition-colors"
                     >
-                      <span>View Skills</span>
+                      <span>{t.contactQuickSkills}</span>
                       <span className="text-accent-gold opacity-0 group-hover:opacity-100 transition-opacity">
                         →
                       </span>
@@ -144,10 +146,10 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
                     >
                       <div className="text-5xl mb-4">✅</div>
                       <h4 className="text-h4 font-bold text-text-primary mb-2">
-                        Message Sent Successfully!
+                        {t.contactSuccess}
                       </h4>
                       <p className="text-body-md text-text-secondary">
-                        Thank you — I got your message and will reply within 24 hours.
+                        {t.contactSuccessText}
                       </p>
                     </motion.div>
                   ) : status === 'error' ? (
@@ -161,10 +163,10 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
                     >
                       <div className="text-5xl mb-4">⚠️</div>
                       <h4 className="text-h4 font-bold text-text-primary mb-2">
-                        Something went wrong
+                        {t.contactError}
                       </h4>
                       <p className="text-body-md text-text-secondary mb-6">
-                        The message couldn't be sent right now. You can retry below or email me directly.
+                        {t.contactErrorText}
                       </p>
                       <Button
                         variant="secondary"
@@ -173,14 +175,14 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
                           setRetryKey((k) => k + 1)
                         }}
                       >
-                        Try Again
+                        {t.contactRetry}
                       </Button>
                     </motion.div>
                   ) : (
                     <form key={retryKey} onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label className="block text-sm font-semibold text-text-primary mb-2">
-                        Name
+                        {t.contactName}
                       </label>
                       <input
                         type="text"
@@ -189,12 +191,12 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
                         onChange={handleChange}
                         required
                         className={inputClass}
-                        placeholder="John Doe"
+                        placeholder={t.contactNamePlaceholder}
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-text-primary mb-2">
-                        Email
+                        {t.contactEmail}
                       </label>
                       <input
                         type="email"
@@ -203,12 +205,12 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
                         onChange={handleChange}
                         required
                         className={inputClass}
-                        placeholder="you@gmail.com"
+                        placeholder={t.contactEmailPlaceholder}
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-text-primary mb-2">
-                        Message
+                        {t.contactMessage}
                       </label>
                       <textarea
                         name="message"
@@ -217,7 +219,7 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
                         required
                         rows={5}
                         className={`${inputClass} resize-none`}
-                        placeholder="Tell me about your project..."
+                        placeholder={t.contactMessagePlaceholder}
                       />
                     </div>
                       <Button
@@ -248,14 +250,14 @@ const Contact = React.forwardRef<HTMLElement, ContactProps>(
                                 d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
                               />
                             </svg>
-                            Sending…
+                            {t.contactSending}…
                           </span>
                         ) : (
-                          'Send Message'
+                          t.contactSubmit
                         )}
                       </Button>
                       <p className="text-caption text-text-muted text-center">
-                        Delivered directly to my inbox · I respond within 24 hours
+                        {t.contactDelivered}
                       </p>
                     </form>
                   )}

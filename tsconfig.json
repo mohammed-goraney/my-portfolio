@@ -29,6 +29,7 @@
       "@data/*": ["src/data/*"],
       "@types/*": ["src/types/*"],
       "@assets/*": ["src/assets/*"],
+      "@i18n": ["src/i18n/index.tsx"],
       "@styles/*": ["src/styles/*"]
     }
   },
