@@ -177,6 +177,28 @@ export interface Dictionary {
   dockerDuration: string
   dockerMicroLabel: string
 
+  // enterprise network project content
+  enterpriseTitle: string
+  enterpriseShortDesc: string
+  enterpriseFullDesc: string
+  enterpriseChallenge: string
+  enterpriseApproach: string
+  enterpriseApproachMethod: string
+  enterpriseResult1Title: string
+  enterpriseResult1Desc: string
+  enterpriseResult2Title: string
+  enterpriseResult2Desc: string
+  enterpriseResult3Title: string
+  enterpriseResult3Desc: string
+  enterpriseLesson1: string
+  enterpriseLesson2: string
+  enterpriseLesson3: string
+  enterpriseDecision1: string
+  enterpriseDecision2: string
+  enterpriseDecision3: string
+  enterpriseDuration: string
+  enterpriseMicroLabel: string
+
   // social proof content
   achievement1: string
   achievement2: string
@@ -374,6 +396,31 @@ export const en: Dictionary = {
   dockerDuration: 'Completed after Docker course',
   dockerMicroLabel: 'Real hands-on lab · Completed',
 
+  enterpriseTitle: 'Enterprise Campus Network — CCNP ENCOR Lab',
+  enterpriseShortDesc:
+    'Full-scale enterprise network for "Goraney Technologies" featuring a 3-tier hierarchical design, OSPF dynamic routing, and HSRP redundancy.',
+  enterpriseFullDesc:
+    'A production-level CCNP ENCOR hands-on lab simulating a corporate headquarters. The architecture implements Cisco best practices across Core, Distribution, and Access layers to ensure 100% uptime, security through VLAN isolation, and scalable dynamic routing.',
+  enterpriseChallenge:
+    'Designing a network that eliminates single points of failure while maintaining efficient traffic routing and ease of management.',
+  enterpriseApproach:
+    'Implemented a hierarchical model with EtherChannel for link aggregation, HSRP for gateway redundancy, and OSPF for dynamic routing across the core and distribution layers.',
+  enterpriseApproachMethod: 'Hierarchical Network Model · Redundancy & HA',
+  enterpriseResult1Title: 'High Availability',
+  enterpriseResult1Desc: 'HSRP & Dual-homed links ensure 100% uptime',
+  enterpriseResult2Title: 'Network Security',
+  enterpriseResult2Desc: 'VLAN isolation & Port Security implemented',
+  enterpriseResult3Title: 'Dynamic Routing',
+  enterpriseResult3Desc: 'OSPF for automatic failover and scalability',
+  enterpriseLesson1: 'Designing fault-tolerant hierarchical networks using Cisco best practices',
+  enterpriseLesson2: 'Configuring Inter-VLAN routing and HSRP for gateway redundancy',
+  enterpriseLesson3: 'Implementing security features like DHCP Snooping and Port Security',
+  enterpriseDecision1: 'Goraney Technologies corporate structure (HR, Finance, IT, Sales) segmentation',
+  enterpriseDecision2: 'EtherChannel between Core switches to maximize backbone bandwidth',
+  enterpriseDecision3: 'NAT/PAT on the Edge router for secure internet egress',
+  enterpriseDuration: 'CCNP ENCOR Hands-on Lab',
+  enterpriseMicroLabel: 'CCNP ENCOR · Enterprise Lab',
+
   achievement1: 'Completed 11 professional courses and programs across networking, DevOps, and productivity platforms — verified on Google profile',
   achievement2: '1,200+ hours of hands-on learning and certification training',
   achievement3: 'Seven official Networkat certificates including Cisco CCNA (200-301) and CCNP',
@@ -569,6 +616,31 @@ export const ar: Dictionary = {
   dockerDecision3: 'ملف docker-compose.yml واحد لتعريف المنظومة كاملة',
   dockerDuration: 'أُكمل بعد دورة Docker',
   dockerMicroLabel: 'معمل تطبيقي حقيقي · مكتمل',
+
+  enterpriseTitle: 'شبكة حرم المؤسسة — معمل CCNP ENCOR',
+  enterpriseShortDesc:
+    'شبكة مؤسسات كاملة لشركة "Goraney Technologies" تتميز بتصميم هرمي ثلاثي الطبقات، وتوجيه OSPF ديناميكي، وتكرارية HSRP.',
+  enterpriseFullDesc:
+    'معمل CCNP ENCOR عملي بمستوى الإنتاج يحاكي مقراً رئيسياً للشركة. تنفذ المعمارية أفضل ممارسات Cisco عبر طبقات Core وDistribution وAccess لضمان استمرارية الخدمة بنسبة 100%، والأمان عبر عزل VLAN، والتوجيه الديناميكي القابل للتوسع.',
+  enterpriseChallenge:
+    'تصميم شبكة تقضي على نقاط الفشل الفردية مع الحفاظ على كفاءة توجيه حركة المرور وسهولة الإدارة.',
+  enterpriseApproach:
+    'تنفيذ نموذج هرمي مع EtherChannel لدمج الروابط، وHSRP لتكرارية البوابة، وOSPF للتوجيه الديناميكي عبر طبقتي Core وDistribution.',
+  enterpriseApproachMethod: 'النموذج الهرمي للشبكة · التكرارية والتوافر العالي',
+  enterpriseResult1Title: 'توافر عالي',
+  enterpriseResult1Desc: 'تضمن روابط HSRP والمزدوجة استمرارية الخدمة بنسبة 100%',
+  enterpriseResult2Title: 'أمن الشبكة',
+  enterpriseResult2Desc: 'تنفيذ عزل VLAN وأمن المنافذ (Port Security)',
+  enterpriseResult3Title: 'توجيه ديناميكي',
+  enterpriseResult3Desc: 'استخدام OSPF للفشل التلقائي وقابلية التوسع',
+  enterpriseLesson1: 'تصميم شبكات هرمية مقاومة للأعطال باستخدام أفضل ممارسات Cisco',
+  enterpriseLesson2: 'تكوين توجيه Inter-VLAN وHSRP لتكرارية بوابة الخروج',
+  enterpriseLesson3: 'تنفيذ ميزات الأمان مثل DHCP Snooping وأمن المنافذ',
+  enterpriseDecision1: 'تقسيم هيكل شركة Goraney Technologies (الموارد البشرية، المالية، التقنية، المبيعات)',
+  enterpriseDecision2: 'تفعيل EtherChannel بين سويتشات Core لزيادة عرض النطاق الترددي للعمود الفقري',
+  enterpriseDecision3: 'إعداد NAT/PAT على راوتر Edge للخروج الآمن للإنترنت',
+  enterpriseDuration: 'معمل CCNP ENCOR عملي',
+  enterpriseMicroLabel: 'CCNP ENCOR · معمل مؤسسات',
 
   achievement1: 'إكمال 11 دورة وبرنامجاً مهنياً عبر منصات الشبكات وديف أوبس والإنتاجية — موثقة عبر ملف جوجل',
   achievement2: 'أكثر من 1,200 ساعة من التعلم العملي والتدريب على الشهادات',

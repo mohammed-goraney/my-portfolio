@@ -17,11 +17,11 @@ export interface ProjectMetrics {
 
 export interface TechStackItem {
   name: string;
-  category: 'Backend' | 'Infrastructure' | 'DevOps' | 'Tools' | 'Frontend' | 'Database' | 'Cloud';
+  category: 'Backend' | 'Infrastructure' | 'DevOps' | 'Tools' | 'Frontend' | 'Database' | 'Cloud' | 'Networking' | 'Routing' | 'Switching';
 }
 
 export interface ProjectStack {
-  category: 'Backend' | 'Infrastructure' | 'DevOps' | 'Tools' | 'Frontend' | 'Database' | 'Cloud';
+  category: 'Backend' | 'Infrastructure' | 'DevOps' | 'Tools' | 'Frontend' | 'Database' | 'Cloud' | 'Networking' | 'Routing' | 'Switching';
   technologies: TechStackItem[];
 }
 

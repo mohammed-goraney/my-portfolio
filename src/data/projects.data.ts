@@ -6,6 +6,102 @@ import { Project, ProjectsData } from '../types/project.types';
  */
 
 
+export const enterpriseNetworkDesign: Project = {
+  id: 'enterprise-network-design',
+  title: 'Enterprise Campus Network — CCNP ENCOR Lab',
+  shortDescription:
+    'Full-scale enterprise network for "Goraney Technologies" featuring a 3-tier hierarchical design, OSPF dynamic routing, and HSRP redundancy.',
+  fullDescription:
+    'A production-level CCNP ENCOR hands-on lab simulating a corporate headquarters. The architecture implements Cisco best practices across Core, Distribution, and Access layers to ensure 100% uptime, security through VLAN isolation, and scalable dynamic routing.',
+
+  challenge: {
+    description:
+      'Designing a network that eliminates single points of failure while maintaining efficient traffic routing and ease of management.',
+    complexity: 'high',
+  },
+
+  approach: {
+    description:
+      'Implemented a hierarchical model with EtherChannel for link aggregation, HSRP for gateway redundancy, and OSPF for dynamic routing across the core and distribution layers.',
+    methodology: 'Hierarchical Network Model · Redundancy & HA',
+  },
+
+  architecture:
+    'ISP → EDGE Router (NAT/PAT) → Dual L3 CORE Switches (EtherChannel) → Dual L3 DIST Switches (HSRP/VLAN Routing) → L2 ACCESS Switches (Port Security)',
+
+  technologies: [
+    {
+      category: 'Networking',
+      technologies: [
+        { name: 'Cisco IOS', category: 'Networking' },
+        { name: 'EtherChannel', category: 'Networking' },
+        { name: 'HSRP', category: 'Networking' },
+      ],
+    },
+    {
+      category: 'Routing',
+      technologies: [
+        { name: 'OSPF', category: 'Routing' },
+        { name: 'BGP (Edge)', category: 'Routing' },
+      ],
+    },
+    {
+      category: 'Switching',
+      technologies: [
+        { name: 'VLANs', category: 'Switching' },
+        { name: 'STP / RSTP', category: 'Switching' },
+      ],
+    },
+  ],
+
+  results: [
+    { title: 'High Availability', description: 'HSRP & Dual-homed links ensure 100% uptime', impact: 'Zero Downtime' },
+    { title: 'Network Security', description: 'VLAN isolation & Port Security implemented', impact: 'Secure Access' },
+    { title: 'Dynamic Routing', description: 'OSPF for automatic failover and scalability', impact: 'Rapid Convergence' },
+  ],
+
+  metrics: {
+    custom: {
+      vlanCount: '7 Segmented VLANs',
+      redundancy: 'HSRP & EtherChannel',
+      routing: 'OSPF Multi-Area',
+    },
+  },
+
+  microLabel: 'CCNP ENCOR · Enterprise Lab',
+
+  image: {
+    url: '/images/projects/enterprise-network.webp',
+    alt: 'Enterprise Hierarchical Network Design topology',
+    width: 1200,
+    height: 900,
+    blur: 'UeJ-|,ofyYof_3t8x]aK00of',
+  },
+
+  featured: true,
+  status: 'completed',
+  gridSize: 'hero',
+  tags: ['Networking', 'Cisco IOS', 'Hierarchical Design', 'Redundancy', 'OSPF'],
+
+  links: {
+    github: 'https://github.com/mohammed-goraney',
+  },
+
+  caseStudyContent: {
+    lessonsLearned: [
+      'Designing fault-tolerant hierarchical networks using Cisco best practices',
+      'Configuring Inter-VLAN routing and HSRP for gateway redundancy',
+      'Implementing security features like DHCP Snooping and Port Security',
+    ],
+    keyDecisions: [
+      'Goraney Technologies corporate structure (HR, Finance, IT, Sales) segmentation',
+      'EtherChannel between Core switches to maximize backbone bandwidth',
+      'NAT/PAT on the Edge router for secure internet egress',
+    ],
+    duration: 'CCNP ENCOR Hands-on Lab',
+  },
+}
+
 export const dockerVotingApp: Project = {
   id: 'docker-voting-app',
   title: 'Docker Example Voting App Lab',
@@ -102,7 +198,7 @@ export const dockerVotingApp: Project = {
   },
 }
 
-const projects: Project[] = [dockerVotingApp];
+const projects: Project[] = [enterpriseNetworkDesign, dockerVotingApp];
 // Featured project
 export const featuredProject = projects.find(p => p.featured) || projects[0];
 
