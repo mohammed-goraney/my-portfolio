@@ -6,7 +6,7 @@ export type MilestoneType = 'learning' | 'challenge' | 'achievement' | 'growth' 
 
 export interface JourneyMilestone {
   id: string;
-  year: number;
+  year: number | string;
   title: string;
   description: string;
   type: MilestoneType;

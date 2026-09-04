@@ -1,7 +1,7 @@
 import { SocialProofData } from '../types/contact.types'
 export const socialProofData: SocialProofData = {
   metrics: {
-    yearsOfExperience: 2,
+    yearsOfExperience: 1,
     projectsCompleted: 15,
     learningHours: 1200,         
     technologiesMastered: 15,
