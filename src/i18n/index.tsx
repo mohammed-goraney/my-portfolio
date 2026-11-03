@@ -63,6 +63,7 @@ export interface Dictionary {
   filterNetworking: string
   filterDevOps: string
   filterSoftSkills: string
+  filterProfessional: string
   filterProductivity: string
   viewCertificate: string
   credential: string
@@ -278,6 +279,7 @@ export const en: Dictionary = {
   filterNetworking: 'Networking',
   filterDevOps: 'DevOps',
   filterSoftSkills: 'Soft Skills',
+  filterProfessional: 'Professional',
   filterProductivity: 'Productivity',
   viewCertificate: 'View Certificate',
   credential: 'Credential',
@@ -499,6 +501,7 @@ export const ar: Dictionary = {
   filterNetworking: 'الشبكات',
   filterDevOps: 'ديف أوبس',
   filterSoftSkills: 'المهارات الشخصية',
+  filterProfessional: 'مهني',
   filterProductivity: 'الإنتاجية',
   viewCertificate: 'عرض الشهادة',
   credential: 'الرابط الرسمي',

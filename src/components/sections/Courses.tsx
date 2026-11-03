@@ -12,15 +12,22 @@ interface CoursesProps {
   data?: typeof coursesData
 }
 
-const CATEGORY_FILTERS = ['All', 'Networking', 'DevOps', 'Soft Skills', 'Productivity'] as const
+const CATEGORY_FILTERS = ['All', 'Networking', 'DevOps', 'Soft Skills', 'Professional', 'Productivity'] as const
 type Filter = (typeof CATEGORY_FILTERS)[number]
 
-type FilterKey = 'filterAll' | 'filterNetworking' | 'filterDevOps' | 'filterSoftSkills' | 'filterProductivity'
+type FilterKey =
+  | 'filterAll'
+  | 'filterNetworking'
+  | 'filterDevOps'
+  | 'filterSoftSkills'
+  | 'filterProfessional'
+  | 'filterProductivity'
 
 const CATEGORY_META: Record<Exclude<Filter, 'All'>, { labelKey: FilterKey; icon: string }> = {
   Networking: { labelKey: 'filterNetworking', icon: '⚙' },
   DevOps: { labelKey: 'filterDevOps', icon: '⚡' },
   'Soft Skills': { labelKey: 'filterSoftSkills', icon: '◆' },
+  Professional: { labelKey: 'filterProfessional', icon: '✧' },
   Productivity: { labelKey: 'filterProductivity', icon: '✦' },
 }
 

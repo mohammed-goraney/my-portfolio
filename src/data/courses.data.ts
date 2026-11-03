@@ -10,7 +10,7 @@ export interface Course {
   provider: string
   date: string
   grade?: string
-  category: 'Networking' | 'DevOps' | 'Cloud' | 'Soft Skills' | 'Productivity'
+  category: 'Networking' | 'DevOps' | 'Cloud' | 'Soft Skills' | 'Productivity' | 'Professional'
   /** Verifiable credential URL (Coursera / Packt verification page) */
   credentialUrl?: string
   /** Local certificate image, e.g. /images/Coursera/encor-350-401.webp */
@@ -25,8 +25,31 @@ export interface CoursesData {
 }
 
 export const coursesData: CoursesData = {
-  totalCourses: 11,
+  totalCourses: 13,
   courses: [
+    {
+      id: 'wfp-light-current-systems',
+      name: 'Training Accomplishment Certificate — Light Current Systems',
+      provider: 'World Food Programme · Super Fny Consulting',
+      date: 'Feb 3, 2026',
+      category: 'Professional',
+      certificateImage: '/images/Certificates/wfp-training-completion.webp',
+      skills: ['Light Current Systems', 'Technical Training', 'Practical Systems', '40 Training Hours'],
+    },
+    {
+      id: 'unhcr-sport-for-protection-tot',
+      name: 'Certificate of Recognition — Sport for Protection Training of Trainers',
+      provider: 'UNHCR · Terre des hommes',
+      date: 'Nov 16, 2025',
+      category: 'Professional',
+      certificateImage: '/images/Certificates/unhcr-protection-recognition.webp',
+      skills: [
+        'Facilitation',
+        'Psychological First Aid',
+        'Proposal Writing',
+        'Documentation & Reporting',
+      ],
+    },
     {
       id: 'encor-350-401',
       name: 'ENCOR (350-401) v1.1 Video Training Series',
