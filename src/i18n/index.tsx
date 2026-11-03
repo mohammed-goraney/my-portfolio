@@ -29,6 +29,7 @@ export interface Dictionary {
   heroVerified: string
   heroAvailable: string
   heroScroll: string
+  heroTargetRoles: string
 
   // pixel statement
   pixelStatementEyebrow: string
@@ -258,7 +259,7 @@ export const en: Dictionary = {
   socialProofTitle: 'Recognition & Achievements',
   socialProofSubtitle: 'Certifications and validation of expertise',
   socialProofCertifications: 'Certifications',
-  socialProofCertIntro: 'Seven official certificates issued by',
+  socialProofCertIntro: 'Seven certificates issued by',
   socialProofCertLink: 'Networkat',
   socialProofCertFullSize: '— click any certificate to view it full size.',
   socialProofKeyAchievements: 'Key Achievements',
@@ -286,7 +287,7 @@ export const en: Dictionary = {
 
   projectsTitle: 'Case Studies',
   projectsSubtitle: 'Engineering problems, the approach, and measurable outcomes',
-  realProjectLabel: 'Real Project · Hands-on Lab',
+  realProjectLabel: 'Hands-on Lab · Portfolio Project',
   caseStudyLabel: 'Case Study',
   theChallenge: 'The Challenge',
   theApproach: 'The Approach',
@@ -331,7 +332,9 @@ export const en: Dictionary = {
   heroValueProposition:
     'Building secure, scalable network infrastructure and cloud solutions with hands-on expertise in Azure, Linux, Docker, and enterprise networking.',
   heroSupportingText:
-    'Certified in CCNA, CCNP, and Azure AZ-104 with practical experience in Linux system administration, network automation, containerization, and DevOps.',
+    'Completed CCNA/CCNP-aligned networking training and Azure AZ-104-focused learning, with hands-on practice in Linux administration, network automation, containerization, and DevOps.',
+  heroTargetRoles:
+    'Open to junior and entry-level roles in Network Engineering, NOC Operations, Cloud Support, Linux Administration, and DevOps.',
 
   pixelLine1: 'Networks that hold.',
   pixelLine2: 'Pipelines that run.',
@@ -355,7 +358,7 @@ export const en: Dictionary = {
   milestone3Title: 'Cisco CCNP & Azure Cloud Journey',
   milestone3Desc: 'Continued advanced networking with CCNP and cloud infrastructure with Azure AZ-104',
   milestone3Details:
-    'Achieved CCNP certification and passed Azure Administrator (AZ-104) exam. Expanded expertise into cloud infrastructure.',
+    'Progressed through CCNP topics and Azure-focused cloud infrastructure learning with practical design exercises.',
   milestone4Title: 'DevOps & Containerization Skills',
   milestone4Desc: 'Started building foundational Docker and DevOps skills',
   milestone4Details:
@@ -402,14 +405,14 @@ export const en: Dictionary = {
   enterpriseShortDesc:
     'Full-scale enterprise network for "Goraney Technologies" featuring a 3-tier hierarchical design, OSPF dynamic routing, and HSRP redundancy.',
   enterpriseFullDesc:
-    'A production-level CCNP ENCOR hands-on lab simulating a corporate headquarters. The architecture implements Cisco best practices across Core, Distribution, and Access layers to ensure 100% uptime, security through VLAN isolation, and scalable dynamic routing.',
+    'An enterprise network simulation based on CCNP ENCOR design principles. The lab applies Cisco best practices across Core, Distribution, and Access layers to explore availability, VLAN isolation, and scalable dynamic routing.',
   enterpriseChallenge:
     'Designing a network that eliminates single points of failure while maintaining efficient traffic routing and ease of management.',
   enterpriseApproach:
     'Implemented a hierarchical model with EtherChannel for link aggregation, HSRP for gateway redundancy, and OSPF for dynamic routing across the core and distribution layers.',
   enterpriseApproachMethod: 'Hierarchical Network Model · Redundancy & HA',
   enterpriseResult1Title: 'High Availability',
-  enterpriseResult1Desc: 'HSRP & Dual-homed links ensure 100% uptime',
+  enterpriseResult1Desc: 'HSRP & redundant links designed to improve gateway availability',
   enterpriseResult2Title: 'Network Security',
   enterpriseResult2Desc: 'VLAN isolation & Port Security implemented',
   enterpriseResult3Title: 'Dynamic Routing',
@@ -424,9 +427,9 @@ export const en: Dictionary = {
   enterpriseMicroLabel: 'CCNP ENCOR · Enterprise Lab',
 
   achievement1: 'Completed 11 professional courses and programs across networking, DevOps, and productivity platforms — verified on Google profile',
-  achievement2: '1,200+ hours of hands-on learning and certification training',
-  achievement3: 'Seven official Networkat certificates including Cisco CCNA (200-301) and CCNP',
-  achievement4: 'Microsoft Azure Administrator (AZ-104) certified',
+  achievement2: 'Two documented hands-on labs covering enterprise networking and containerized applications',
+  achievement3: 'Seven Networkat certificates covering networking, cloud, security, and Linux topics',
+  achievement4: 'Completed Azure AZ-104-focused cloud infrastructure learning',
   achievement5: 'Docker containerization and DevOps fundamentals mastered',
   achievement6: 'Advanced expertise in Enterprise Network Design, Security, and Automation',
   badge1Label: 'Network Architect',
@@ -470,6 +473,8 @@ export const ar: Dictionary = {
   heroLinkedIn: 'لينكدإن',
   heroVerified: 'موثقة',
   heroAvailable: 'متاح للفرص الوظيفية',
+  heroTargetRoles:
+    'متاح لفرص Junior وEntry-level في هندسة الشبكات، عمليات NOC، دعم السحابة، إدارة Linux، وDevOps.',
   heroScroll: 'مرر للأسفل',
 
   pixelStatementEyebrow: 'بيان المهندس',
@@ -480,7 +485,7 @@ export const ar: Dictionary = {
   socialProofTitle: 'الاعتراف والإنجازات',
   socialProofSubtitle: 'الشهادات وإثبات الخبرة',
   socialProofCertifications: 'الشهادات',
-  socialProofCertIntro: 'سبع شهادات رسمية صادرة من',
+  socialProofCertIntro: 'سبع شهادات صادرة من',
   socialProofCertLink: 'Networkat',
   socialProofCertFullSize: '— اضغط على أي شهادة لعرضها بالحجم الكامل.',
   socialProofKeyAchievements: 'أبرز الإنجازات',
@@ -508,7 +513,7 @@ export const ar: Dictionary = {
 
   projectsTitle: 'دراسات الحالة',
   projectsSubtitle: 'مشاكل هندسية، المنهجية، والنتائج القابلة للقياس',
-  realProjectLabel: 'مشروع حقيقي · معمل تطبيقي',
+  realProjectLabel: 'معمل تطبيقي · مشروع بورتفوليو',
   caseStudyLabel: 'دراسة حالة',
   theChallenge: 'التحدي',
   theApproach: 'المنهجية',
@@ -553,7 +558,7 @@ export const ar: Dictionary = {
   heroValueProposition:
     'بناء بنية شبكات آمنة وقابلة للتوسع وحلول سحابية بخبرة عملية في Azure ولينكس وDocker وشبكات المؤسسات.',
   heroSupportingText:
-    'حاصل على شهادات CCNA وCCNP وAzure AZ-104 مع خبرة عملية في إدارة أنظمة لينكس وأتمتة الشبكات والحاويات وديف أوبس.',
+    'أكملت تدريبًا متخصصًا متوافقًا مع CCNA وCCNP وتعلمًا يركز على Azure AZ-104، مع ممارسة عملية في إدارة Linux وأتمتة الشبكات والحاويات وDevOps.',
 
   pixelLine1: 'شبكات تصمد.',
   pixelLine2: 'مسارات عمل تعمل.',
@@ -577,7 +582,7 @@ export const ar: Dictionary = {
   milestone3Title: 'رحلة CCNP وسحابة Azure',
   milestone3Desc: 'مواصلة التقدم في الشبكات مع CCNP والبنية السحابية مع Azure AZ-104',
   milestone3Details:
-    'الحصول على شهادة CCNP واجتياز امتحان Azure Administrator (AZ-104). توسيع الخبرة إلى البنية السحابية.',
+    'التقدم في موضوعات CCNP والبنية السحابية مع تعلم يركز على Azure AZ-104 وتطبيقات عملية في تصميم البنية التحتية.',
   milestone4Title: 'مهارات ديف أوبس والحاويات',
   milestone4Desc: 'بدء بناء مهارات Docker وديف أوبس الأساسية',
   milestone4Details:
@@ -624,14 +629,14 @@ export const ar: Dictionary = {
   enterpriseShortDesc:
     'شبكة مؤسسات كاملة لشركة "Goraney Technologies" تتميز بتصميم هرمي ثلاثي الطبقات، وتوجيه OSPF ديناميكي، وتكرارية HSRP.',
   enterpriseFullDesc:
-    'معمل CCNP ENCOR عملي بمستوى الإنتاج يحاكي مقراً رئيسياً للشركة. تنفذ المعمارية أفضل ممارسات Cisco عبر طبقات Core وDistribution وAccess لضمان استمرارية الخدمة بنسبة 100%، والأمان عبر عزل VLAN، والتوجيه الديناميكي القابل للتوسع.',
+    'محاكاة لشبكة مؤسسية مبنية على مبادئ تصميم CCNP ENCOR. يطبق المعمل أفضل ممارسات Cisco عبر طبقات Core وDistribution وAccess لاستكشاف التوافر وعزل VLAN والتوجيه الديناميكي القابل للتوسع.',
   enterpriseChallenge:
     'تصميم شبكة تقضي على نقاط الفشل الفردية مع الحفاظ على كفاءة توجيه حركة المرور وسهولة الإدارة.',
   enterpriseApproach:
     'تنفيذ نموذج هرمي مع EtherChannel لدمج الروابط، وHSRP لتكرارية البوابة، وOSPF للتوجيه الديناميكي عبر طبقتي Core وDistribution.',
   enterpriseApproachMethod: 'النموذج الهرمي للشبكة · التكرارية والتوافر العالي',
   enterpriseResult1Title: 'توافر عالي',
-  enterpriseResult1Desc: 'تضمن روابط HSRP والمزدوجة استمرارية الخدمة بنسبة 100%',
+  enterpriseResult1Desc: 'روابط HSRP ومزدوجة مصممة لتحسين توافر البوابة',
   enterpriseResult2Title: 'أمن الشبكة',
   enterpriseResult2Desc: 'تنفيذ عزل VLAN وأمن المنافذ (Port Security)',
   enterpriseResult3Title: 'توجيه ديناميكي',
@@ -646,9 +651,9 @@ export const ar: Dictionary = {
   enterpriseMicroLabel: 'CCNP ENCOR · معمل مؤسسات',
 
   achievement1: 'إكمال 11 دورة وبرنامجاً مهنياً عبر منصات الشبكات وديف أوبس والإنتاجية — موثقة عبر ملف جوجل',
-  achievement2: 'أكثر من 1,200 ساعة من التعلم العملي والتدريب على الشهادات',
-  achievement3: 'سبع شهادات رسمية من Networkat منها Cisco CCNA (200-301) وCCNP',
-  achievement4: 'حاصل على شهادة Microsoft Azure Administrator (AZ-104)',
+  achievement2: 'معملان موثقان في شبكات المؤسسات والتطبيقات المعتمدة على الحاويات',
+  achievement3: 'سبع شهادات من Networkat في الشبكات والسحابة والأمن ولينكس',
+  achievement4: 'أكملت تعلمًا يركز على البنية السحابية وAzure AZ-104',
   achievement5: 'إتقان أساسيات Docker والحاويات وديف أوبس',
   achievement6: 'خبرة متقدمة في تصميم شبكات المؤسسات والأمن والأتمتة',
   badge1Label: 'مهندس شبكات',

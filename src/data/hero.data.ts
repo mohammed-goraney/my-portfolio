@@ -5,7 +5,7 @@ export const heroData: HeroData = {
   valueProposition:
     'Building secure, scalable network infrastructure and cloud solutions with hands-on expertise in Azure, Linux, Docker, and enterprise networking.',
   supportingText:
-    'Certified in CCNA, CCNP, and Azure AZ-104 with practical experience in Linux system administration, network automation, containerization, and DevOps.',
+    'Completed CCNA/CCNP-aligned networking training and Azure AZ-104-focused learning, with hands-on practice in Linux administration, network automation, containerization, and DevOps.',
   portrait: {
     url: '/images/hero/portrait.jpg',
     alt: 'Mohammed Abdalla - Network, DevOps & Cloud Engineer and Linux Administrator',

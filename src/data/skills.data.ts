@@ -1,7 +1,7 @@
 import { SkillsData } from '../types/skill.types'
 export const skillsData: SkillsData = {
   intro:
-    'Hands-on experience with enterprise networking, cloud infrastructure, and modern DevOps practices. Certified across multiple platforms including Cisco, Microsoft Azure, and containerization technologies.',
+    'Hands-on practice with enterprise networking, cloud infrastructure, and modern DevOps fundamentals through structured labs and learning.',
 
 
   categories: [

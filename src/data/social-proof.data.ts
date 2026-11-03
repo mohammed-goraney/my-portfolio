@@ -2,11 +2,11 @@ import { SocialProofData } from '../types/contact.types'
 export const socialProofData: SocialProofData = {
   metrics: {
     yearsOfExperience: 1,
-    projectsCompleted: 15,
-    learningHours: 1200,         
+    projectsCompleted: 2,
+    learningHours: 0,
     technologiesMastered: 15,
     certifications: +7,
-    recommendations: 1,
+    recommendations: 0,
     githubFollowers: 150,
     publicSpeakingEvents: 2,
     articlesPublished: 3,
@@ -94,9 +94,9 @@ export const socialProofData: SocialProofData = {
 
   achievements: [
     'Completed 11 professional courses and programs across networking, DevOps, and productivity platforms — verified on Google profile',
-    '1,200+ hours of hands-on learning and certification training',
+    'Two documented hands-on labs covering enterprise networking and containerized applications',
     'Seven official Networkat certificates including Cisco CCNA (200-301) and CCNP',
-    'Microsoft Azure Administrator (AZ-104) certified',
+    'Completed Azure AZ-104-focused cloud infrastructure learning',
     'Docker containerization and DevOps fundamentals mastered',
     'Advanced expertise in Enterprise Network Design, Security, and Automation',
   ],
@@ -108,7 +108,7 @@ export const socialProofData: SocialProofData = {
   ],
 
   recommendations: {
-    count: 6,
+    count: 0,
     url: 'https://linkedin.com/in/mohammed-abdalla-it',
   },
 }

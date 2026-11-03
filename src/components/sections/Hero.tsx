@@ -45,7 +45,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
       >
         {/* Animated network particle background */}
         <div className="absolute inset-0" aria-hidden="true">
-          <NetworkCanvas particleCount={110} maxLinkDist={150} speedFactor={0.8} />
+          <NetworkCanvas particleCount={typeof window !== 'undefined' && window.innerWidth < 768 ? 55 : 110} maxLinkDist={150} speedFactor={0.8} />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#1A1918_78%)]" />
           <div className="absolute inset-0 bg-noise-grid opacity-60" />
         </div>
@@ -98,6 +98,9 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
             >
               {t.heroSupportingText}
             </motion.p>
+            <p className="max-w-xl border-l-2 border-accent-gold/60 pl-3 text-sm font-medium text-accent-gold md:text-base">
+              {t.heroTargetRoles}
+            </p>
 
             {/* CTAs */}
             <motion.div

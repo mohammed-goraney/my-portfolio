@@ -12,7 +12,7 @@ export const enterpriseNetworkDesign: Project = {
   shortDescription:
     'Full-scale enterprise network for "Goraney Technologies" featuring a 3-tier hierarchical design, OSPF dynamic routing, and HSRP redundancy.',
   fullDescription:
-    'A production-level CCNP ENCOR hands-on lab simulating a corporate headquarters. The architecture implements Cisco best practices across Core, Distribution, and Access layers to ensure 100% uptime, security through VLAN isolation, and scalable dynamic routing.',
+    'An enterprise network simulation based on CCNP ENCOR design principles. The lab applies Cisco best practices across Core, Distribution, and Access layers to explore availability, VLAN isolation, and scalable dynamic routing.',
 
   challenge: {
     description:
@@ -55,7 +55,7 @@ export const enterpriseNetworkDesign: Project = {
   ],
 
   results: [
-    { title: 'High Availability', description: 'HSRP & Dual-homed links ensure 100% uptime', impact: 'Zero Downtime' },
+    { title: 'High Availability', description: 'HSRP & redundant links designed to improve gateway availability', impact: 'HA Design' },
     { title: 'Network Security', description: 'VLAN isolation & Port Security implemented', impact: 'Secure Access' },
     { title: 'Dynamic Routing', description: 'OSPF for automatic failover and scalability', impact: 'Rapid Convergence' },
   ],
@@ -82,10 +82,6 @@ export const enterpriseNetworkDesign: Project = {
   status: 'completed',
   gridSize: 'hero',
   tags: ['Networking', 'Cisco IOS', 'Hierarchical Design', 'Redundancy', 'OSPF'],
-
-  links: {
-    github: 'https://github.com/mohammed-goraney',
-  },
 
   caseStudyContent: {
     lessonsLearned: [
@@ -153,7 +149,7 @@ export const dockerVotingApp: Project = {
   results: [
     { title: 'Containers', description: '5 services on 1 network', impact: '5 services' },
     { title: 'Messaging', description: 'Queue-backed async vote processing', impact: 'Redis queue' },
-    { title: 'Skills', description: 'Networking, env vars, docker logs troubleshooting', impact: 'Production patterns' },
+    { title: 'Skills', description: 'Networking, env vars, docker logs troubleshooting', impact: 'Production-inspired' },
   ],
 
   metrics: {
@@ -178,10 +174,6 @@ export const dockerVotingApp: Project = {
   status: 'completed',
   gridSize: 'hero',
   tags: ['Docker', 'Docker Compose', 'Redis', 'PostgreSQL', 'DevOps'],
-
-  links: {
-    github: 'https://github.com/mohammed-goraney',
-  },
 
   caseStudyContent: {
     lessonsLearned: [

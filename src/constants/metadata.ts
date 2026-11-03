@@ -7,7 +7,7 @@ export const siteMetadata = {
   // Basic info
   title: 'Mohammed Abdalla - Network & Cloud Engineer',
   description:
-    'Mohammed Abdalla — Network & Cloud Engineer designing resilient infrastructure that scales with confidence. Certified in CCNA, CCNP, and Azure AZ-104. Expert in AWS, networking, and DevOps.',
+    'Mohammed Abdalla — Network, Cloud, and DevOps learner building hands-on labs in enterprise networking, Azure-focused infrastructure, Linux, and Docker.',
   siteName: 'Mohammed Abdalla — Portfolio',
   url: 'https://github.com/mohammed-goraney/my-portfolio',
   locale: 'en_US',
@@ -30,7 +30,7 @@ export const siteMetadata = {
 
   // Open Graph / Social sharing
   og: {
-    image: 'https://yourportfolio.com/og-image.jpg',
+    image: '/images/hero/portrait.jpg',
     type: 'website',
     width: 1200,
     height: 630,
@@ -47,12 +47,9 @@ export const siteMetadata = {
     'Network Engineer',
     'Cloud Architect',
     'DevOps',
-    'AWS',
     'Infrastructure',
     'Network Administration',
     'Cloud Security',
-    'Terraform',
-    'Kubernetes',
   ],
 
   // Contact information

@@ -128,6 +128,6 @@ export interface AnalyticsEvent {
 }
  
 export type RecursivePartial<T> = {
-  [P in keyof T]?: T[P] extends Record<string, any> ? RecursivePartial<T[P]> : T[P];
+  [P in keyof T]?: T[P] extends Record<string, unknown> ? RecursivePartial<T[P]> : T[P];
 };
  

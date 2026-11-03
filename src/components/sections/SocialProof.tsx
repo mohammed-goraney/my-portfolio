@@ -38,7 +38,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
             { label: t.socialProofHours, value: data.metrics.learningHours, suffix: '+' },
             { label: t.socialProofTech, value: data.metrics.technologiesMastered, suffix: '' },
             { label: t.socialProofCerts, value: data.metrics.certifications, suffix: '+' },
-          ].map((metric, i) => (
+          ].filter((metric) => (metric.value ?? 0) > 0).map((metric, i) => (
             <motion.div
               key={metric.label}
               initial={{ opacity: 0, y: 24 }}
@@ -184,7 +184,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
       ) : null}
 
       {/* Recommendations */}
-      {data.recommendations ? (
+      {data.recommendations && data.recommendations.count > 0 ? (
         <FadeUp>
           <div className="relative rounded-2xl border border-accent-gold/30 bg-surface/50 p-10 text-center backdrop-blur-sm">
             <div
