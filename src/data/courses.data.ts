@@ -11,6 +11,8 @@ export interface Course {
   date: string
   grade?: string
   category: 'Networking' | 'DevOps' | 'Cloud' | 'Soft Skills' | 'Productivity' | 'Professional'
+  /** Professional grouping used by the certificate gallery filters. */
+  group: 'Technical & Systems' | 'Professional Development' | 'Field & Community Training'
   /** Verifiable credential URL (Coursera / Packt verification page) */
   credentialUrl?: string
   /** Local certificate image, e.g. /images/Coursera/encor-350-401.webp */
@@ -33,6 +35,7 @@ export const coursesData: CoursesData = {
       provider: 'World Food Programme · Super Fny Consulting',
       date: 'Feb 3, 2026',
       category: 'Professional',
+      group: 'Technical & Systems',
       certificateImage: '/images/Certificates/wfp-training-completion.webp',
       skills: ['Light Current Systems', 'Technical Training', 'Practical Systems', '40 Training Hours'],
     },
@@ -42,6 +45,7 @@ export const coursesData: CoursesData = {
       provider: 'UNHCR · Terre des hommes',
       date: 'Nov 16, 2025',
       category: 'Professional',
+      group: 'Field & Community Training',
       certificateImage: '/images/Certificates/unhcr-protection-recognition.webp',
       skills: [
         'Facilitation',
@@ -56,6 +60,7 @@ export const coursesData: CoursesData = {
       provider: 'Packt',
       date: 'Mar 1, 2026',
       category: 'Networking',
+      group: 'Technical & Systems',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/specialization/00JIDXE1U80N',
       certificateImage: '/images/Coursera/encor-350-401.webp',
@@ -76,6 +81,7 @@ export const coursesData: CoursesData = {
       date: 'Mar 1, 2026',
       grade: '84%',
       category: 'Networking',
+      group: 'Technical & Systems',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/BQ49Z50FA70U',
       certificateImage: '/images/Coursera/network-security-automation.webp',
@@ -88,6 +94,7 @@ export const coursesData: CoursesData = {
       date: 'Feb 19, 2026',
       grade: '92%',
       category: 'Networking',
+      group: 'Technical & Systems',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/FXCWETNX6UTR',
       certificateImage: '/images/Coursera/advanced-routing.webp',
@@ -100,6 +107,7 @@ export const coursesData: CoursesData = {
       date: 'Jan 21, 2026',
       grade: '80%',
       category: 'Networking',
+      group: 'Technical & Systems',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/WAS4JDHGDRHL',
       certificateImage: '/images/Coursera/enterprise-network-design.webp',
@@ -111,6 +119,7 @@ export const coursesData: CoursesData = {
       provider: 'KodeKloud',
       date: 'Jul 24, 2026',
       category: 'DevOps',
+      group: 'Technical & Systems',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/5EXQZC4ECHPY',
       certificateImage: '/images/Coursera/docker-for-beginners.webp',
@@ -130,6 +139,7 @@ export const coursesData: CoursesData = {
       date: 'Mar 2, 2025',
       grade: '83%',
       category: 'DevOps',
+      group: 'Technical & Systems',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/76LFUHWTI2E2',
       certificateImage: '/images/Coursera/intro-devops.webp',
@@ -147,6 +157,7 @@ export const coursesData: CoursesData = {
       provider: 'IBM SkillsBuild',
       date: 'Dec 25, 2024',
       category: 'DevOps',
+      group: 'Technical & Systems',
       credentialUrl: 'https://www.credly.com/go/Y2Pu6P4W',
       certificateImage: '/images/Coursera/ai-fundamentals.webp',
       skills: [
@@ -163,6 +174,7 @@ export const coursesData: CoursesData = {
       date: 'Feb 23, 2025',
       grade: '95%',
       category: 'Soft Skills',
+      group: 'Professional Development',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/3F04BKH9RLXY',
       certificateImage: '/images/Coursera/effective-time-management.webp',
@@ -180,6 +192,7 @@ export const coursesData: CoursesData = {
       date: 'Mar 17, 2025',
       grade: '89%',
       category: 'Soft Skills',
+      group: 'Professional Development',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/verify/D2R10HWJQHZY',
       certificateImage: '/images/Coursera/storytelling-influencing.webp',
@@ -196,6 +209,7 @@ export const coursesData: CoursesData = {
       provider: 'Google',
       date: 'Jul 7, 2024',
       category: 'Productivity',
+      group: 'Professional Development',
       credentialUrl:
         'https://www.coursera.org/account/accomplishments/specialization/ZCGFXYJSHNG3',
       certificateImage: '/images/Coursera/google-digital-marketing.webp',
@@ -214,6 +228,7 @@ export const coursesData: CoursesData = {
       provider: 'McKinsey & Company',
       date: 'Dec 17, 2024',
       category: 'Soft Skills',
+      group: 'Professional Development',
       certificateImage: '/images/Coursera/mckinsey-forward.webp',
       skills: [
         'Problem Solving',

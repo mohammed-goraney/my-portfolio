@@ -12,23 +12,15 @@ interface CoursesProps {
   data?: typeof coursesData
 }
 
-const CATEGORY_FILTERS = ['All', 'Networking', 'DevOps', 'Soft Skills', 'Professional', 'Productivity'] as const
-type Filter = (typeof CATEGORY_FILTERS)[number]
+const CERTIFICATE_GROUPS = ['All', 'Technical & Systems', 'Professional Development', 'Field & Community Training'] as const
+type Filter = (typeof CERTIFICATE_GROUPS)[number]
 
-type FilterKey =
-  | 'filterAll'
-  | 'filterNetworking'
-  | 'filterDevOps'
-  | 'filterSoftSkills'
-  | 'filterProfessional'
-  | 'filterProductivity'
+type FilterKey = 'filterAll' | 'filterTechnical' | 'filterProfessionalDevelopment' | 'filterFieldCommunity'
 
-const CATEGORY_META: Record<Exclude<Filter, 'All'>, { labelKey: FilterKey; icon: string }> = {
-  Networking: { labelKey: 'filterNetworking', icon: '⚙' },
-  DevOps: { labelKey: 'filterDevOps', icon: '⚡' },
-  'Soft Skills': { labelKey: 'filterSoftSkills', icon: '◆' },
-  Professional: { labelKey: 'filterProfessional', icon: '✧' },
-  Productivity: { labelKey: 'filterProductivity', icon: '✦' },
+const GROUP_META: Record<Exclude<Filter, 'All'>, { labelKey: FilterKey }> = {
+  'Technical & Systems': { labelKey: 'filterTechnical' },
+  'Professional Development': { labelKey: 'filterProfessionalDevelopment' },
+  'Field & Community Training': { labelKey: 'filterFieldCommunity' },
 }
 
 const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesData }, ref) => {
@@ -40,7 +32,7 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
     () =>
       filter === 'All'
         ? data.courses
-        : data.courses.filter((c) => c.category === filter),
+        : data.courses.filter((c) => c.group === filter),
     [filter, data.courses]
   )
 
@@ -60,7 +52,7 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
       {/* ---------- Category filter pills ---------- */}
       <FadeUp delay={0.15}>
         <div className="mb-12 flex flex-wrap items-center justify-center gap-2 md:gap-3">
-          {CATEGORY_FILTERS.map((f) => {
+          {CERTIFICATE_GROUPS.map((f) => {
             const active = f === filter
             return (
               <button
@@ -75,7 +67,7 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
                     : 'border border-border bg-surface/60 text-text-secondary hover:border-accent-gold/50 hover:text-accent-gold')
                 }
               >
-                {f === 'All' ? t.filterAll : t[CATEGORY_META[f as Exclude<Filter, 'All'>].labelKey]}
+                {f === 'All' ? t.filterAll : t[GROUP_META[f as Exclude<Filter, 'All'>].labelKey]}
               </button>
             )
           })}
@@ -135,8 +127,8 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
               )}
 
               <div className="mb-4 flex items-center justify-between gap-3">
-                <Badge variant="soft" size="sm" className="capitalize">
-                  {course.category}
+                <Badge variant="soft" size="sm">
+                  {t[GROUP_META[course.group].labelKey]}
                 </Badge>
                 {course.grade && (
                   <span className="font-mono-tech text-xs text-accent-gold">
@@ -144,6 +136,10 @@ const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesDat
                   </span>
                 )}
               </div>
+
+              <p className="mb-3 font-mono-tech text-[10px] uppercase tracking-widest text-text-muted">
+                {course.category}
+              </p>
 
               {course.skills && course.skills.length > 0 && (
                 <div className="mb-3 flex flex-wrap gap-1.5">

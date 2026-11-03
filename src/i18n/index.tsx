@@ -66,6 +66,9 @@ export interface Dictionary {
   filterSoftSkills: string
   filterProfessional: string
   filterProductivity: string
+  filterTechnical: string
+  filterProfessionalDevelopment: string
+  filterFieldCommunity: string
   viewCertificate: string
   credential: string
 
@@ -282,6 +285,9 @@ export const en: Dictionary = {
   filterSoftSkills: 'Soft Skills',
   filterProfessional: 'Professional',
   filterProductivity: 'Productivity',
+  filterTechnical: 'Technical & Systems',
+  filterProfessionalDevelopment: 'Professional Development',
+  filterFieldCommunity: 'Field & Community Training',
   viewCertificate: 'View Certificate',
   credential: 'Credential',
 
@@ -508,6 +514,9 @@ export const ar: Dictionary = {
   filterSoftSkills: 'المهارات الشخصية',
   filterProfessional: 'مهني',
   filterProductivity: 'الإنتاجية',
+  filterTechnical: 'تقني وأنظمة',
+  filterProfessionalDevelopment: 'التطوير المهني',
+  filterFieldCommunity: 'تدريب ميداني ومجتمعي',
   viewCertificate: 'عرض الشهادة',
   credential: 'الرابط الرسمي',
 
