@@ -10,7 +10,7 @@ export const skillsData: SkillsData = {
       name: 'Enterprise Networking',
       description: 'Cisco CCNA, CCNP. Advanced routing, network design, and security.',
       level: 92,
-      yearsOfExperience: 2,
+      yearsOfPractice: 2,
       color: '#D4A574',
       icon: 'Network',
       skills: [
@@ -26,7 +26,7 @@ export const skillsData: SkillsData = {
       name: 'Cloud Infrastructure',
       description: 'Microsoft Azure. Cloud design, deployment, and management.',
       level: 85,
-      yearsOfExperience: 1,
+      yearsOfPractice: 1,
       color: '#E0A677',
       icon: 'Cloud',
       skills: [
@@ -40,7 +40,7 @@ export const skillsData: SkillsData = {
       name: 'Containerization & DevOps',
       description: 'Docker expertise and DevOps fundamentals for modern infrastructure.',
       level: 80,
-      yearsOfExperience: 2,
+      yearsOfPractice: 1,
       color: '#D4B574',
       icon: 'Code',
       skills: [
@@ -54,7 +54,7 @@ export const skillsData: SkillsData = {
       name: 'Linux System Administration',
       description: 'Practical Linux experience for network and infrastructure management.',
       level: 78,
-      yearsOfExperience: 2,
+      yearsOfPractice: 1,
       color: '#E0C677',
       icon: 'Zap',
       skills: [
@@ -68,7 +68,7 @@ export const skillsData: SkillsData = {
       name: 'Network Automation',
       description: 'Automation tools and practices for network management and efficiency.',
       level: 82,
-      yearsOfExperience: 2,
+      yearsOfPractice: 1,
       color: '#D4C574',
       icon: 'Code',
       skills: [
@@ -81,7 +81,7 @@ export const skillsData: SkillsData = {
       name: 'Development & Tools',
       description: 'Version control, collaboration tools, and development practices.',
       level: 80,
-      yearsOfExperience: 2,
+      yearsOfPractice: 1,
       color: '#E0B677',
       icon: 'Code',
       skills: [

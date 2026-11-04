@@ -444,7 +444,7 @@ export const en: Dictionary = {
 
   skillsIntro:
     'Hands-on experience with enterprise networking, cloud infrastructure, and modern DevOps practices. Certified across multiple platforms including Cisco, Microsoft Azure, and containerization technologies.',
-  skillsYrs: 'yrs',
+  skillsYrs: 'yrs practice',
   skillCat0Name: 'Enterprise Networking',
   skillCat0Desc: 'Cisco CCNA, CCNP. Advanced routing, network design, and security.',
   skillCat1Name: 'Cloud Infrastructure',
@@ -461,7 +461,7 @@ export const en: Dictionary = {
   skillsSummaryCategories: 'Categories',
   skillsSummaryTotal: 'Total Skills',
   skillsSummaryAvg: 'Avg Level',
-  skillsSummaryYears: 'Years Exp',
+  skillsSummaryYears: 'Years of Practice',
 }
 
 export const ar: Dictionary = {
@@ -671,7 +671,7 @@ export const ar: Dictionary = {
 
   skillsIntro:
     'خبرة عملية في شبكات المؤسسات والبنية السحابية وممارسات ديف أوبس الحديثة. حائز على شهادات عبر منصات متعددة تشمل Cisco وMicrosoft Azure وتقنيات الحاويات.',
-  skillsYrs: 'سنوات',
+  skillsYrs: 'سنوات ممارسة',
   skillCat0Name: 'شبكات المؤسسات',
   skillCat0Desc: 'Cisco CCNA وCCNP. التوجيه المتقدم وتصميم الشبكات والأمن.',
   skillCat1Name: 'البنية السحابية',
@@ -688,7 +688,7 @@ export const ar: Dictionary = {
   skillsSummaryCategories: 'التصنيفات',
   skillsSummaryTotal: 'إجمالي المهارات',
   skillsSummaryAvg: 'متوسط المستوى',
-  skillsSummaryYears: 'سنوات الخبرة',
+  skillsSummaryYears: 'سنوات الممارسة العملية',
 }
 
 export const dictionaries: Record<Locale, Dictionary> = { en, ar }

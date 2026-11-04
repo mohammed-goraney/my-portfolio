@@ -63,7 +63,7 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
                     <span className="text-2xl font-bold text-accent-gold">
                       {category.level ?? 0}%
                     </span>
-                    <p className="text-caption text-text-muted">{category.yearsOfExperience ?? 0}+ {t.skillsYrs}</p>
+                    <p className="text-caption text-text-muted">{category.yearsOfPractice ?? 0}+ {t.skillsYrs}</p>
                   </div>
                 </div>
 
@@ -148,7 +148,7 @@ const Skills = React.forwardRef<HTMLElement, SkillsProps>(
             {
               label: t.skillsSummaryYears,
               value: Math.max(
-                ...data.categories.map((cat: typeof data.categories[0]) => cat.yearsOfExperience ?? 0)
+                ...data.categories.map((cat: typeof data.categories[0]) => cat.yearsOfPractice ?? 0)
               ),
               suffix: '+',
             },

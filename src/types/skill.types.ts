@@ -5,7 +5,7 @@
 export interface Skill {
   name: string;
   level?: number; // 0-100
-  yearsOfExperience?: number;
+  yearsOfPractice?: number;
   proficiency?: 'beginner' | 'intermediate' | 'advanced' | 'expert';
   icon?: string;
   verified?: boolean; // Certification badge
@@ -19,7 +19,7 @@ export interface SkillCategory {
   skills: Skill[];
   color?: string; // Optional accent color for the category
   icon?: string;
-  yearsOfExperience?: number;
+  yearsOfPractice?: number;
 }
 
 export interface SkillsData {
