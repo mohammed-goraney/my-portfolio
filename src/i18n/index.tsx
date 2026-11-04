@@ -250,7 +250,7 @@ export const en: Dictionary = {
   heroCtaProjects: 'View My Projects',
   heroCtaContact: 'Get In Touch',
   heroLinkedIn: 'LinkedIn',
-  heroVerified: 'Verified',
+  heroVerified: 'Hands-on',
   heroAvailable: 'Available for opportunities',
   heroScroll: 'Scroll',
 
@@ -477,7 +477,7 @@ export const ar: Dictionary = {
   heroCtaProjects: 'شاهد مشاريعي',
   heroCtaContact: 'تواصل معي',
   heroLinkedIn: 'لينكدإن',
-  heroVerified: 'موثقة',
+  heroVerified: 'ممارسة عملية',
   heroAvailable: 'متاح للفرص الوظيفية',
   heroTargetRoles:
     'متاح لفرص Junior وEntry-level في هندسة الشبكات، عمليات NOC، دعم السحابة، إدارة Linux، وDevOps.',
