@@ -82,6 +82,9 @@ export const enterpriseNetworkDesign: Project = {
   status: 'completed',
   gridSize: 'hero',
   tags: ['Networking', 'Cisco IOS', 'Hierarchical Design', 'Redundancy', 'OSPF'],
+  links: {
+    github: 'https://github.com/mohammed-goraney/ccnp-enterprise-campus-network-lab',
+  },
 
   caseStudyContent: {
     lessonsLearned: [
@@ -174,6 +177,9 @@ export const dockerVotingApp: Project = {
   status: 'completed',
   gridSize: 'hero',
   tags: ['Docker', 'Docker Compose', 'Redis', 'PostgreSQL', 'DevOps'],
+  links: {
+    github: 'https://github.com/mohammed-goraney/docker-example-voting-app-lab',
+  },
 
   caseStudyContent: {
     lessonsLearned: [
