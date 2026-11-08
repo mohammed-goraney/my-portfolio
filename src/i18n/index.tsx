@@ -306,7 +306,7 @@ export const en: Dictionary = {
 
   skillsTitle: 'Technical Expertise',
   skillsSubtitle: 'Skills developed through hands-on experience',
-  verifiedSkill: 'Verified skill',
+  verifiedSkill: 'Credential-linked skill',
 
   contactTitle: "Let's Build Something Great",
   contactSubtitle: 'Get in touch to discuss your next project',
@@ -536,7 +536,7 @@ export const ar: Dictionary = {
 
   skillsTitle: 'الخبرة التقنية',
   skillsSubtitle: 'مهارات طُورت عبر التطبيق العملي',
-  verifiedSkill: 'مهارة موثقة',
+  verifiedSkill: 'مهارة مرتبطة باعتماد',
 
   contactTitle: 'لنبني شيئاً عظيماً',
   contactSubtitle: 'تواصل معي لمناقشة مشروعك القادم',

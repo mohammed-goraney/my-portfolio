@@ -133,7 +133,7 @@ const SocialProof = React.forwardRef<HTMLElement, SocialProofProps>(
 
       {/* Certificate viewer (lightbox) */}
       <Lightbox
-        item={viewerCert ? { image: viewerCert.image, name: viewerCert.name, subtitle: `${viewerCert.issuer} · Credential ID: ${viewerCert.credentialId ?? 'Networkat1197'} · Verified` } : null}
+        item={viewerCert ? { image: viewerCert.image, name: viewerCert.name, subtitle: `${viewerCert.issuer} · Credential ID: ${viewerCert.credentialId ?? 'Networkat1197'}` } : null}
         onClose={() => setViewerCert(null)}
       />
 

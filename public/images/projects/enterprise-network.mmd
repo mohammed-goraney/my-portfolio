@@ -1,0 +1,23 @@
+flowchart LR
+  ISP[ISP / Internet] --> EDGE[EDGE Router\nNAT/PAT]
+  EDGE --> CORE1[CORE 1\nLayer 3]
+  EDGE --> CORE2[CORE 2\nLayer 3]
+  CORE1 <--> |EtherChannel| CORE2
+  CORE1 --> DIST1[DISTRIBUTION 1\nHSRP / Inter-VLAN]
+  CORE2 --> DIST2[DISTRIBUTION 2\nHSRP / Inter-VLAN]
+  DIST1 <--> |Redundant uplinks| DIST2
+  DIST1 --> ACCESS1[ACCESS SWITCHES\nVLANs / Port Security]
+  DIST2 --> ACCESS2[ACCESS SWITCHES\nVLANs / Port Security]
+  ACCESS1 --> USERS[HR · Finance · IT · Sales]
+  ACCESS2 --> USERS
+
+  classDef edge fill:#3b2f2a,stroke:#d4a574,color:#fff
+  classDef core fill:#253b4d,stroke:#77b8d8,color:#fff
+  classDef dist fill:#3b4a36,stroke:#9bc27a,color:#fff
+  classDef access fill:#4a3d55,stroke:#c9a7e8,color:#fff
+  classDef users fill:#57452f,stroke:#e0b677,color:#fff
+  class ISP,EDGE edge
+  class CORE1,CORE2 core
+  class DIST1,DIST2 dist
+  class ACCESS1,ACCESS2 access
+  class USERS users

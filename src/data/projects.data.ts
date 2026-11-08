@@ -74,7 +74,7 @@ export const enterpriseNetworkDesign: Project = {
     url: '/images/projects/enterprise-network.webp',
     alt: 'Enterprise Hierarchical Network Design topology',
     width: 1200,
-    height: 900,
+    height: 186,
     blur: 'UeJ-|,ofyYof_3t8x]aK00of',
   },
 
