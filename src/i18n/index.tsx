@@ -26,6 +26,7 @@ export interface Dictionary {
   heroCtaProjects: string
   heroCtaContact: string
   heroLinkedIn: string
+  heroCv: string
   heroVerified: string
   heroAvailable: string
   heroScroll: string
@@ -250,6 +251,7 @@ export const en: Dictionary = {
   heroCtaProjects: 'View My Projects',
   heroCtaContact: 'Get In Touch',
   heroLinkedIn: 'LinkedIn',
+  heroCv: 'Download CV',
   heroVerified: 'Hands-on',
   heroAvailable: 'Available for opportunities',
   heroScroll: 'Scroll',
@@ -277,7 +279,7 @@ export const en: Dictionary = {
   socialProofRecommendationsText: 'Endorsed by colleagues and clients on LinkedIn',
 
   coursesTitle: 'Courses & Continuous Learning',
-  coursesSubtitle: 'completed courses across networking, DevOps, and professional skills — verified on Google profile',
+  coursesSubtitle: 'certificate-backed courses and trainings across networking, DevOps, and professional development',
   coursesEmpty: 'No courses in this category yet.',
   filterAll: 'All',
   filterNetworking: 'Networking',
@@ -358,11 +360,11 @@ export const en: Dictionary = {
   milestone1Title: 'Networking Specialization Journey Begins',
   milestone1Desc: 'Started a focused networking learning and certification path',
   milestone1Details: 'Started the Networkat networking course in February 2025 and began building hands-on labs in enterprise network design.',
-  milestone2Title: 'Cisco CCNA Certification Achieved',
+  milestone2Title: 'Cisco CCNA-Aligned Training Completed',
   milestone2Desc: 'Completed comprehensive CCNA training through the Networkat platform',
   milestone2Details: 'Mastered networking fundamentals through comprehensive courses and practical labs.',
-  milestone3Title: 'Cisco CCNP & Azure Cloud Journey',
-  milestone3Desc: 'Continued advanced networking with CCNP and cloud infrastructure with Azure AZ-104',
+  milestone3Title: 'CCNP & Azure Cloud Learning Path',
+  milestone3Desc: 'Advanced networking study with CCNP topics and Azure-focused infrastructure learning',
   milestone3Details:
     'Progressed through CCNP topics and Azure-focused cloud infrastructure learning with practical design exercises.',
   milestone4Title: 'DevOps & Containerization Skills',
@@ -370,9 +372,9 @@ export const en: Dictionary = {
   milestone4Details:
     'Started learning Docker and DevOps in 2026 through hands-on labs and practical containerization exercises.',
   milestone5Title: 'Continuous Learning & Specialization',
-  milestone5Desc: '11 verified courses and programs completed across multiple platforms and technologies',
+  milestone5Desc: '13 certificate-backed courses and trainings completed across technical and professional tracks',
   milestone5Details:
-    'Continued structured learning in 2026 through verified courses from Google, Packt, Coursera, IBM, and specialized platforms in networking, cloud, DevOps, and automation.',
+    'Continued structured learning in 2026 through courses and trainings from Packt, Coursera, IBM, KodeKloud, Networkat, and specialized providers.',
   journeyNowTitle: 'NOW',
   journeyNowDesc:
     'Deepening expertise in Kubernetes orchestration, preparing for advanced cloud certifications, and exploring edge computing solutions for enterprise networks.',
@@ -432,7 +434,7 @@ export const en: Dictionary = {
   enterpriseDuration: 'CCNP ENCOR Hands-on Lab',
   enterpriseMicroLabel: 'CCNP ENCOR · Enterprise Lab',
 
-  achievement1: 'Completed 11 professional courses and programs across networking, DevOps, and productivity platforms — verified on Google profile',
+  achievement1: 'Completed 13 certificate-backed courses and trainings across technical and professional tracks',
   achievement2: 'Two documented hands-on labs covering enterprise networking and containerized applications',
   achievement3: 'Seven Networkat certificates covering networking, cloud, security, and Linux topics',
   achievement4: 'Completed Azure AZ-104-focused cloud infrastructure learning',
@@ -477,6 +479,7 @@ export const ar: Dictionary = {
   heroCtaProjects: 'شاهد مشاريعي',
   heroCtaContact: 'تواصل معي',
   heroLinkedIn: 'لينكدإن',
+  heroCv: 'تحميل السيرة الذاتية',
   heroVerified: 'ممارسة عملية',
   heroAvailable: 'متاح للفرص الوظيفية',
   heroTargetRoles:
@@ -506,7 +509,7 @@ export const ar: Dictionary = {
   socialProofRecommendationsText: 'تأييد من الزملاء والعملاء على لينكدإن',
 
   coursesTitle: 'الدورات والتعلم المستمر',
-  coursesSubtitle: 'دورة مكتملة عبر الشبكات وديف أوبس والمهارات المهنية — موثقة عبر ملف جوجل',
+  coursesSubtitle: 'دورات وتدريبات بشهادات أو إثبات إكمال في الشبكات وديف أوبس والتطوير المهني',
   coursesEmpty: 'لا توجد دورات في هذا التصنيف بعد.',
   filterAll: 'الكل',
   filterNetworking: 'الشبكات',
@@ -588,8 +591,8 @@ export const ar: Dictionary = {
   milestone2Title: 'الحصول على شهادة Cisco CCNA',
   milestone2Desc: 'إكمال تدريب CCNA الشامل عبر منصة Networkat',
   milestone2Details: 'إتقان أساسيات الشبكات عبر دورات شاملة ومعامل عملية.',
-  milestone3Title: 'رحلة CCNP وسحابة Azure',
-  milestone3Desc: 'مواصلة التقدم في الشبكات مع CCNP والبنية السحابية مع Azure AZ-104',
+  milestone3Title: 'مسار تعلم CCNP وسحابة Azure',
+  milestone3Desc: 'دراسة متقدمة لموضوعات CCNP وتعلم يركز على البنية التحتية في Azure',
   milestone3Details:
     'التقدم في موضوعات CCNP والبنية السحابية مع تعلم يركز على Azure AZ-104 وتطبيقات عملية في تصميم البنية التحتية.',
   milestone4Title: 'مهارات ديف أوبس والحاويات',
@@ -597,9 +600,9 @@ export const ar: Dictionary = {
   milestone4Details:
     'بدء تعلم Docker وديف أوبس في 2026 عبر معامل عملية وتمارين في الحاويات.',
   milestone5Title: 'التعلم المستمر والتخصص',
-  milestone5Desc: 'إكمال 11 دورة وبرنامجاً موثقاً عبر منصات وتقنيات متعددة',
+  milestone5Desc: 'إكمال 13 دورة وتدريباً بشهادات أو إثبات إكمال ضمن مسارات تقنية ومهنية',
   milestone5Details:
-    'مواصلة التعلم المنظم في 2026 عبر دورات موثقة من Google وPackt وCoursera وIBM ومنصات متخصصة في الشبكات والسحابة وديف أوبس والأتمتة.',
+    'مواصلة التعلم المنظم في 2026 عبر دورات وتدريبات من Packt وCoursera وIBM وKodeKloud وNetworkat وجهات متخصصة.',
   journeyNowTitle: 'الآن',
   journeyNowDesc:
     'تعميق الخبرة في Kubernetes، والاستعداد لشهادات سحابية متقدمة، واستكشاف حلول الحوسبة الطرفية لشبكات المؤسسات.',
@@ -659,7 +662,7 @@ export const ar: Dictionary = {
   enterpriseDuration: 'معمل CCNP ENCOR عملي',
   enterpriseMicroLabel: 'CCNP ENCOR · معمل مؤسسات',
 
-  achievement1: 'إكمال 11 دورة وبرنامجاً مهنياً عبر منصات الشبكات وديف أوبس والإنتاجية — موثقة عبر ملف جوجل',
+  achievement1: 'إكمال 13 دورة وتدريباً بشهادات أو إثبات إكمال ضمن مسارات تقنية ومهنية',
   achievement2: 'معملان موثقان في شبكات المؤسسات والتطبيقات المعتمدة على الحاويات',
   achievement3: 'سبع شهادات من Networkat في الشبكات والسحابة والأمن ولينكس',
   achievement4: 'أكملت تعلمًا يركز على البنية السحابية وAzure AZ-104',

@@ -133,6 +133,15 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                 {t.heroLinkedIn}
                 <span className="text-accent-gold opacity-0 transition-opacity group-hover:opacity-100">↗</span>
               </a>
+              <a
+                href="/Mohammed-Abdalla-ATS-Resume.pdf"
+                download="Mohammed-Abdalla-ATS-Resume.pdf"
+                aria-label="Download my CV"
+                className="group inline-flex items-center justify-center gap-2.5 rounded-2xl border border-accent-gold/50 bg-accent-gold/10 px-6 py-4 text-base font-semibold text-accent-gold backdrop-blur-sm transition-all duration-300 hover:border-accent-gold hover:bg-accent-gold/20 sm:px-7"
+              >
+                <span aria-hidden="true">↓</span>
+                {t.heroCv}
+              </a>
             </motion.div>
 
             {/* certification status line */}

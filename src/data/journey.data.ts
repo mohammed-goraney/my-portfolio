@@ -32,19 +32,19 @@ export const journeyData: JourneyData = {
       description: 'Completed comprehensive CCNA training from Networkat platform',
       type: 'achievement',
       icon: 'Award',
-      tags: ['Cisco', 'CCNA', 'Verified'],
+      tags: ['Cisco', 'CCNA', 'Training'],
       details: 'Mastered networking fundamentals through comprehensive courses and practical labs.',
     },
     {
       id: 'milestone-3',
       year: 2025,
-      title: 'Cisco CCNP & Azure Cloud Journey',
-      description: 'Advanced networking with CCNP and cloud infrastructure with Azure AZ-104',
+      title: 'CCNP & Azure Cloud Learning Path',
+      description: 'Advanced networking study with CCNP topics and Azure-focused infrastructure learning',
       type: 'growth',
       icon: 'Zap',
       tags: ['CCNP', 'Azure', 'Cloud'],
       details:
-        'Achieved CCNP certification and passed Azure Administrator (AZ-104) exam. Expanded expertise into cloud infrastructure.',
+        'Continued structured study across CCNP topics and Azure-focused cloud infrastructure, supported by practical design exercises.',
     },
     {
       id: 'milestone-4',
@@ -61,12 +61,12 @@ export const journeyData: JourneyData = {
       id: 'milestone-5',
       year: 2026,
       title: 'Continuous Learning & Specialization',
-      description: '11 verified courses and programs completed across multiple platforms and technologies',
+      description: '13 certificate-backed courses and trainings completed across technical and professional tracks',
       type: 'achievement',
       icon: 'Sparkles',
       tags: ['Learning', 'Certifications', 'Google', 'Coursera', 'IBM', 'McKinsey'],
       details:
-        'Continued structured learning in 2026 through verified courses from Google, Packt, Coursera, IBM, and specialized platforms in networking, cloud, DevOps, and automation.',
+        'Continued structured learning in 2026 through courses and trainings from Packt, Coursera, IBM, KodeKloud, Networkat, and specialized providers.',
     },
   ],
 
