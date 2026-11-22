@@ -59,8 +59,8 @@ export const NetworkTopologyDiagram: React.FC = () => {
                 stroke="currentColor"
                 strokeWidth={link.double ? 0.8 : 0.4}
                 className="text-accent-gold/20"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
+                initial={{ pathLength: 0, opacity: 0 } as unknown as never}
+                animate={{ pathLength: 1, opacity: 1 } as unknown as never}
                 transition={{ duration: 1.5, delay: i * 0.1 }}
               />
               {/* Data packet animation */}

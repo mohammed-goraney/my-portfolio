@@ -74,8 +74,8 @@ const Journey = React.forwardRef<HTMLElement, JourneyProps>(
               y2="1000"
               stroke="url(#spineGrad)"
               strokeWidth="2"
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
+              initial={{ pathLength: 0 } as unknown as never}
+              whileInView={{ pathLength: 1 } as unknown as never}
               viewport={{ once: true, margin: '-20% 0px' }}
               transition={{ duration: 2.5, ease: 'easeInOut' }}
             />

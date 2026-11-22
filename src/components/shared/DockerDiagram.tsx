@@ -96,8 +96,8 @@ export const DockerDiagram: React.FC = () => {
         <motion.path
           d={`M ${nodeX('vote') + NODE_W} ${TOP_Y} L ${nodeX('redis') - 8} ${TOP_Y}`}
           fill="none" stroke={TYPE_STYLES.app.stroke} strokeWidth="1.5" strokeDasharray={EDGE_DASH}
-          initial={{ pathLength: 0, opacity: 0 }}
-          whileInView={{ pathLength: 1, opacity: 1 }}
+          initial={{ pathLength: 0, opacity: 0 } as unknown as never}
+          whileInView={{ pathLength: 1, opacity: 1 } as unknown as never}
           transition={{ duration: 0.7, delay: 0.35 }}
           viewport={{ once: true }}
         />
@@ -114,8 +114,8 @@ export const DockerDiagram: React.FC = () => {
         <motion.path
           d={`M ${nodeX('redis') + NODE_W} ${TOP_Y} L ${nodeX('worker') - 8} ${TOP_Y}`}
           fill="none" stroke={TYPE_STYLES.queue.stroke} strokeWidth="1.5" strokeDasharray={EDGE_DASH}
-          initial={{ pathLength: 0, opacity: 0 }}
-          whileInView={{ pathLength: 1, opacity: 1 }}
+          initial={{ pathLength: 0, opacity: 0 } as unknown as never}
+          whileInView={{ pathLength: 1, opacity: 1 } as unknown as never}
           transition={{ duration: 0.7, delay: 0.55 }}
           viewport={{ once: true }}
         />
@@ -132,8 +132,8 @@ export const DockerDiagram: React.FC = () => {
         <motion.path
           d={`M ${nodeX('worker') + NODE_W / 2} ${NODE_Y + NODE_H} L ${nodeX('worker') + NODE_W / 2} ${BOTTOM_Y} L ${nodeX('postgres') + NODE_W / 2} ${BOTTOM_Y} L ${nodeX('postgres') + NODE_W / 2} ${NODE_Y + NODE_H}`}
           fill="none" stroke={TYPE_STYLES.app.stroke} strokeWidth="1.5" strokeDasharray={EDGE_DASH}
-          initial={{ pathLength: 0, opacity: 0 }}
-          whileInView={{ pathLength: 1, opacity: 1 }}
+          initial={{ pathLength: 0, opacity: 0 } as unknown as never}
+          whileInView={{ pathLength: 1, opacity: 1 } as unknown as never}
           transition={{ duration: 0.9, delay: 0.75 }}
           viewport={{ once: true }}
         />
@@ -150,8 +150,8 @@ export const DockerDiagram: React.FC = () => {
         <motion.path
           d={`M ${nodeX('postgres') + NODE_W} ${BOTTOM_Y} L ${nodeX('result') - 8} ${BOTTOM_Y}`}
           fill="none" stroke={TYPE_STYLES.db.stroke} strokeWidth="1.5" strokeDasharray={EDGE_DASH}
-          initial={{ pathLength: 0, opacity: 0 }}
-          whileInView={{ pathLength: 1, opacity: 1 }}
+          initial={{ pathLength: 0, opacity: 0 } as unknown as never}
+          whileInView={{ pathLength: 1, opacity: 1 } as unknown as never}
           transition={{ duration: 0.7, delay: 0.95 }}
           viewport={{ once: true }}
         />

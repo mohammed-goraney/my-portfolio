@@ -6,7 +6,7 @@ export interface Skill {
   name: string;
   level?: number; // 0-100
   yearsOfPractice?: number;
-  proficiency?: 'beginner' | 'intermediate' | 'advanced' | 'expert';
+  proficiency?: 'beginner' | 'developing' | 'intermediate' | 'advanced' | 'expert';
   icon?: string;
   verified?: boolean; // Certification badge
 }

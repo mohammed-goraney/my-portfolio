@@ -20,6 +20,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
     const { t } = useI18n()
     const reduced = useReducedMotion()
     const [typed, setTyped] = useState('')
+    const [portraitAvailable, setPortraitAvailable] = useState(true)
     const roleText = t.heroRole || data.title || 'Network & Cloud Engineer'
 
     // terminal-style typing effect for the role
@@ -45,7 +46,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
       >
         {/* Animated network particle background */}
         <div className="absolute inset-0" aria-hidden="true">
-          <NetworkCanvas particleCount={typeof window !== 'undefined' && window.innerWidth < 768 ? 55 : 110} maxLinkDist={150} speedFactor={0.8} />
+          <NetworkCanvas particleCount={typeof window !== 'undefined' && window.innerWidth < 768 ? 42 : 90} maxLinkDist={150} speedFactor={0.8} />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#1A1918_78%)]" />
           <div className="absolute inset-0 bg-noise-grid opacity-60" />
         </div>
@@ -107,7 +108,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.05, duration: 0.6 }}
-              className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center"
+              className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center"
             >
               <Button variant="primary" size="lg" onClick={onPrimaryCtaClick} className="sm:w-auto">
                 {t.heroCtaProjects}
@@ -120,7 +121,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View my LinkedIn profile"
-                className="group inline-flex items-center justify-center gap-2.5 rounded-2xl border border-text-primary/20 bg-white/5 px-6 py-4 text-base font-semibold text-text-secondary backdrop-blur-sm transition-all duration-300 hover:border-accent-gold/60 hover:bg-accent-gold/10 hover:text-accent-gold sm:px-7"
+                className="group inline-flex items-center justify-center gap-2.5 rounded-2xl border border-text-primary/20 bg-white/5 px-5 py-3.5 text-sm font-semibold text-text-secondary backdrop-blur-sm transition-all duration-300 hover:border-accent-gold/60 hover:bg-accent-gold/10 hover:text-accent-gold sm:px-6 sm:py-4 sm:text-base"
               >
                 <svg
                   className="h-5 w-5"
@@ -137,7 +138,7 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
                 href="/Mohammed-Abdalla-ATS-Resume.pdf"
                 download="Mohammed-Abdalla-ATS-Resume.pdf"
                 aria-label="Download my CV"
-                className="group inline-flex items-center justify-center gap-2.5 rounded-2xl border border-accent-gold/50 bg-accent-gold/10 px-6 py-4 text-base font-semibold text-accent-gold backdrop-blur-sm transition-all duration-300 hover:border-accent-gold hover:bg-accent-gold/20 sm:px-7"
+                className="group inline-flex items-center justify-center gap-2.5 rounded-2xl border border-accent-gold/50 bg-accent-gold/10 px-5 py-3.5 text-sm font-semibold text-accent-gold backdrop-blur-sm transition-all duration-300 hover:border-accent-gold hover:bg-accent-gold/20 sm:px-6 sm:py-4 sm:text-base"
               >
                 <span aria-hidden="true">↓</span>
                 {t.heroCv}
@@ -182,15 +183,22 @@ const Hero = React.forwardRef<HTMLElement, HeroProps>(
             />
             <div className="absolute -inset-3 rounded-[2rem] bg-accent-gold/10 blur-2xl" aria-hidden="true" />
 
-            <div className="relative overflow-hidden rounded-[1.7rem] border border-accent-gold/30 shadow-[0_20px_80px_rgba(0,0,0,0.6)]">
-              <img
-                src={data.portrait.url}
-                alt={data.portrait.alt}
-                width={data.portrait.width}
-                height={data.portrait.height}
-                className="w-full h-full object-cover"
-                loading="eager"
-              />
+            <div className="relative min-h-[360px] overflow-hidden rounded-[1.7rem] border border-accent-gold/30 bg-surface shadow-[0_20px_80px_rgba(0,0,0,0.6)] sm:min-h-0">
+              {portraitAvailable ? (
+                <img
+                  src={data.portrait.url}
+                  alt={data.portrait.alt}
+                  width={data.portrait.width}
+                  height={data.portrait.height}
+                  className="h-full w-full object-cover"
+                  loading="eager"
+                  onError={() => setPortraitAvailable(false)}
+                />
+              ) : (
+                <div className="flex min-h-[360px] items-center justify-center bg-gradient-to-br from-surface via-background to-accent-gold/10 sm:min-h-[500px]" role="img" aria-label="Mohammed Abdalla portfolio portrait placeholder">
+                  <span className="font-display text-8xl font-bold text-accent-gold/70" aria-hidden="true">MA</span>
+                </div>
+              )}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
 
               {/* corner ticks */}

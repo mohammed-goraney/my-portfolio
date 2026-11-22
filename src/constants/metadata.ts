@@ -5,10 +5,11 @@
 
 export const siteMetadata = {
   // Basic info
-  title: 'Mohammed Abdalla - Network & Cloud Engineer',
+  title: 'Mohammed Abdalla - Network, Cloud & DevOps Portfolio',
   description:
     'Mohammed Abdalla — Network, Cloud, and DevOps learner building hands-on labs in enterprise networking, Azure-focused infrastructure, Linux, and Docker.',
   siteName: 'Mohammed Abdalla — Portfolio',
+  // Replace with the final Vercel/custom-domain URL once the deployment URL is confirmed.
   url: 'https://github.com/mohammed-goraney/my-portfolio',
   locale: 'en_US',
 

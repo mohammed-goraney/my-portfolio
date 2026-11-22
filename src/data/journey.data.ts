@@ -2,7 +2,7 @@ import { JourneyData } from '../types/journey.types'
 
 export const journeyData: JourneyData = {
   introText:
-    'From IT education to specialized expertise in enterprise networking and cloud infrastructure. A continuous journey of learning, certification, and hands-on experience in building secure, scalable systems.',
+    'From IT education to focused practice in enterprise networking and cloud infrastructure. A continuous journey of structured learning, credential-backed training, and hands-on labs.',
 
   milestones: [
     {
@@ -28,12 +28,12 @@ export const journeyData: JourneyData = {
     {
       id: 'milestone-2',
       year: 2025,
-      title: 'Cisco CCNA Certification Achieved',
-      description: 'Completed comprehensive CCNA training from Networkat platform',
+      title: 'CCNA-Aligned Networking Training Completed',
+      description: 'Completed structured CCNA-aligned training through the Networkat platform',
       type: 'achievement',
       icon: 'Award',
       tags: ['Cisco', 'CCNA', 'Training'],
-      details: 'Mastered networking fundamentals through comprehensive courses and practical labs.',
+      details: 'Built a foundation in networking fundamentals through structured coursework and practical labs; this is training completion, not a claim of a Cisco exam pass.',
     },
     {
       id: 'milestone-3',
@@ -73,7 +73,7 @@ export const journeyData: JourneyData = {
   currentFocus: {
     title: 'NOW',
     description:
-      'Deepening expertise in Kubernetes orchestration, preparing for advanced cloud certifications, and exploring edge computing solutions for enterprise networks.',
+      'Deepening practical skills in Kubernetes orchestration, cloud infrastructure, and network automation through focused labs and structured learning.',
     keywords: ['Kubernetes', 'Advanced Cloud', 'Edge Computing', 'Network Automation'],
     icon: 'Sparkles',
   },

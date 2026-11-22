@@ -109,6 +109,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .animate-marquee, .animate-float-slow, .animate-blink { animation: none; }
+  [style*="animation"] { animation: none !important; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
