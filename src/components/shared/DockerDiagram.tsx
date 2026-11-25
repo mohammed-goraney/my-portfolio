@@ -20,9 +20,9 @@ interface DiagramNode {
 const NODES: DiagramNode[] = [
   { id: 'vote', label: 'Vote App', sub: 'Python (Flask)', type: 'app' },
   { id: 'redis', label: 'Redis', sub: 'Message Queue', type: 'queue' },
-  { id: 'worker', label: 'Worker', sub: '.NET', type: 'app' },
+  { id: 'worker', label: 'Worker', sub: 'Background process', type: 'app' },
   { id: 'postgres', label: 'PostgreSQL', sub: 'Database', type: 'db' },
-  { id: 'result', label: 'Result App', sub: 'Node.js', type: 'app' },
+  { id: 'result', label: 'Result App', sub: 'Result service', type: 'app' },
 ]
 
 const TYPE_STYLES: Record<NodeType, { stroke: string; fill: string; icon: string }> = {

@@ -107,7 +107,7 @@ export const dockerVotingApp: Project = {
   shortDescription:
     'Multi-container application orchestrated with Docker Compose: Vote App → Redis → Worker → PostgreSQL → Result App',
   fullDescription:
-    'Hands-on Docker lab completed after the Docker for Beginners course. Five containers communicate over a single Docker network, with Redis acting as the message queue and a .NET background worker persisting votes into PostgreSQL.',
+    'Hands-on Docker lab completed after the Docker for Beginners course. Five services communicate over a single Docker network, using Redis for queue-based processing and PostgreSQL for persistence.',
 
   challenge: {
     description:
@@ -122,7 +122,7 @@ export const dockerVotingApp: Project = {
   },
 
   architecture:
-    'Vote App (Python/Flask) → Redis (queue) → Worker (.NET) → PostgreSQL; Result App (Node.js) reads votes directly from PostgreSQL',
+    'Vote App → Redis (queue) → Worker → PostgreSQL → Result App',
 
   technologies: [
     {
@@ -143,8 +143,7 @@ export const dockerVotingApp: Project = {
       category: 'Backend',
       technologies: [
         { name: 'Python (Flask)', category: 'Backend' },
-        { name: '.NET Worker', category: 'Backend' },
-        { name: 'Node.js', category: 'Backend' },
+        { name: 'Vote and result services', category: 'Backend' },
       ],
     },
   ],

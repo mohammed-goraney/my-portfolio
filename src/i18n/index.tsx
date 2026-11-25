@@ -335,14 +335,14 @@ export const en: Dictionary = {
   closeLightbox: 'Close certificate viewer',
   scrollToTop: 'Scroll to top',
 
-  heroEyebrow: 'Networks · DevOps · Cloud · Linux',
-  heroRole: 'Network · Cloud · DevOps',
+  heroEyebrow: 'IT Support · NOC · Network Operations',
+  heroRole: 'IT Support · NOC · Network Operations',
   heroValueProposition:
-    'Building secure, scalable network infrastructure and cloud solutions with hands-on expertise in Azure, Linux, Docker, and enterprise networking.',
+    'Supporting reliable IT and network operations through hands-on practice in troubleshooting, Cisco IOS, Linux, Docker, and enterprise networking.',
   heroSupportingText:
     'Completed CCNA/CCNP-aligned networking training and Azure AZ-104-focused learning, with hands-on practice in Linux administration, network automation, containerization, and DevOps.',
   heroTargetRoles:
-    'Open to junior and entry-level roles in Network Engineering, NOC Operations, Cloud Support, Linux Administration, and DevOps.',
+    'Open to junior and entry-level roles in IT Support, NOC Operations, Network Support, Cloud Support, and Linux Administration.',
 
   pixelLine1: 'Networks that hold.',
   pixelLine2: 'Pipelines that run.',
@@ -386,9 +386,9 @@ export const en: Dictionary = {
 
   dockerTitle: 'Docker Example Voting App Lab',
   dockerShortDesc:
-    'Deployed a five-service voting application using Docker Compose, integrating Redis, PostgreSQL, Python, and Node.js services over a shared Docker network.',
+    'Deployed a five-service voting application using Docker Compose, integrating Redis and PostgreSQL services over a shared Docker network.',
   dockerFullDesc:
-    'Hands-on Docker lab completed after the Docker for Beginners course. Five containers communicate over a single Docker network, with Redis acting as the message queue and a .NET background worker persisting votes into PostgreSQL.',
+    'Hands-on Docker lab completed after the Docker for Beginners course. Five services communicate over a single Docker network, using Redis for queue-based processing and PostgreSQL for persistence.',
   dockerChallenge:
     'Running multiple containers and making them communicate reliably: service discovery, networking, environment variables, and background worker lifecycle.',
   dockerApproach:
@@ -483,7 +483,7 @@ export const ar: Dictionary = {
   heroVerified: 'ممارسة عملية',
   heroAvailable: 'متاح للفرص الوظيفية',
   heroTargetRoles:
-    'متاح لفرص Junior وEntry-level في هندسة الشبكات، عمليات NOC، دعم السحابة، إدارة Linux، وDevOps.',
+    'منفتح على وظائف المبتدئين في دعم تقنية المعلومات وعمليات NOC ودعم الشبكات والدعم السحابي وإدارة Linux.',
   heroScroll: 'مرر للأسفل',
 
   pixelStatementEyebrow: 'بيان المهندس',
@@ -565,10 +565,10 @@ export const ar: Dictionary = {
   closeLightbox: 'إغلاق عارض الشهادة',
   scrollToTop: 'العودة للأعلى',
 
-  heroEyebrow: 'الشبكات · ديف أوبس · السحابة · لينكس',
-  heroRole: 'مهندس شبكات · سحابة · ديف أوبس',
+  heroEyebrow: 'دعم تقنية المعلومات · NOC · عمليات الشبكات',
+  heroRole: 'دعم تقنية المعلومات · NOC · عمليات الشبكات',
   heroValueProposition:
-    'بناء بنية شبكات آمنة وقابلة للتوسع وحلول سحابية بخبرة عملية في Azure ولينكس وDocker وشبكات المؤسسات.',
+    'دعم عمليات تقنية المعلومات والشبكات من خلال ممارسة عملية في استكشاف الأخطاء وCisco IOS ولينكس وDocker وشبكات المؤسسات.',
   heroSupportingText:
     'أكملت تدريبًا متخصصًا متوافقًا مع CCNA وCCNP وتعلمًا يركز على Azure AZ-104، مع ممارسة عملية في إدارة Linux وأتمتة الشبكات والحاويات وDevOps.',
 
@@ -614,9 +614,9 @@ export const ar: Dictionary = {
 
   dockerTitle: 'معمل Docker — تطبيق التصويت',
   dockerShortDesc:
-    'نشر تطبيق تصويت مكوّن من خمس خدمات باستخدام Docker Compose، مع دمج Redis وPostgreSQL وخدمات Python وNode.js عبر شبكة Docker مشتركة.',
+    'نشر تطبيق تصويت مكوّن من خمس خدمات باستخدام Docker Compose، مع دمج Redis وPostgreSQL عبر شبكة Docker مشتركة.',
   dockerFullDesc:
-    'معمل Docker عملي أُكمل بعد دورة Docker للمبتدئين. خمس حاويات تتواصل عبر شبكة Docker واحدة، مع عمل Redis كطابور رسائل وعامل خلفية .NET لحفظ الأصوات في PostgreSQL.',
+    'معمل Docker عملي أُكمل بعد دورة Docker للمبتدئين. خمس خدمات تتواصل عبر شبكة Docker واحدة، باستخدام Redis للمعالجة عبر الطابور وPostgreSQL لحفظ البيانات.',
   dockerChallenge:
     'تشغيل عدة حاويات وضمان تواصلها الموثوق: اكتشاف الخدمات، والشبكات، والمتغيرات البيئية، ودورة حياة عامل الخلفية.',
   dockerApproach:
