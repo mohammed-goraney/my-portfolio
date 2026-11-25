@@ -9,11 +9,11 @@ export const journeyData: JourneyData = {
       id: 'milestone-0',
       year: 2026,
       title: 'Bachelor of Science in Information Technology',
-      description: 'Completed a Bachelor of Science in Information Technology with a foundation in computer systems and networks',
+      description: 'Graduated from Future University with a Bachelor of Science in Information Technology',
       type: 'achievement',
       icon: 'Award',
       tags: ['Education', 'IT Foundation'],
-      details: 'Graduated in 2026 with a foundation in IT fundamentals, networking basics, and system administration.',
+      details: 'Graduated from Future University in 2026 with a foundation in IT fundamentals, networking basics, and system administration.',
     },
     {
       id: 'milestone-1',

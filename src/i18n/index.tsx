@@ -69,7 +69,7 @@ export interface Dictionary {
   filterProductivity: string
   filterTechnical: string
   filterProfessionalDevelopment: string
-  filterFieldCommunity: string
+  filterAdditionalTraining: string
   viewCertificate: string
   credential: string
 
@@ -289,7 +289,7 @@ export const en: Dictionary = {
   filterProductivity: 'Productivity',
   filterTechnical: 'Technical & Systems',
   filterProfessionalDevelopment: 'Professional Development',
-  filterFieldCommunity: 'Field & Community Training',
+  filterAdditionalTraining: 'Additional Training',
   viewCertificate: 'View Certificate',
   credential: 'Credential',
 
@@ -355,8 +355,8 @@ export const en: Dictionary = {
   journeyIntro:
     'From IT education to specialized expertise in enterprise networking and cloud infrastructure. A continuous journey of learning, certification, and hands-on experience in building secure, scalable systems.',
   milestone0Title: 'Bachelor of Science in Information Technology',
-  milestone0Desc: 'Completed a Bachelor of Science in Information Technology with a foundation in computer systems and networks',
-  milestone0Details: 'Graduated in 2026 with a foundation in IT fundamentals, networking basics, and system administration.',
+  milestone0Desc: 'Graduated from Future University with a Bachelor of Science in Information Technology',
+  milestone0Details: 'Graduated from Future University in 2026 with a foundation in IT fundamentals, networking basics, and system administration.',
   milestone1Title: 'Networking Specialization Journey Begins',
   milestone1Desc: 'Started a focused networking learning and certification path',
   milestone1Details: 'Started the Networkat networking course in February 2025 and began building hands-on labs in enterprise network design.',
@@ -386,7 +386,7 @@ export const en: Dictionary = {
 
   dockerTitle: 'Docker Example Voting App Lab',
   dockerShortDesc:
-    'Multi-container application orchestrated with Docker Compose: Vote App → Redis → Worker → PostgreSQL → Result App',
+    'Deployed a five-service voting application using Docker Compose, integrating Redis, PostgreSQL, Python, and Node.js services over a shared Docker network.',
   dockerFullDesc:
     'Hands-on Docker lab completed after the Docker for Beginners course. Five containers communicate over a single Docker network, with Redis acting as the message queue and a .NET background worker persisting votes into PostgreSQL.',
   dockerChallenge:
@@ -411,7 +411,7 @@ export const en: Dictionary = {
 
   enterpriseTitle: 'Enterprise Campus Network — CCNP ENCOR Lab',
   enterpriseShortDesc:
-    'Full-scale enterprise network for "Goraney Technologies" featuring a 3-tier hierarchical design, OSPF dynamic routing, and HSRP redundancy.',
+    'Designed and implemented a three-tier enterprise campus network with OSPF routing, VLAN segmentation, inter-VLAN routing, and HSRP gateway redundancy.',
   enterpriseFullDesc:
     'An enterprise network simulation based on CCNP ENCOR design principles. The lab applies Cisco best practices across Core, Distribution, and Access layers to explore availability, VLAN isolation, and scalable dynamic routing.',
   enterpriseChallenge:
@@ -438,21 +438,21 @@ export const en: Dictionary = {
   achievement2: 'Two documented hands-on labs covering enterprise networking and containerized applications',
   achievement3: 'Seven Networkat certificates covering networking, cloud, security, and Linux topics',
   achievement4: 'Completed Azure AZ-104-focused cloud infrastructure learning',
-  achievement5: 'Docker containerization and DevOps fundamentals mastered',
-  achievement6: 'Advanced expertise in Enterprise Network Design, Security, and Automation',
+  achievement5: 'Built hands-on Docker containerization and DevOps fundamentals through lab practice',
+  achievement6: 'Developing practice in enterprise network design, security, and automation',
   badge1Label: 'Network Architect',
   badge2Label: 'Cloud Engineer',
   badge3Label: 'DevOps Enthusiast',
 
   skillsIntro:
-    'Hands-on experience with enterprise networking, cloud infrastructure, and modern DevOps practices. Certified across multiple platforms including Cisco, Microsoft Azure, and containerization technologies.',
+    'Hands-on practice with enterprise networking, cloud infrastructure, and modern DevOps fundamentals through structured labs and learning.',
   skillsYrs: 'yrs practice',
   skillCat0Name: 'Enterprise Networking',
-  skillCat0Desc: 'Cisco CCNA, CCNP. Advanced routing, network design, and security.',
+  skillCat0Desc: 'Cisco IOS, CCNA/CCNP-aligned training, routing practice, network design, and security fundamentals.',
   skillCat1Name: 'Cloud Infrastructure',
-  skillCat1Desc: 'Microsoft Azure. Cloud design, deployment, and management.',
+  skillCat1Desc: 'Azure-focused learning, cloud fundamentals, and infrastructure practice.',
   skillCat2Name: 'Containerization & DevOps',
-  skillCat2Desc: 'Docker expertise and DevOps fundamentals for modern infrastructure.',
+  skillCat2Desc: 'Docker, Docker Compose, and foundational DevOps workflows for modern infrastructure.',
   skillCat3Name: 'Linux System Administration',
   skillCat3Desc: 'Practical Linux experience for network and infrastructure management.',
   skillCat4Name: 'Network Automation',
@@ -519,7 +519,7 @@ export const ar: Dictionary = {
   filterProductivity: 'الإنتاجية',
   filterTechnical: 'تقني وأنظمة',
   filterProfessionalDevelopment: 'التطوير المهني',
-  filterFieldCommunity: 'تدريب ميداني ومجتمعي',
+  filterAdditionalTraining: 'تدريب إضافي',
   viewCertificate: 'عرض الشهادة',
   credential: 'الرابط الرسمي',
 
@@ -583,14 +583,14 @@ export const ar: Dictionary = {
   journeyIntro:
     'من دراسة تقنية المعلومات إلى التخصص في شبكات المؤسسات والبنية السحابية. مسيرة مستمرة من التعلم والشهادات والخبرة العملية في بناء أنظمة آمنة وقابلة للتوسع.',
   milestone0Title: 'بكالوريوس تقنية المعلومات',
-  milestone0Desc: 'إكمال بكالوريوس تقنية المعلومات مع أساس في أنظمة الحاسوب والشبكات',
-  milestone0Details: 'التخرج في 2026 مع أساس في تقنية المعلومات والشبكات وإدارة الأنظمة.',
+  milestone0Desc: 'التخرج من Future University بدرجة بكالوريوس في تقنية المعلومات',
+  milestone0Details: 'التخرج من Future University في عام 2026 مع أساس في تقنية المعلومات والشبكات وإدارة الأنظمة.',
   milestone1Title: 'بداية التخصص في الشبكات',
   milestone1Desc: 'بدء مسار مركز للتعلم والشهادات في شبكات المؤسسات',
   milestone1Details: 'بدء كورس الشبكات من Networkat في فبراير 2025 وبناء معامل عملية في تصميم شبكات المؤسسات.',
-  milestone2Title: 'الحصول على شهادة Cisco CCNA',
+  milestone2Title: 'إكمال تدريب متوافق مع Cisco CCNA',
   milestone2Desc: 'إكمال تدريب CCNA الشامل عبر منصة Networkat',
-  milestone2Details: 'إتقان أساسيات الشبكات عبر دورات شاملة ومعامل عملية.',
+  milestone2Details: 'بناء أساس في الشبكات عبر دورات منظمة ومعامل عملية؛ هذا إكمال تدريب وليس ادعاء اجتياز امتحان Cisco.',
   milestone3Title: 'مسار تعلم CCNP وسحابة Azure',
   milestone3Desc: 'دراسة متقدمة لموضوعات CCNP وتعلم يركز على البنية التحتية في Azure',
   milestone3Details:
@@ -614,7 +614,7 @@ export const ar: Dictionary = {
 
   dockerTitle: 'معمل Docker — تطبيق التصويت',
   dockerShortDesc:
-    'تطبيق متعدد الحاويات مُدار عبر Docker Compose: تطبيق التصويت → Redis → عامل الخلفية → PostgreSQL → تطبيق النتائج',
+    'نشر تطبيق تصويت مكوّن من خمس خدمات باستخدام Docker Compose، مع دمج Redis وPostgreSQL وخدمات Python وNode.js عبر شبكة Docker مشتركة.',
   dockerFullDesc:
     'معمل Docker عملي أُكمل بعد دورة Docker للمبتدئين. خمس حاويات تتواصل عبر شبكة Docker واحدة، مع عمل Redis كطابور رسائل وعامل خلفية .NET لحفظ الأصوات في PostgreSQL.',
   dockerChallenge:
@@ -639,7 +639,7 @@ export const ar: Dictionary = {
 
   enterpriseTitle: 'شبكة حرم المؤسسة — معمل CCNP ENCOR',
   enterpriseShortDesc:
-    'شبكة مؤسسات كاملة لشركة "Goraney Technologies" تتميز بتصميم هرمي ثلاثي الطبقات، وتوجيه OSPF ديناميكي، وتكرارية HSRP.',
+    'تصميم وتنفيذ شبكة حرم مؤسسية من ثلاث طبقات باستخدام توجيه OSPF وتقسيم VLAN والتوجيه بين الشبكات وتكرارية بوابة HSRP.',
   enterpriseFullDesc:
     'محاكاة لشبكة مؤسسية مبنية على مبادئ تصميم CCNP ENCOR. يطبق المعمل أفضل ممارسات Cisco عبر طبقات Core وDistribution وAccess لاستكشاف التوافر وعزل VLAN والتوجيه الديناميكي القابل للتوسع.',
   enterpriseChallenge:
@@ -666,21 +666,21 @@ export const ar: Dictionary = {
   achievement2: 'معملان موثقان في شبكات المؤسسات والتطبيقات المعتمدة على الحاويات',
   achievement3: 'سبع شهادات من Networkat في الشبكات والسحابة والأمن ولينكس',
   achievement4: 'أكملت تعلمًا يركز على البنية السحابية وAzure AZ-104',
-  achievement5: 'إتقان أساسيات Docker والحاويات وديف أوبس',
-  achievement6: 'خبرة متقدمة في تصميم شبكات المؤسسات والأمن والأتمتة',
+  achievement5: 'بناء ممارسة عملية في Docker والحاويات وأساسيات ديف أوبس عبر المعامل',
+  achievement6: 'ممارسة متطورة في تصميم شبكات المؤسسات والأمن والأتمتة',
   badge1Label: 'مهندس شبكات',
   badge2Label: 'مهندس سحابة',
   badge3Label: 'مهتم بديف أوبس',
 
   skillsIntro:
-    'خبرة عملية في شبكات المؤسسات والبنية السحابية وممارسات ديف أوبس الحديثة. حائز على شهادات عبر منصات متعددة تشمل Cisco وMicrosoft Azure وتقنيات الحاويات.',
+    'ممارسة عملية في شبكات المؤسسات والبنية السحابية وأساسيات ديف أوبس الحديثة عبر معامل وتعلم منظم.',
   skillsYrs: 'سنوات ممارسة',
   skillCat0Name: 'شبكات المؤسسات',
-  skillCat0Desc: 'Cisco CCNA وCCNP. التوجيه المتقدم وتصميم الشبكات والأمن.',
+  skillCat0Desc: 'Cisco IOS وتدريب متوافق مع CCNA وCCNP وممارسة التوجيه وتصميم الشبكات وأساسيات الأمن.',
   skillCat1Name: 'البنية السحابية',
-  skillCat1Desc: 'Microsoft Azure. تصميم السحابة ونشرها وإدارتها.',
+  skillCat1Desc: 'تعلم يركز على Azure وأساسيات السحابة وممارسة البنية التحتية.',
   skillCat2Name: 'الحاويات وديف أوبس',
-  skillCat2Desc: 'خبرة Docker وأساسيات ديف أوبس للبنية الحديثة.',
+  skillCat2Desc: 'Docker وDocker Compose وسير عمل ديف أوبس الأساسي للبنية الحديثة.',
   skillCat3Name: 'إدارة أنظمة لينكس',
   skillCat3Desc: 'خبرة لينكس عملية لإدارة الشبكات والبنية التحتية.',
   skillCat4Name: 'أتمتة الشبكات',

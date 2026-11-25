@@ -12,15 +12,15 @@ interface CoursesProps {
   data?: typeof coursesData
 }
 
-const CERTIFICATE_GROUPS = ['All', 'Technical & Systems', 'Professional Development', 'Field & Community Training'] as const
+const CERTIFICATE_GROUPS = ['All', 'Technical & Systems', 'Professional Development', 'Additional Training'] as const
 type Filter = (typeof CERTIFICATE_GROUPS)[number]
 
-type FilterKey = 'filterAll' | 'filterTechnical' | 'filterProfessionalDevelopment' | 'filterFieldCommunity'
+type FilterKey = 'filterAll' | 'filterTechnical' | 'filterProfessionalDevelopment' | 'filterAdditionalTraining'
 
 const GROUP_META: Record<Exclude<Filter, 'All'>, { labelKey: FilterKey }> = {
   'Technical & Systems': { labelKey: 'filterTechnical' },
   'Professional Development': { labelKey: 'filterProfessionalDevelopment' },
-  'Field & Community Training': { labelKey: 'filterFieldCommunity' },
+  'Additional Training': { labelKey: 'filterAdditionalTraining' },
 }
 
 const Courses = React.forwardRef<HTMLElement, CoursesProps>(({ data = coursesData }, ref) => {

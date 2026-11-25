@@ -16,6 +16,7 @@ export const skillsData: SkillsData = {
       skills: [
         { name: 'Cisco CCNA-aligned topics', level: 78, proficiency: 'intermediate', verified: true },
         { name: 'Cisco CCNP-aligned topics', level: 62, proficiency: 'intermediate', verified: true },
+        { name: 'Cisco IOS', level: 72, proficiency: 'intermediate' },
         { name: 'Routing & switching labs', level: 72, proficiency: 'intermediate' },
         { name: 'Enterprise design practice', level: 68, proficiency: 'intermediate' },
         { name: 'Network Security', level: 65, proficiency: 'intermediate', verified: true },
@@ -44,6 +45,7 @@ export const skillsData: SkillsData = {
       color: '#D4B574',
       icon: 'Code',
       skills: [
+        { name: 'Docker Compose', level: 72, proficiency: 'intermediate', verified: true },
         { name: 'Docker', level: 72, proficiency: 'intermediate', verified: true },
         { name: 'DevOps basics', level: 64, proficiency: 'developing' },
         { name: 'Containerization', level: 68, proficiency: 'intermediate' },

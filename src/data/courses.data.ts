@@ -12,7 +12,7 @@ export interface Course {
   grade?: string
   category: 'Networking' | 'DevOps' | 'Cloud' | 'Soft Skills' | 'Productivity' | 'Professional'
   /** Professional grouping used by the certificate gallery filters. */
-  group: 'Technical & Systems' | 'Professional Development' | 'Field & Community Training'
+  group: 'Technical & Systems' | 'Professional Development' | 'Additional Training'
   /** Verifiable credential URL (Coursera / Packt verification page) */
   credentialUrl?: string
   /** Local certificate image, e.g. /images/Coursera/encor-350-401.webp */
@@ -45,7 +45,7 @@ export const coursesData: CoursesData = {
       provider: 'UNHCR · Terre des hommes',
       date: 'Nov 16, 2025',
       category: 'Professional',
-      group: 'Field & Community Training',
+      group: 'Additional Training',
       certificateImage: '/images/Certificates/unhcr-protection-recognition.webp',
       skills: [
         'Facilitation',

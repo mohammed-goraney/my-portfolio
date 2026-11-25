@@ -31,10 +31,11 @@ export const siteMetadata = {
 
   // Open Graph / Social sharing
   og: {
-    image: '/images/hero/portrait.jpg',
+    image: '/images/projects/docker-voting-app.webp',
+    imageAlt: 'Docker multi-container voting application lab architecture',
     type: 'website',
     width: 1200,
-    height: 630,
+    height: 600,
   },
 
   // Twitter Card
@@ -46,11 +47,12 @@ export const siteMetadata = {
   // Keywords
   keywords: [
     'Network Engineer',
-    'Cloud Architect',
+    'NOC Operations',
+    'Cloud Support',
+    'Linux Administration',
     'DevOps',
     'Infrastructure',
     'Network Administration',
-    'Cloud Security',
   ],
 
   // Contact information
